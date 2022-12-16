@@ -1,0 +1,14 @@
+// Font styles
+$font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-jumbo: 10rem;
+$font-x-large: 5.4rem;
+$font-large: 3.2rem;
+$font-medium: 2.1rem;
+$font-small: 1.6rem;
+$font-x-small: 1.2rem;
+
+* {
+    font-family: $font-family !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

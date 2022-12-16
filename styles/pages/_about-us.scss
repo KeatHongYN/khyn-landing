@@ -1,0 +1,72 @@
+.c-About-us {
+    width: 100%;
+    .c-Hero {
+        padding: 100px 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h1 {
+            font-size: $font-x-large;
+            font-weight: bold;
+        }
+        p {
+            margin-top: 10px;
+            font-size: $font-small;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+    .c-CD {
+        padding: 50px 150px;
+        .c-Top {
+            h1 {
+                text-align: center;
+                font-size: $font-medium;
+            }
+            p {
+                margin-top: 10px;
+                text-align: center;
+                color: #86868B;
+                font-weight: 600;
+                font-size: $font-small;
+            }
+        }
+    }
+
+    .c-Partners {
+        padding: 50px 150px;
+        h1 {
+            font-size: $font-medium;
+            text-align: center;
+        }
+
+        &__Img-list {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            img {
+                &:first-of-type {
+                    margin-right: 30px;
+                }
+
+                &:last-of-type {
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+
+    .c-FAQs {
+        background-color: #FCFCFC;
+        padding: 50px 150px;
+
+        h1 {
+            font-size: $font-medium;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.c-Pill {
+    border-radius: 4px;
+    padding: 2px 8px;
+    width: fit-content;
+    height: fit-content;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    p {
+        font-weight: bold;
+        font-size: $font-x-small;
+    }
+
+    &__Icon {
+        font-size: $font-x-small;
+        margin-right: 5px;
+    }
+
+    &__Gradient-ig {
+        background: $gradient-ig;
+        color: white;
+    }
+
+    &__Warning {
+        background-color: #F7E5B9;
+        color: #924714;
+    }
+}

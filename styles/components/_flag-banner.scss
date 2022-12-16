@@ -1,0 +1,41 @@
+.c-Flag-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 64.46px;
+    left: 0;
+    width: 100%;
+
+    &--mobile {
+        top: 65px;
+    }
+    .c-Line {
+        display: block;
+        width: 100%;
+    }
+
+    .c-Text-box {
+        padding: 2px 8px;
+        border-radius: 0 0 4px 4px;
+        width: fit-content;
+        p {
+            font-weight: 700;
+            font-size: 10px;
+        }
+    }
+
+    &__Dev {
+        .c-Line {
+            border-bottom: 1px solid #ED6704;
+        }
+
+        .c-Text-box {
+            background-color: #ED6704;
+            p {
+                color: white;
+            }
+        }
+    }
+}
