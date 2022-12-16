@@ -1,0 +1,54 @@
+.c-Join-us {
+  .c-Hero {
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+      font-size: $font-x-large;
+      background: $gradient-ig;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {
+      text-align: center;
+      margin: 20px 0;
+      font-size: $font-small;
+      color: #545969;
+      max-width: 550px;
+      font-weight: 500;
+    }
+    .c-Btns {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+
+  .c-Socials {
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      font-size: $font-large;
+      background: $gradient-fire;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+  }
+
+  .c-IG {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      font-size: $font-large;
+    }
+  }
+}

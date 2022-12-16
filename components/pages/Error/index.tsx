@@ -5,7 +5,6 @@ import { ERROR_PAGE_ENUM, ERROR_PAGE_META } from "../../../config/constants";
 import MainLayout from "../../../layout/MainLayout";
 import { ErrorProps } from "next/error";
 
-
 const Error = ({ statusCode }: ErrorProps): JSX.Element => {
     const router = useRouter();
 
