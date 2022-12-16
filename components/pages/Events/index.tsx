@@ -21,9 +21,7 @@ const EventsPage = (): JSX.Element => {
       price: formatPrice(oneEvent.price, oneEvent.multiplePrice)
     }));
     setEvents(formattedEvents);
-    setTimeout(() => {
-      setLoadingEvents(false)
-    }, 1500);
+    setLoadingEvents(false)
   }, []);
 
   return (

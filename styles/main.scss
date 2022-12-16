@@ -15,8 +15,12 @@
 @import "pages/about-us";
 @import "pages/error";
 @import "pages/join-us";
+@import "pages/view-event";
 
 // Layout
 @import "layout/header";
 @import "layout/footer";
 @import "layout/main-layout";
+
+// Vendors
+@import "vendors/material-ui";

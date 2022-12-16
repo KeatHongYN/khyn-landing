@@ -20,7 +20,7 @@ export const MOCK_EVENTS = [
       },
     },
     volunteers_needed: true,
-    image: "https://picsum.photos/seed/picsum/200/300",
+    image: "https://picsum.photos/seed/picsum/200/200",
     price: 399.9,
     multiplePrice: false
   },

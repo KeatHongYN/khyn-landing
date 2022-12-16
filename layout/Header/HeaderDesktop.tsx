@@ -14,7 +14,7 @@ const HeaderDesktop = (): JSX.Element => {
             </div>
             <div className="c-Header-desktop__Middle c-Middle">
                 <Link href="/" className={`c-Link ${router.asPath === "/" ? "c-Link--active" : ""}`}>Home</Link>
-                <Link href="/events" className={`c-Link ${router.asPath === "/events" ? "c-Link--active" : ""}`}>Events</Link>
+                <Link href="/events" className={`c-Link ${router.asPath.startsWith("/events") ? "c-Link--active" : ""}`}>Events</Link>
                 <Link href="/about-us" className={`c-Link ${router.asPath === "/about-us" ? "c-Link--active" : ""}`}>About us</Link>
             </div>
             <div className="c-Header-desktop__Right c-Right">
