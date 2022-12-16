@@ -1,10 +1,10 @@
 import { camelCase } from "change-case";
 import dayjs from "dayjs";
 import {
-  formatDateParams,
-  formatDateRV,
-  formatPriceRV,
-  formatTimeParams,
+  FormatDateParams,
+  FormatDateRV,
+  FormatPriceRV,
+  FormatTimeParams,
 } from "./types";
 
 export const recursiveCamelCase = (item: any): any => {
@@ -23,7 +23,7 @@ export const recursiveCamelCase = (item: any): any => {
 export const formatPrice = (
   price: number | null | undefined,
   multiplePrice: boolean = false
-): formatPriceRV => {
+): FormatPriceRV => {
   if (price === null || price === undefined) return price;
 
   if (price === 0) return "FREE";
@@ -32,7 +32,7 @@ export const formatPrice = (
   return formattedPrice;
 };
 
-export const formatDate = ({ start, end }: formatDateParams): formatDateRV => {
+export const formatDate = ({ start, end }: FormatDateParams): FormatDateRV => {
   if (!start && !end) return null;
 
   const makeDateReadable = (date: string) => dayjs(parseInt(date) * 1000).format("DD MMM YYYY");
@@ -44,7 +44,7 @@ export const formatDate = ({ start, end }: formatDateParams): formatDateRV => {
   return formattedDate;
 };
 
-export const formatTime = ({ start, end }: formatTimeParams): string | null => {
+export const formatTime = ({ start, end }: FormatTimeParams): string | null => {
   if (!start?.hour && !start?.minute && !end?.hour && !end?.minute) return null;
   
   // Format start time first
