@@ -1,5 +1,5 @@
 
-export const ENVIRONMENT = process.env.REACT_APP_ENVIONMENT ? process.env.REACT_APP_ENVIONMENT : "prod";
+export const ENVIRONMENT = process.env.NEXT_PUBLIC_ENVIONMENT ? process.env.NEXT_PUBLIC_ENVIONMENT : "prod";
 export const IS_DEV_ENV = ENVIRONMENT === "dev";
 export const VERSION_NO = `LANDING-1.0.0${IS_DEV_ENV ? "-DEV" : ""}`;
 

@@ -6,7 +6,7 @@ import { MainLayoutProps } from "./types";
 
 const MainLayout = ({ children, title }: MainLayoutProps): JSX.Element => {
 
-  const [windowWidth, setWindowWidth] = useState<undefined | number>(undefined);
+  const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);
 
   useEffect(() => {
     const changeWindowSize = () => {
