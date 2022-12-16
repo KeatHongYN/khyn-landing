@@ -1,0 +1,33 @@
+.c-Error-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: calc(100vh - 65px);
+    width: 100%;
+
+    &__Icon-container {
+        background-color: #F6F8FA;
+        padding: 10px;
+        border-radius: 5px;
+        .c-Error-page__Icon {
+            color: $error;
+            font-size: 30px;
+        }
+    }
+
+    h1 {
+        font-size: $font-large;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+    p {
+        font-size: $font-small;
+        font-weight: 600;
+        color: #545969;
+        margin: 15px 0;
+    }
+    a {
+        font-weight: bold;
+    }
+}
