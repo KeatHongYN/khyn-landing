@@ -1,6 +1,4 @@
-interface CommonMarkdownProps {
-    children?: any;
-}
+import { CommonMarkdownProps } from "./types";
 
 export const Heading = {
     H1: ({ children }: CommonMarkdownProps) => <h1 className = "c-Markdown c-Markdown--h1">{children}</h1>,
