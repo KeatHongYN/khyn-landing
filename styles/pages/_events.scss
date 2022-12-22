@@ -1,6 +1,5 @@
 .c-Events {
     &__Top {
-        padding: 50px 200px;
         h1 {
             font-size: $font-large;
         }
@@ -11,9 +10,7 @@
     }
 
     .c-List {
-        margin: 0 200px;
-        margin-bottom: 100px;
-
+        margin-top: 50px;
         .c-HR {
             border: none;
             border-top: 1px solid #EBEEF1;

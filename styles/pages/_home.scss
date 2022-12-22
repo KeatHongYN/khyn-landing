@@ -1,10 +1,8 @@
 .c-Home {
   .c-Hero {
     display: flex;
+    width: 100%;
     flex-direction: row;
-    padding: 75px 200px;
-    max-width: 1920px;
-    margin: auto;
     .c-Left {
       max-width: 400px;
       h1 {

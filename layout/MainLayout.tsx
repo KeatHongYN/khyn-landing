@@ -4,7 +4,7 @@ import Header from "./Header";
 import Title from "./Title";
 import { MainLayoutProps } from "./types";
 
-const MainLayout = ({ children, title }: MainLayoutProps): JSX.Element => {
+const MainLayout = ({ children, maxBodyWidth = false, title }: MainLayoutProps): JSX.Element => {
 
   const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);
 
@@ -24,7 +24,7 @@ const MainLayout = ({ children, title }: MainLayoutProps): JSX.Element => {
       />
       <Header windowWidth={windowWidth} />
       <main className="c-Main-layout">
-        {children}
+        {maxBodyWidth ? children : <div className="c-Main-layout__Inner">{children}</div>}
       </main>
       <Footer windowWidth={windowWidth} />
     </>

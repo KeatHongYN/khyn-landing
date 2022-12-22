@@ -4,6 +4,7 @@ export interface TitleProps {
 
 export interface MainLayoutProps {
     children?: any;
+    maxBodyWidth?: boolean;
     title?: string;
 };
 

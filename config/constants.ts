@@ -1,6 +1,5 @@
-export const ENVIRONMENT = process.env.NEXT_PUBLIC_ENVIONMENT ? process.env.NEXT_PUBLIC_ENVIONMENT : "prod";
-export const IS_DEV_ENV = ENVIRONMENT === "dev";
-export const VERSION_NO = `LANDING-1.0.0${IS_DEV_ENV ? "-DEV" : ""}`;
+export const ENVIRONMENT = process.env.NEXT_PUBLIC_ENVIONMENT ? process.env.NEXT_PUBLIC_ENVIONMENT : "dev";
+export const VERSION_NO = `LANDING-1.0.0${ENVIRONMENT === "dev" ? "-DEV" : ""}`;
 
 // Enums and its relative meta info
 export enum ERROR_PAGE_ENUM {
@@ -61,7 +60,8 @@ export const FLAG_BANNER_META = {
 
 export enum PILL_VARIATION_ENUM {
     GRADIENT_IG = "GRADIENT_IG",
-    WARNING = "WARNING"
+    WARNING = "WARNING",
+    GREEN = "GREEN"
 };
 
 export const PILL_META = {
@@ -70,5 +70,8 @@ export const PILL_META = {
     },
     [PILL_VARIATION_ENUM.WARNING]: {
         classSuffix: "Warning"
+    },
+    [PILL_VARIATION_ENUM.GREEN]: {
+        classSuffix: "Green"
     }
 };

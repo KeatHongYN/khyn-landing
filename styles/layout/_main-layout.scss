@@ -1,4 +1,9 @@
 .c-Main-layout {
     padding-top: 65px;
     min-height: calc(100vh - 65px);
+    &__Inner {
+        max-width: 1920px;
+        padding: 75px 150px;
+        height: 100%;
+    }
 }

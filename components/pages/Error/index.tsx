@@ -34,6 +34,7 @@ const Error = ({ statusCode }: ErrorProps): JSX.Element => {
     return (
         <MainLayout
             title="Error - Keat Hong Youth Network"
+            maxBodyWidth
         >
             <div className={`c-Error-page c-Error-page--${classSuffix}`}>
                 <span className="c-Error-page__Icon-container">
