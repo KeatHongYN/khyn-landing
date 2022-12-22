@@ -21,7 +21,6 @@
     width: fit-content;
 
     &--arrow {
-
         .c-Btn__Arrow {
             overflow: visible;
             margin-left: 5px;
@@ -76,7 +75,8 @@
     &:hover {
         opacity: 0.8;
         transform: translateY(-1px);
-        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1),
+            0 3px 6px rgba(0, 0, 0, 0.08);
     }
 
     &:active {
@@ -88,7 +88,6 @@
         opacity: 0.5;
         cursor: not-allowed;
     }
-
 }
 
 .c-External-link-btn {
@@ -114,7 +113,7 @@
     width: fit-content;
 
     &__Icon {
-        margin-right: 10px; 
+        margin-right: 10px;
     }
 
     &__Loading {
@@ -146,7 +145,7 @@
             transform: none !important;
             box-shadow: none !important;
         }
-    
+
         &:active {
             color: $paym-blue !important;
         }
@@ -156,7 +155,8 @@
         opacity: 0.8;
         color: white;
         transform: translateY(-1px);
-        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1),
+            0 3px 6px rgba(0, 0, 0, 0.08);
     }
 
     &:active {
@@ -169,5 +169,4 @@
         opacity: 0.5;
         cursor: not-allowed;
     }
-
 }

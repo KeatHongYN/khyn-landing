@@ -10,16 +10,21 @@ const ExternalLinkButton = ({
     className = "",
     showIcon = true
 }: ExternalLinkButtonProps): JSX.Element => {
-
     const classSuffix = BTN_META[variation].classSuffix;
 
     return (
         <a
             {...(disabled ? null : { href })}
-            target="_blank" rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`c-External-link-btn c-External-link-btn__${classSuffix} ${className}`}
         >
-            {showIcon && <Icon className="c-External-link-btn__Icon" icon="bx:link-external" />}
+            {showIcon && (
+                <Icon
+                    className="c-External-link-btn__Icon"
+                    icon="bx:link-external"
+                />
+            )}
             {text}
         </a>
     );

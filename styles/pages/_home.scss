@@ -1,83 +1,83 @@
 .c-Home {
-  .c-Hero {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    .c-Left {
-      max-width: 400px;
-      h1 {
-        font-size: $font-large;
-        font-weight: 450;
-      }
-
-      &__Btns {
+    .c-Hero {
         display: flex;
+        width: 100%;
         flex-direction: row;
-        margin-top: 20px;
-        button {
-          &:last-of-type {
-            margin-left: 10px;
-          }
-        }
-      }
-    }
+        .c-Left {
+            max-width: 400px;
+            h1 {
+                font-size: $font-large;
+                font-weight: 450;
+            }
 
-    .c-Right {
-      display: flex;
-      justify-content: flex-end;
-      width: 100%;
-    }
-  }
-
-  .c-Sig-events {
-    margin: 50px 0;
-    h1 {
-      text-align: center;
-      font-size: $font-large;
-    }
-  }
-
-  .c-Testimonials {
-    margin: 50px 0;
-    h1 {
-      text-align: center;
-      font-size: $font-large;
-    }
-  }
-
-  .c-CTA {
-    margin: 100px 0;
-    &__Punchline {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      h2 {
-        font-size: $font-medium;
-      }
-      h1 {
-        font-size: $font-x-large;
-        background: $gradient-ig;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-    }
-
-    &__Btns {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10px;
-      button {
-        &:first-of-type {
-          margin-right: 5px;
+            &__Btns {
+                display: flex;
+                flex-direction: row;
+                margin-top: 20px;
+                button {
+                    &:last-of-type {
+                        margin-left: 10px;
+                    }
+                }
+            }
         }
 
-        &:last-of-type {
-          margin-left: 5px;
+        .c-Right {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
         }
-      }
     }
-  }
+
+    .c-Sig-events {
+        margin: 50px 0;
+        h1 {
+            text-align: center;
+            font-size: $font-large;
+        }
+    }
+
+    .c-Testimonials {
+        margin: 50px 0;
+        h1 {
+            text-align: center;
+            font-size: $font-large;
+        }
+    }
+
+    .c-CTA {
+        margin: 100px 0;
+        &__Punchline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            h2 {
+                font-size: $font-medium;
+            }
+            h1 {
+                font-size: $font-x-large;
+                background: $gradient-ig;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        &__Btns {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            button {
+                &:first-of-type {
+                    margin-right: 5px;
+                }
+
+                &:last-of-type {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
 }

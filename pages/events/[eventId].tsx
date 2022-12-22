@@ -1,2 +1,2 @@
-import ViewEventPage from '../../components/pages/Events/ViewEvent';
+import ViewEventPage from "../../components/pages/Events/ViewEvent";
 export default ViewEventPage;

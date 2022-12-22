@@ -1,4 +1,6 @@
-export const ENVIRONMENT = process.env.NEXT_PUBLIC_ENVIONMENT ? process.env.NEXT_PUBLIC_ENVIONMENT : "dev";
+export const ENVIRONMENT = process.env.NEXT_PUBLIC_ENVIONMENT
+    ? process.env.NEXT_PUBLIC_ENVIONMENT
+    : "dev";
 export const VERSION_NO = `LANDING-1.0.0${ENVIRONMENT === "dev" ? "-DEV" : ""}`;
 
 // Enums and its relative meta info
@@ -6,7 +8,7 @@ export enum ERROR_PAGE_ENUM {
     PAGE_NOT_FOUND = "PAGE_NOT_FOUND",
     SERVER_ERROR = "SERVER_ERROR",
     GENERIC = "GENERIC"
-};
+}
 
 export const ERROR_PAGE_META = {
     [ERROR_PAGE_ENUM.PAGE_NOT_FOUND]: {
@@ -31,7 +33,7 @@ export enum BTN_VARIATION_ENUM {
     PRIMARY_EMPTY = "PRIMARY_EMPTY",
     DANGER = "DANGER",
     KOSONG = "KOSONG"
-};
+}
 
 export const BTN_META = {
     [BTN_VARIATION_ENUM.PRIMARY]: {
@@ -50,19 +52,19 @@ export const BTN_META = {
 
 export enum FLAG_BANNER_VARIATION_ENUM {
     DEV = "DEV"
-};
+}
 
 export const FLAG_BANNER_META = {
     [FLAG_BANNER_VARIATION_ENUM.DEV]: {
         classSuffix: "Dev"
-    },
+    }
 };
 
 export enum PILL_VARIATION_ENUM {
     GRADIENT_IG = "GRADIENT_IG",
     WARNING = "WARNING",
     GREEN = "GREEN"
-};
+}
 
 export const PILL_META = {
     [PILL_VARIATION_ENUM.GRADIENT_IG]: {

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Skeleton } from '@mui/material';
+import React from "react";
+import { Skeleton } from "@mui/material";
 
 const EventListItemSkeleton = (): JSX.Element => {
     return (
@@ -16,7 +16,7 @@ const EventListItemSkeleton = (): JSX.Element => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default EventListItemSkeleton;

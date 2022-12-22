@@ -1,4 +1,4 @@
-import MainLayout from '../../../layout/MainLayout';
+import MainLayout from "../../../layout/MainLayout";
 import Changelog from "../../../CHANGELOG.mdx";
 
 const ReleaseNotes = () => {
@@ -10,9 +10,8 @@ const ReleaseNotes = () => {
                     <Changelog />
                 </div>
             </div>
-
         </MainLayout>
-    )
-}
+    );
+};
 
 export default ReleaseNotes;

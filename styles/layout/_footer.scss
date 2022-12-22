@@ -1,252 +1,252 @@
 footer {
-  background-color: #f5f5f7;
-  width: 100%;
-  padding: 30px 0;
-  .c-Footer-desktop {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-color: #f5f5f7;
     width: 100%;
-    max-width: 1920px;
-    margin: auto;
-
-    .c-Top {
-      display: flex;
-      padding: 0 200px;
-      align-items: center;
-
-      .c-Left {
-        flex: 1;
-        &__Logo {
-          svg {
-            width: 200px;
-          }
-        }
-
-        .c-Status {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          margin-top: 20px;
-
-          &__Link {
-            font-size: $font-x-small;
-            font-weight: bold;
-            color: #6e6e73;
-            margin-left: 10px;
-
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-
-      .c-Links {
-        flex: 1;
-        display: flex;
-        flex-direction: row;
-
-        .c-Column {
-          h1 {
-            font-size: $font-small;
-            font-weight: bold;
-          }
-
-          .c-List {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-top: 10px;
-            &__Anchor {
-              margin: 3px 0;
-            }
-          }
-
-          &:nth-of-type(2) {
-            margin: 0 50px;
-          }
-        }
-      }
-    }
-
-    hr {
-      margin: 20px 200px;
-      height: 0px;
-      border: none;
-      border-top: 0.0000000001px solid #6e6e73;
-      border-radius: 5px;
-    }
-
-    .c-Bottom {
-      display: flex;
-      padding: 0 200px;
-      align-items: center;
-      justify-content: space-between;
-      &__Copyright {
-        p {
-          font-weight: bold;
-          font-size: $font-x-small;
-          color: #6e6e73;
-        }
-      }
-
-      .c-Socials {
-        display: flex;
-        flex-direction: row;
-        &__Link {
-          margin: 0 10px;
-          &:first-of-type {
-            margin-left: 0px;
-          }
-
-          &:last-of-type {
-            margin-right: 0px;
-          }
-
-          .c-Icon {
-            font-size: 20px;
-            color: #6e6e73;
-          }
-        }
-      }
-    }
-
-    .c-Version {
-      display: flex;
-      justify-content: flex-end;
-      padding: 0 200px;
-      margin-top: 10px;
-      &__Link {
-        color: #a8a8a8;
-        font-size: $font-x-small;
-        font-weight: bold;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  .c-Footer-mobile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-
-    .c-Top {
-      display: flex;
-      padding: 0 40px;
-      flex-direction: column;
-
-      .c-Left {
-        flex: 1;
-        &__Logo {
-          svg {
-            width: 200px;
-          }
-        }
-
-        .c-Status {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          margin-top: 20px;
-
-          &__Link {
-            font-size: $font-x-small;
-            font-weight: bold;
-            color: #6e6e73;
-            margin-left: 10px;
-
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-
-      .c-Links {
+    padding: 30px 0;
+    .c-Footer-desktop {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        max-width: 1920px;
+        margin: auto;
 
-        .c-Column {
-          margin-top: 20px;
-          h1 {
-            font-size: $font-small;
-            font-weight: bold;
-          }
+        .c-Top {
+            display: flex;
+            padding: 0 200px;
+            align-items: center;
 
-          .c-List {
+            .c-Left {
+                flex: 1;
+                &__Logo {
+                    svg {
+                        width: 200px;
+                    }
+                }
+
+                .c-Status {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-top: 20px;
+
+                    &__Link {
+                        font-size: $font-x-small;
+                        font-weight: bold;
+                        color: #6e6e73;
+                        margin-left: 10px;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .c-Links {
+                flex: 1;
+                display: flex;
+                flex-direction: row;
+
+                .c-Column {
+                    h1 {
+                        font-size: $font-small;
+                        font-weight: bold;
+                    }
+
+                    .c-List {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        margin-top: 10px;
+                        &__Anchor {
+                            margin: 3px 0;
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        margin: 0 50px;
+                    }
+                }
+            }
+        }
+
+        hr {
+            margin: 20px 200px;
+            height: 0px;
+            border: none;
+            border-top: 0.0000000001px solid #6e6e73;
+            border-radius: 5px;
+        }
+
+        .c-Bottom {
+            display: flex;
+            padding: 0 200px;
+            align-items: center;
+            justify-content: space-between;
+            &__Copyright {
+                p {
+                    font-weight: bold;
+                    font-size: $font-x-small;
+                    color: #6e6e73;
+                }
+            }
+
+            .c-Socials {
+                display: flex;
+                flex-direction: row;
+                &__Link {
+                    margin: 0 10px;
+                    &:first-of-type {
+                        margin-left: 0px;
+                    }
+
+                    &:last-of-type {
+                        margin-right: 0px;
+                    }
+
+                    .c-Icon {
+                        font-size: 20px;
+                        color: #6e6e73;
+                    }
+                }
+            }
+        }
+
+        .c-Version {
+            display: flex;
+            justify-content: flex-end;
+            padding: 0 200px;
+            margin-top: 10px;
+            &__Link {
+                color: #a8a8a8;
+                font-size: $font-x-small;
+                font-weight: bold;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .c-Footer-mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+
+        .c-Top {
+            display: flex;
+            padding: 0 40px;
+            flex-direction: column;
+
+            .c-Left {
+                flex: 1;
+                &__Logo {
+                    svg {
+                        width: 200px;
+                    }
+                }
+
+                .c-Status {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    margin-top: 20px;
+
+                    &__Link {
+                        font-size: $font-x-small;
+                        font-weight: bold;
+                        color: #6e6e73;
+                        margin-left: 10px;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .c-Links {
+                display: flex;
+                flex-direction: column;
+
+                .c-Column {
+                    margin-top: 20px;
+                    h1 {
+                        font-size: $font-small;
+                        font-weight: bold;
+                    }
+
+                    .c-List {
+                        display: flex;
+                        flex-direction: column;
+                        margin-top: 10px;
+                        align-items: flex-start;
+                        &__Anchor {
+                            margin: 3px 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        hr {
+            margin: 20px 40px;
+            height: 0px;
+            border: none;
+            border-top: 0.0000000001px solid #6e6e73;
+            border-radius: 5px;
+        }
+
+        .c-Bottom {
+            padding: 0 40px;
             display: flex;
             flex-direction: column;
-            margin-top: 10px;
-            align-items: flex-start;
-            &__Anchor {
-              margin: 3px 0;
+
+            &__Copyright {
+                p {
+                    font-weight: bold;
+                    font-size: $font-x-small;
+                    color: #6e6e73;
+                }
             }
-          }
+
+            .c-Socials {
+                display: flex;
+                flex-direction: row;
+                margin: 10px 0;
+                &__Link {
+                    margin: 0 5px;
+                    &:first-of-type {
+                        margin-left: 0px;
+                    }
+
+                    &:last-of-type {
+                        margin-right: 0px;
+                    }
+
+                    .c-Icon {
+                        font-size: 20px;
+                        color: #6e6e73;
+                    }
+                }
+            }
         }
-      }
-    }
 
-    hr {
-      margin: 20px 40px;
-      height: 0px;
-      border: none;
-      border-top: 0.0000000001px solid #6e6e73;
-      border-radius: 5px;
-    }
+        .c-Version {
+            display: flex;
+            padding: 0 40px;
+            margin-top: 10px;
+            &__Link {
+                color: #a8a8a8;
+                font-size: $font-x-small;
+                font-weight: bold;
 
-    .c-Bottom {
-      padding: 0 40px;
-      display: flex;
-      flex-direction: column;
-
-      &__Copyright {
-        p {
-          font-weight: bold;
-          font-size: $font-x-small;
-          color: #6e6e73;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
-      }
-
-      .c-Socials {
-        display: flex;
-        flex-direction: row;
-        margin: 10px 0;
-        &__Link {
-          margin: 0 5px;
-          &:first-of-type {
-            margin-left: 0px;
-          }
-
-          &:last-of-type {
-            margin-right: 0px;
-          }
-
-          .c-Icon {
-            font-size: 20px;
-            color: #6e6e73;
-          }
-        }
-      }
     }
-
-    .c-Version {
-      display: flex;
-      padding: 0 40px;
-      margin-top: 10px;
-      &__Link {
-        color: #a8a8a8;
-        font-size: $font-x-small;
-        font-weight: bold;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
 }
