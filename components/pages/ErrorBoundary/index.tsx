@@ -1,3 +1,5 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/state-in-constructor */
 import React, { Component, ErrorInfo, ReactNode } from "react";
 import { Icon } from "@iconify/react";
 import Button from "../../shared/Button";
@@ -15,7 +17,7 @@ class ErrorBoundary extends Component<Props, State> {
         hasError: false
     };
 
-    public static getDerivedStateFromError(_: Error): State {
+    public static getDerivedStateFromError(): State {
         // Update state so the next render will show the fallback UI.
         return { hasError: true };
     }
@@ -35,7 +37,7 @@ class ErrorBoundary extends Component<Props, State> {
                     <p>Oops! Something went wrong. Please try again later.</p>
                     <Button
                         text="Go to home"
-                        arrow={true}
+                        arrow
                         onClickFn={() => window.location.replace("/")}
                     />
                 </div>

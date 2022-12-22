@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // helper.ts
 export type FormatPriceRV = string | null | undefined;
 

@@ -1,22 +1,21 @@
 import { Icon } from "@iconify/react";
-import React, { useEffect, useState } from "react";
-import ExternalLinkButton from "../../../shared/Button/ExternalLinkButton";
-import Pill from "../../../shared/Pill";
-import MainLayout from "../../../../layout/MainLayout";
-import ImgPlaceholder from "../../../../assets/img/partner-jpjc.png";
+import React from "react";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Pill from "../../../shared/Pill";
+import MainLayout from "../../../../layout/MainLayout";
+import ExternalLinkButton from "../../../shared/Button/ExternalLinkButton";
 import { DEBUG } from "../../../../utils/logger";
 import Button from "../../../shared/Button";
 
-const ViewEventPage = (): JSX.Element => {
+function ViewEventPage(): JSX.Element {
     const router = useRouter();
     const { eventId } = router.query;
     DEBUG.log(eventId);
-    const [event, setEvent] = useState(null);
-    const [loading, setLoading] = useState(false);
+    // const [event, setEvent] = useState(null);
+    // const [loading, setLoading] = useState(false);
 
     return (
         <MainLayout title="View Event - Keat Hong Youth Network">
@@ -33,7 +32,7 @@ const ViewEventPage = (): JSX.Element => {
                     <div className="c-Middle__Pic">
                         <Image
                             priority
-                            src={"https://picsum.photos/seed/picsum/200/200"}
+                            src="https://picsum.photos/seed/picsum/200/200"
                             alt="Event poster"
                             fill
                         />
@@ -99,6 +98,6 @@ const ViewEventPage = (): JSX.Element => {
             </div>
         </MainLayout>
     );
-};
+}
 
 export default ViewEventPage;

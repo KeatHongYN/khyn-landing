@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import LogoKHYN from "../../assets/svg/logo-khyn.svg";
 import { HamburgerProps } from "./types";
-import Link from "next/link";
 
 const Hamburger = ({ openMenu, setOpenMenu }: HamburgerProps): JSX.Element => {
     const handleHamburgerClick = () => {

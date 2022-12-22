@@ -8,7 +8,7 @@ const Pill = ({
     iconID,
     variation = PILL_VARIATION_ENUM.GRADIENT_IG
 }: PillProps): JSX.Element => {
-    const classSuffix = PILL_META[variation].classSuffix;
+    const { classSuffix } = PILL_META[variation];
 
     return (
         <div className={`c-Pill c-Pill__${classSuffix}`}>

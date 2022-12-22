@@ -1,11 +1,11 @@
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
+import { ErrorProps } from "next/error";
 import Button from "../../shared/Button";
 import { ERROR_PAGE_ENUM, ERROR_PAGE_META } from "../../../config/constants";
 import MainLayout from "../../../layout/MainLayout";
-import { ErrorProps } from "next/error";
 
-const Error = ({ statusCode }: ErrorProps): JSX.Element => {
+function Error({ statusCode }: ErrorProps): JSX.Element {
     const router = useRouter();
 
     let classSuffix = "";
@@ -43,16 +43,21 @@ const Error = ({ statusCode }: ErrorProps): JSX.Element => {
                 <p>{desc}</p>
                 <Button
                     text="Go to home"
-                    arrow={true}
+                    arrow
                     onClickFn={() => router.push("/")}
                 />
             </div>
         </MainLayout>
     );
-};
+}
 
 Error.getInitialProps = ({ res, err }: { res: any; err: any }) => {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
+    let statusCode = 404;
+    if (res) {
+        statusCode = res.statusCode;
+    } else if (err) {
+        statusCode = err.StatusCode;
+    }
     return { statusCode };
 };
 

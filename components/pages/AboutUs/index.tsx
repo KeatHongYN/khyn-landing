@@ -4,7 +4,7 @@ import MainLayout from "../../../layout/MainLayout";
 import ImgBPGH from "../../../assets/img/partner-bpgh.png";
 import ImgJPJC from "../../../assets/img/partner-jpjc.png";
 
-const AboutUsPage = (): JSX.Element => {
+function AboutUsPage(): JSX.Element {
     return (
         <MainLayout title="About us - Keat Hong Youth Network">
             <div className="c-About-us">
@@ -33,7 +33,7 @@ const AboutUsPage = (): JSX.Element => {
                             domains
                         </p>
                     </div>
-                    <div className="c-CD__Cards c-Cards"></div>
+                    <div className="c-CD__Cards c-Cards" />
                 </div>
 
                 {/* Partners */}
@@ -52,6 +52,6 @@ const AboutUsPage = (): JSX.Element => {
             </div>
         </MainLayout>
     );
-};
+}
 
 export default AboutUsPage;

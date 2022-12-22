@@ -11,7 +11,7 @@ const Button = ({
     arrow = false,
     onClickFn
 }: ButtonProps): JSX.Element => {
-    const classSuffix = BTN_META[variation].classSuffix;
+    const { classSuffix } = BTN_META[variation];
 
     return (
         <button

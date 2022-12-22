@@ -5,12 +5,12 @@ import {
 } from "../../../config/constants";
 import { FlagBannerProps } from "./types";
 
-const FlagBanner = ({
+function FlagBanner({
     text,
     isMobile = false,
     variation = FLAG_BANNER_VARIATION_ENUM.DEV
-}: FlagBannerProps): JSX.Element => {
-    const classSuffix = FLAG_BANNER_META[variation].classSuffix;
+}: FlagBannerProps): JSX.Element {
+    const { classSuffix } = FLAG_BANNER_META[variation];
 
     return (
         <div
@@ -24,6 +24,6 @@ const FlagBanner = ({
             </span>
         </div>
     );
-};
+}
 
 export default FlagBanner;

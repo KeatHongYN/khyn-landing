@@ -1,7 +1,7 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import Button from "../../components/shared/Button";
 import LogoKHYN from "../../assets/svg/logo-khyn.svg";
-import { useRouter } from "next/router";
-import Link from "next/link";
 
 const HeaderDesktop = (): JSX.Element => {
     const router = useRouter();

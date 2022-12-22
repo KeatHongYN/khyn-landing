@@ -1,7 +1,7 @@
 import "../styles/main.scss";
 import type { AppProps } from "next/app";
-import ErrorBoundary from "../components/pages/ErrorBoundary";
 import { MDXProvider } from "@mdx-js/react";
+import ErrorBoundary from "../components/pages/ErrorBoundary";
 import { Heading, HR, List, Paragraph } from "../components/shared/Markdown";
 
 export default function App({ Component, pageProps }: AppProps) {

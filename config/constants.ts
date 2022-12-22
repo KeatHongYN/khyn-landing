@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export const ENVIRONMENT = process.env.NEXT_PUBLIC_ENVIONMENT
     ? process.env.NEXT_PUBLIC_ENVIONMENT
     : "dev";

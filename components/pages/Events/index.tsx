@@ -12,6 +12,36 @@ import {
 import NoEvents from "./NoEvents";
 import { EventType, SingularRawCamelCasedEvent } from "./types";
 
+const renderEventListSkeleton = (): JSX.Element => (
+    <>
+        {MOCK_EVENTS.map((event, index) => (
+            <span key={index}>
+                <EventListItemSkeleton />
+                {index !== MOCK_EVENTS.length - 1 ? (
+                    <hr className="c-List__HR c-HR" />
+                ) : null}
+            </span>
+        ))}
+    </>
+);
+
+const renderEventList = (events: EventType | []): JSX.Element => (
+    <>
+        {events.length ? (
+            events.map((event, index) => (
+                <span key={`event-${index}`}>
+                    <EventListItem {...event} />
+                    {index !== events.length - 1 ? (
+                        <hr className="c-List__HR c-HR" />
+                    ) : null}
+                </span>
+            ))
+        ) : (
+            <NoEvents />
+        )}
+    </>
+);
+
 const EventsPage = (): JSX.Element => {
     const [events, setEvents] = useState<EventType | []>([]);
     const [loadingEvents, setLoadingEvents] = useState(true);
@@ -48,37 +78,3 @@ const EventsPage = (): JSX.Element => {
 };
 
 export default EventsPage;
-
-const renderEventListSkeleton = (): JSX.Element => {
-    return (
-        <>
-            {MOCK_EVENTS.map((event, index) => (
-                <span key={index}>
-                    <EventListItemSkeleton />
-                    {index !== MOCK_EVENTS.length - 1 ? (
-                        <hr className="c-List__HR c-HR" />
-                    ) : null}
-                </span>
-            ))}
-        </>
-    );
-};
-
-const renderEventList = (events: EventType | []): JSX.Element => {
-    return (
-        <>
-            {events.length ? (
-                events.map((event, index) => (
-                    <span key={`event-${index}`}>
-                        <EventListItem {...event} />
-                        {index !== events.length - 1 ? (
-                            <hr className="c-List__HR c-HR" />
-                        ) : null}
-                    </span>
-                ))
-            ) : (
-                <NoEvents />
-            )}
-        </>
-    );
-};

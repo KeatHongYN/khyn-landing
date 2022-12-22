@@ -10,7 +10,7 @@ const ExternalLinkButton = ({
     className = "",
     showIcon = true
 }: ExternalLinkButtonProps): JSX.Element => {
-    const classSuffix = BTN_META[variation].classSuffix;
+    const { classSuffix } = BTN_META[variation];
 
     return (
         <a

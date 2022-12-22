@@ -1,9 +1,16 @@
 import React from "react";
 import { Icon } from "@iconify/react";
+import Image from "next/image";
+import { useRouter } from "next/router";
 import Pill from "../Pill";
 import { EventListItemProps } from "./types";
-import { useRouter } from "next/router";
-import Image from "next/image";
+
+const NoImage = (): JSX.Element => (
+    <div className="c-No-image">
+        <Icon className="c-No-image__Icon" icon="carbon:no-image" />
+        <p>No image</p>
+    </div>
+);
 
 const EventListItem = ({
     eventId,
@@ -20,6 +27,7 @@ const EventListItem = ({
     return (
         <div
             className="c-Event-list-item"
+            role="button"
             onClick={() => router.push(`/events/${eventId}`)}
         >
             <div className="c-Event-list-item__Img c-Img">
@@ -43,7 +51,7 @@ const EventListItem = ({
                         className="c-Location__Icon"
                         icon="akar-icons:location"
                     />
-                    <p>{location ? location : "-"}</p>
+                    <p>{location || "-"}</p>
                 </span>
                 <div className="c-Desc__Date-and-time c-Date-and-time">
                     <span className="c-Date-and-time__Date c-Date">
@@ -51,11 +59,11 @@ const EventListItem = ({
                             className="c-Date__Icon"
                             icon="akar-icons:calendar"
                         />
-                        <p>{date ? date : "-"}</p>
+                        <p>{date || "-"}</p>
                     </span>
                     <span className="c-Date-and-time__Time c-Time">
                         <Icon className="c-Time__Icon" icon="bx:time-five" />
-                        <p>{time ? time : "-"}</p>
+                        <p>{time || "-"}</p>
                     </span>
                 </div>
                 <div className="c-Desc__Bottom c-Bottom">
@@ -65,15 +73,6 @@ const EventListItem = ({
                     <h2>{price}</h2>
                 </div>
             </div>
-        </div>
-    );
-};
-
-const NoImage = (): JSX.Element => {
-    return (
-        <div className="c-No-image">
-            <Icon className="c-No-image__Icon" icon="carbon:no-image" />
-            <p>No image</p>
         </div>
     );
 };

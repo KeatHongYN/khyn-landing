@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import Button from "../../shared/Button";
 import { BTN_VARIATION_ENUM } from "../../../config/constants";
 import MainLayout from "../../../layout/MainLayout";
-import { DEBUG } from "../../../utils/logger";
 
 export default function HomePage() {
     const router = useRouter();

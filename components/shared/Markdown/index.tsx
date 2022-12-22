@@ -27,6 +27,4 @@ export const Paragraph = ({ children }: CommonMarkdownProps) => (
 export const List = ({ children }: CommonMarkdownProps) => (
     <li className="c-Markdown c-Markdown--li">{children}</li>
 );
-export const HR = ({ children }: CommonMarkdownProps) => (
-    <hr className="c-Markdown c-Markdown--hr">{children}</hr>
-);
+export const HR = () => <hr className="c-Markdown c-Markdown--hr" />;

@@ -1,12 +1,15 @@
+/* eslint-disable no-console */
 import { ENVIRONMENT } from "../config/constants";
 import { LogFn, Logger } from "./types";
 
-const NO_OPERATION: LogFn = (message?: any, ...optionalParams: any[]) => {};
+const NO_OPERATION: LogFn = () => {};
 
 /** Logger which outputs to the browser console (only available for dev environment) */
 export class DebugConsoleLogger implements Logger {
     readonly log: LogFn;
+
     readonly warn: LogFn;
+
     readonly error: LogFn;
 
     constructor() {

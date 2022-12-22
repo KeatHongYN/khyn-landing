@@ -1,9 +1,9 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Button from "../../shared/Button";
 import ExternalLinkButton from "../../shared/Button/ExternalLinkButton";
 import { BTN_VARIATION_ENUM } from "../../../config/constants";
 import MainLayout from "../../../layout/MainLayout";
-import { useRouter } from "next/router";
 
 const JoinUsPage = (): JSX.Element => {
     const router = useRouter();

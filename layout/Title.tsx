@@ -4,13 +4,11 @@ import { TitleProps } from "./types";
 
 const Title = ({
     title = "Keat Hong Youth Network"
-}: TitleProps): JSX.Element => {
-    return (
-        <Head>
-            <meta charSet="utf-8" />
-            <title>{title}</title>
-        </Head>
-    );
-};
+}: TitleProps): JSX.Element => (
+    <Head>
+        <meta charSet="utf-8" />
+        <title>{title}</title>
+    </Head>
+);
 
 export default Title;

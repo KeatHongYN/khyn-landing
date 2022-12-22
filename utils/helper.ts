@@ -36,7 +36,7 @@ export const formatDate = ({ start, end }: FormatDateParams): FormatDateRV => {
     if (!start && !end) return null;
 
     const makeDateReadable = (date: string) =>
-        dayjs(parseInt(date) * 1000).format("DD MMM YYYY");
+        dayjs(parseInt(date, 10) * 1000).format("DD MMM YYYY");
     let formattedDate = makeDateReadable(start!);
 
     if (!end) return formattedDate;
