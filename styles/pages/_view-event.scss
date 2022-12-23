@@ -2,12 +2,12 @@
     &__Top {
         display: flex;
         flex-direction: row;
-        padding: 20px 200px;
+        padding: 20px 0;
     }
 
     &__Middle {
         display: flex;
-        margin: 10px 200px;
+        margin: 10px 0;
         justify-content: space-between;
         align-items: center;
 
@@ -95,7 +95,7 @@
         justify-content: center;
         align-content: center;
         flex-direction: column;
-        padding: 30px 200px;
+        padding: 30px 0;
         text-align: center;
         h2 {
             font-size: $font-medium;
@@ -108,7 +108,7 @@
     }
 
     hr {
-        margin: 20px 200px;
+        margin: 20px 0;
         height: 0px;
         border: none;
         border-top: 0.0000000001px solid #cbcbcb;
@@ -116,7 +116,7 @@
     }
 
     .c-View-event__View-all-events {
-        padding: 30px 200px;
+        padding: 30px 0;
         padding-bottom: 50px;
         display: flex;
         justify-content: center;

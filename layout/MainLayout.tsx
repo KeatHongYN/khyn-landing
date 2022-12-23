@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import useBrowserLayoutEffect from "../hooks/useBrowserLayoutEffect";
 import Footer from "./Footer";
 import Header from "./Header";
 import Title from "./Title";
@@ -13,7 +14,7 @@ const MainLayout = ({
         undefined
     );
 
-    useEffect(() => {
+    useBrowserLayoutEffect(() => {
         const changeWindowSize = () => {
             setWindowWidth(() => window.innerWidth);
         };

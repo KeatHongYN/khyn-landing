@@ -2,7 +2,10 @@ import React from "react";
 import { useRouter } from "next/router";
 import Button from "../../shared/Button";
 import ExternalLinkButton from "../../shared/Button/ExternalLinkButton";
-import { BTN_VARIATION_ENUM } from "../../../config/constants";
+import {
+    BTN_VARIATION_ENUM,
+    KHYN_VOLUNTEER_SIGN_UP_FORM_URL
+} from "../../../config/constants";
 import MainLayout from "../../../layout/MainLayout";
 
 const JoinUsPage = (): JSX.Element => {
@@ -23,7 +26,7 @@ const JoinUsPage = (): JSX.Element => {
                     <div className="c-Hero__Btns c-Btns">
                         <ExternalLinkButton
                             text="Sign up"
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSeFxeOJYoBedxfsPpYWe_WSEk8yZYZ7iYb0dlFV7mbeqMzkUQ/viewform"
+                            href={KHYN_VOLUNTEER_SIGN_UP_FORM_URL}
                         />
                         <Button
                             text="Frequently asked questions"

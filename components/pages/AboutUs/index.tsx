@@ -3,6 +3,12 @@ import React from "react";
 import MainLayout from "../../../layout/MainLayout";
 import ImgBPGH from "../../../assets/img/partner-bpgh.png";
 import ImgJPJC from "../../../assets/img/partner-jpjc.png";
+import Accordion from "../../shared/Accordion";
+import {
+    FAQ_LIST,
+    KHYN_TELEGRAM_URL,
+    KHYN_VOLUNTEER_SIGN_UP_FORM_URL
+} from "../../../config/constants";
 
 function AboutUsPage(): JSX.Element {
     return (
@@ -47,7 +53,16 @@ function AboutUsPage(): JSX.Element {
 
                 {/* FAQs */}
                 <div className="c-About-us__FAQs c-FAQs" id="about-us_faqs">
-                    <h1>Frequently Asked Questions</h1>
+                    <h1 className="c-FAQs__Header">
+                        Frequently Asked Questions
+                    </h1>
+                    <Accordion
+                        contents={FAQ_LIST}
+                        linkMap={{
+                            [KHYN_VOLUNTEER_SIGN_UP_FORM_URL]: "sign up form.",
+                            [KHYN_TELEGRAM_URL]: "here"
+                        }}
+                    />
                 </div>
             </div>
         </MainLayout>

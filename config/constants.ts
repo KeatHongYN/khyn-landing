@@ -78,3 +78,46 @@ export const PILL_META = {
         classSuffix: "Green"
     }
 };
+
+// URL Links
+export const KHYN_VOLUNTEER_SIGN_UP_FORM_URL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSeFxeOJYoBedxfsPpYWe_WSEk8yZYZ7iYb0dlFV7mbeqMzkUQ/viewform";
+export const KHYN_TELEGRAM_URL = "https://t.me/+8Jo5iyac3AFiYTNk";
+
+// REGEX
+export const EMAIL_INCLUDED_REGEX =
+    /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi;
+export const HTTPS_INCLUDED_REGEX = /(https?:\/\/\S+)/gi;
+export const EMAIL_OR_HTTPS_INCLUDED_REGEX =
+    /(https?:\/\/\S+|[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9._-]+)/gi;
+
+// Lists
+export const FAQ_LIST = [
+    {
+        summary: "How do I join the YN as a volunteer?",
+        details: `You may express to join us by indicating in this ${KHYN_VOLUNTEER_SIGN_UP_FORM_URL} Do follow us on Instagram or on our Telegram channel to stay abreast of the latest events, and sign up to volunteer in them whenever possible!`
+    },
+    {
+        summary: "How do I join the interest groups of the YN?",
+        details: `If you are interested in a particular interest group, you may express your interest to join in `
+    },
+    {
+        summary: "How do I stay updated for all future events?",
+        details: `Follow us on Instagram @keathongyouths and subscribe to our Telegram channel ${KHYN_TELEGRAM_URL}`
+    },
+    {
+        summary: "I am keen to help plan a project. Where do I get started?",
+        details:
+            "You may contact any one of our YN members and he/she can follow up from there. It will be even better if you have a group of friends who are keen to do a project together!"
+    },
+    {
+        summary: "Where does the YN get its funding from?",
+        details:
+            "The YN is under the umbrella of the PAYM, so we do receive some funding from the PA. We also have various partners which provide us with sponsorships and grants on an ad-hoc basis."
+    },
+    {
+        summary:
+            "I would like to collaborate with the YN. Who should I contact?",
+        details: "Feel free to drop a DM to our Instagram or Facebook accounts."
+    }
+];

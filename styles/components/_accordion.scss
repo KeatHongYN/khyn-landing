@@ -1,0 +1,52 @@
+.c-Accordion {
+    max-width: 570px;
+    margin: auto;
+    border-bottom: 0.0000000001px solid #cbcbcb;
+    .c-Accordion-group {
+        border-top: 0.0000000001px solid #cbcbcb;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 0;
+        a[target="_blank"] {
+            display: inline-flex;
+            align-items: center;
+            font-size: $font-small;
+            color: $paym-blue;
+            font-weight: bold;
+            .c-External-link__Icon {
+                margin-left: 3px;
+                font-size: 15px;
+            }
+        }
+
+        .c-Summary {
+            margin: 10px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            cursor: pointer;
+            h1 {
+                font-size: $font-small;
+                font-weight: bold;
+            }
+            &__Icon {
+                font-size: 20px;
+                transition: transform 0.2s ease;
+                &--expanded {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+
+        .c-Detail {
+            overflow-y: hidden;
+            will-change: height;
+            transition: height 0.2s ease;
+            p {
+                overflow-y: hidden;
+                font-size: $font-small;
+            }
+        }
+    }
+}

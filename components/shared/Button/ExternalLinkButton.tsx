@@ -19,13 +19,13 @@ const ExternalLinkButton = ({
             rel="noopener noreferrer"
             className={`c-External-link-btn c-External-link-btn__${classSuffix} ${className}`}
         >
+            {text}
             {showIcon && (
                 <Icon
                     className="c-External-link-btn__Icon"
                     icon="bx:link-external"
                 />
             )}
-            {text}
         </a>
     );
 };
