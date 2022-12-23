@@ -1,10 +1,20 @@
 import { Icon } from "@iconify/react";
+import { Tooltip } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import LogoKHYN from "../../assets/svg/logo-khyn.svg";
 import LogoStatus from "../../assets/svg/logo-status.svg";
 import ExternalLinkButton from "../../components/shared/Button/ExternalLinkButton";
-import { BTN_VARIATION_ENUM, VERSION_NO } from "../../config/constants";
+import {
+    BTN_VARIATION_ENUM,
+    KHYN_BETTERUPTIME_URL,
+    KHYN_FACEBOOK_URL,
+    KHYN_GITHUB_URL,
+    KHYN_INSTAGRAM_URL,
+    KHYN_KHR_URL,
+    KHYN_TELEGRAM_URL,
+    VERSION_NO
+} from "../../config/constants";
 
 const FooterMobile = (): JSX.Element => (
     <div className="c-Footer-mobile">
@@ -18,7 +28,7 @@ const FooterMobile = (): JSX.Element => (
                     <ExternalLinkButton
                         text="All Systems Operational."
                         className="c-Status__Link"
-                        href="https://keathongyouths.betteruptime.com"
+                        href={KHYN_BETTERUPTIME_URL}
                         showIcon={false}
                         variation={BTN_VARIATION_ENUM.KOSONG}
                     />
@@ -30,7 +40,7 @@ const FooterMobile = (): JSX.Element => (
                     <div className="c-Column__List c-List">
                         <ExternalLinkButton
                             text="Keat Hong Recycles"
-                            href="https://keat-hong-recycles.web.app"
+                            href={KHYN_KHR_URL}
                             variation={BTN_VARIATION_ENUM.KOSONG}
                             className="c-List__Anchor"
                             showIcon={false}
@@ -67,50 +77,58 @@ const FooterMobile = (): JSX.Element => (
                 </p>
             </div>
             <div className="c-Bottom__Socials c-Socials">
-                <a
-                    className="c-Socials__Link c-Link"
-                    href="https://t.me/+8d9R8Ts6UiZjYWM0"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Icon
-                        className="c-Link__Icon c-Icon"
-                        icon="akar-icons:telegram-fill"
-                    />
-                </a>
-                <a
-                    className="c-Socials__Link c-Link"
-                    href="https://www.instagram.com/keathongyouths"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Icon
-                        className="c-Link__Icon c-Icon"
-                        icon="akar-icons:instagram-fill"
-                    />
-                </a>
-                <a
-                    className="c-Socials__Link c-Link"
-                    href="https://www.facebook.com/KeatHongYouths"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Icon
-                        className="c-Link__Icon c-Icon"
-                        icon="akar-icons:facebook-fill"
-                    />
-                </a>
-                <a
-                    className="c-Socials__Link c-Link"
-                    href="https://github.com/KeatHongYN"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Icon
-                        className="c-Link__Icon c-Icon"
-                        icon="akar-icons:github-fill"
-                    />
-                </a>
+                <Tooltip title="Telegram" arrow placement="top">
+                    <a
+                        className="c-Socials__Link c-Link"
+                        href={KHYN_TELEGRAM_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Icon
+                            className="c-Link__Icon c-Icon"
+                            icon="akar-icons:telegram-fill"
+                        />
+                    </a>
+                </Tooltip>
+                <Tooltip title="Instagram" arrow placement="top">
+                    <a
+                        className="c-Socials__Link c-Link"
+                        href={KHYN_INSTAGRAM_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Icon
+                            className="c-Link__Icon c-Icon"
+                            icon="akar-icons:instagram-fill"
+                        />
+                    </a>
+                </Tooltip>
+                <Tooltip title="Facebook" arrow placement="top">
+                    <a
+                        className="c-Socials__Link c-Link"
+                        href={KHYN_FACEBOOK_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Icon
+                            className="c-Link__Icon c-Icon"
+                            icon="akar-icons:facebook-fill"
+                        />
+                    </a>
+                </Tooltip>
+                <Tooltip title="GitHub" arrow placement="top">
+                    <a
+                        className="c-Socials__Link c-Link"
+                        href={KHYN_GITHUB_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Icon
+                            className="c-Link__Icon c-Icon"
+                            icon="akar-icons:github-fill"
+                        />
+                    </a>
+                </Tooltip>
             </div>
         </div>
         <div className="c-Footer-desktop__Version c-Version">
