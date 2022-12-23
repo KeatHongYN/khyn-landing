@@ -1,7 +1,11 @@
 import { useRouter } from "next/router";
 import Button from "../../shared/Button";
-import { BTN_VARIATION_ENUM } from "../../../config/constants";
+import {
+    BTN_VARIATION_ENUM,
+    HOME_HERO_PIC_LIST
+} from "../../../config/constants";
 import MainLayout from "../../../layout/MainLayout";
+import Carousel from "../../shared/Carousel";
 
 export default function HomePage() {
     const router = useRouter();
@@ -31,7 +35,7 @@ export default function HomePage() {
                             </div>
                         </div>
                         <div className="c-Hero__Right c-Right">
-                            <h1>Hero carousell</h1>
+                            <Carousel pictureList={HOME_HERO_PIC_LIST} />
                         </div>
                     </div>
                     {/* Signature Events */}

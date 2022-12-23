@@ -2,8 +2,8 @@ import { Icon } from "@iconify/react";
 import { Tooltip } from "@mui/material";
 import Link from "next/link";
 import React from "react";
-import LogoKHYN from "../../assets/svg/logo-khyn.svg";
-import LogoStatus from "../../assets/svg/logo-status.svg";
+import LogoKHYN from "../../public/assets/svg/logo-khyn.svg";
+import LogoStatus from "../../public/assets/svg/logo-status.svg";
 import ExternalLinkButton from "../../components/shared/Button/ExternalLinkButton";
 import {
     BTN_VARIATION_ENUM,
@@ -133,7 +133,7 @@ const FooterMobile = (): JSX.Element => (
         </div>
         <div className="c-Footer-desktop__Version c-Version">
             <Link className="c-Version__Link" href="/release-notes">
-                Version: {VERSION_NO}
+                {VERSION_NO}
             </Link>
         </div>
     </div>

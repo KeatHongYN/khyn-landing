@@ -126,3 +126,18 @@ export const FAQ_LIST = [
         details: "Feel free to drop a DM to our Instagram or Facebook accounts."
     }
 ];
+
+export const HOME_HERO_PIC_LIST = [
+    {
+        fileId: 1,
+        filePath: "/assets/img/test-mw.png"
+    },
+    {
+        fileId: 2,
+        filePath: "/assets/img/partner-jpjc.png"
+    },
+    {
+        fileId: 3,
+        filePath: "/assets/img/partner-bpgh.png"
+    }
+];

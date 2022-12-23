@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import MainLayout from "../../../layout/MainLayout";
-import ImgBPGH from "../../../assets/img/partner-bpgh.png";
-import ImgJPJC from "../../../assets/img/partner-jpjc.png";
+import ImgBPGH from "../../../public/assets/img/partner-bpgh.png";
+import ImgJPJC from "../../../public/assets/img/partner-jpjc.png";
 import Accordion from "../../shared/Accordion";
 import {
     FAQ_LIST,
