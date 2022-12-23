@@ -6,7 +6,7 @@ import ImgJPJC from "../../../assets/img/partner-jpjc.png";
 
 function AboutUsPage(): JSX.Element {
     return (
-        <MainLayout title="About us - Keat Hong Youth Network">
+        <MainLayout title="About us - Keat Hong Youth Network" maxBodyWidth>
             <div className="c-About-us">
                 {/* Hero */}
                 <div className="c-About-us__Hero c-Hero">
