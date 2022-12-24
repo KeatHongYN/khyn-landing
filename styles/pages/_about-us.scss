@@ -5,6 +5,8 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        max-width: 1000px;
+        margin: auto;
         h1 {
             font-size: $font-x-large;
             font-weight: bold;
@@ -62,7 +64,6 @@
     .c-FAQs {
         background-color: #fafafa;
         padding: 100px 150px;
-        padding-bottom: 150px;
 
         &__Header {
             font-size: $font-large;

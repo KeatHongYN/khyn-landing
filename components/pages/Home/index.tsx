@@ -20,8 +20,9 @@ const HomePage = () => {
 
     return (
         <>
-            <MainLayout>
+            <MainLayout maxBodyWidth>
                 <div className="c-Home">
+                    <span className="c-Home__BG" />
                     {/* Hero */}
                     <div className="c-Home__Hero c-Hero">
                         <div className="c-Hero__Left c-Left">
