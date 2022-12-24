@@ -3,15 +3,15 @@ import React, { useEffect, useState } from "react";
 import { CarouselProps } from "./types";
 
 const Carousel = ({ pictureList }: CarouselProps): JSX.Element | null => {
-    const [selectedSlide, setSelectedSlide] = useState<number | null>(null);
+    const [selectedFileId, setSelectedFileId] = useState<number | null>(null);
 
     useEffect(() => {
         if (pictureList && pictureList.length) {
-            setSelectedSlide(pictureList[0].fileId);
+            setSelectedFileId(pictureList[0].fileId);
         }
 
         const slideInterval = setInterval(() => {
-            setSelectedSlide((prevValue) =>
+            setSelectedFileId((prevValue) =>
                 prevValue === pictureList.length ? 1 : prevValue! + 1
             );
         }, 7000);
@@ -23,8 +23,8 @@ const Carousel = ({ pictureList }: CarouselProps): JSX.Element | null => {
         return <p>No pictures inputted.</p>;
     }
 
-    const handleIndicatorOnClick = (selectedFileId: number | null) => {
-        setSelectedSlide(selectedFileId);
+    const handleIndicatorOnClick = (newSelectedFileId: number | null) => {
+        setSelectedFileId(newSelectedFileId);
     };
 
     return (
@@ -33,7 +33,7 @@ const Carousel = ({ pictureList }: CarouselProps): JSX.Element | null => {
                 {pictureList.map((onePicture) => (
                     <Image
                         className={`c-Img-container__Img c-Img ${
-                            selectedSlide === onePicture.fileId
+                            selectedFileId === onePicture.fileId
                                 ? "c-Img--selected"
                                 : ""
                         }`}
@@ -51,7 +51,7 @@ const Carousel = ({ pictureList }: CarouselProps): JSX.Element | null => {
                 {pictureList.map((onePicture) => (
                     <span
                         className={`c-Indicators__Tab c-Tab ${
-                            selectedSlide === onePicture.fileId
+                            selectedFileId === onePicture.fileId
                                 ? "c-Tab--selected"
                                 : ""
                         }`}

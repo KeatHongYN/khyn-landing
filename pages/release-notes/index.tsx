@@ -1,3 +1,3 @@
-import ReleaseNotes from "../../components/pages/ReleaseNotes";
+import ReleaseNotesPage from "../../components/pages/ReleaseNotes";
 
-export default ReleaseNotes;
+export default ReleaseNotesPage;

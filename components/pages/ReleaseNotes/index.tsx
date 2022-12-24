@@ -1,7 +1,7 @@
 import MainLayout from "../../../layout/MainLayout";
 import Changelog from "../../../CHANGELOG.mdx";
 
-const ReleaseNotes = () => (
+const ReleaseNotesPage = () => (
     <MainLayout>
         <div className="c-Release-notes">
             <h1>Release notes</h1>
@@ -12,4 +12,4 @@ const ReleaseNotes = () => (
     </MainLayout>
 );
 
-export default ReleaseNotes;
+export default ReleaseNotesPage;

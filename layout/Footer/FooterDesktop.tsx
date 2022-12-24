@@ -12,6 +12,7 @@ import {
     KHYN_GITHUB_URL,
     KHYN_INSTAGRAM_URL,
     KHYN_KHR_URL,
+    KHYN_LINKTREE_URL,
     KHYN_TELEGRAM_URL,
     VERSION_NO
 } from "../../config/constants";
@@ -126,6 +127,19 @@ const FooterDesktop = () => (
                         <Icon
                             className="c-Link__Icon c-Icon"
                             icon="akar-icons:github-fill"
+                        />
+                    </a>
+                </Tooltip>
+                <Tooltip title="Linktree" arrow placement="top">
+                    <a
+                        className="c-Socials__Link c-Link"
+                        href={KHYN_LINKTREE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Icon
+                            className="c-Link__Icon c-Icon"
+                            icon="simple-icons:linktree"
                         />
                     </a>
                 </Tooltip>

@@ -2,13 +2,22 @@ import { useRouter } from "next/router";
 import Button from "../../shared/Button";
 import {
     BTN_VARIATION_ENUM,
-    HOME_HERO_PIC_LIST
+    HOME_HERO_PIC_LIST,
+    HOME_SIG_EVENTS_LIST
 } from "../../../config/constants";
 import MainLayout from "../../../layout/MainLayout";
 import Carousel from "../../shared/Carousel";
+import SegmentedControl from "../../shared/SegmentedControl";
+import SIGEventsBentoBox from "./SIGEventsBentoBox";
 
-export default function HomePage() {
+const HomePage = () => {
     const router = useRouter();
+
+    const formattedHomeSigEventsList = HOME_SIG_EVENTS_LIST.map((sigEvent) => ({
+        ...sigEvent,
+        content: <SIGEventsBentoBox pictureList={sigEvent.pictureFilePaths} />
+    }));
+
     return (
         <>
             <MainLayout>
@@ -40,7 +49,14 @@ export default function HomePage() {
                     </div>
                     {/* Signature Events */}
                     <div className="c-Home__Sig-events c-Sig-events">
-                        <h1>Signature Events</h1>
+                        <h1 className="c-Sig-events__Header">
+                            Signature Events
+                        </h1>
+                        <div className="c-Sig-events__Container">
+                            <SegmentedControl
+                                data={formattedHomeSigEventsList}
+                            />
+                        </div>
                     </div>
                     {/* Testimonials */}
                     <div className="c-Home__Testimonials c-Testimonials">
@@ -70,4 +86,6 @@ export default function HomePage() {
             </MainLayout>
         </>
     );
-}
+};
+
+export default HomePage;

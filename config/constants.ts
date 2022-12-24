@@ -88,6 +88,7 @@ export const KHYN_FACEBOOK_URL = "https://www.facebook.com/KeatHongYouths";
 export const KHYN_INSTAGRAM_URL = "https://www.instagram.com/keathongyouths";
 export const KHYN_BETTERUPTIME_URL = "https://keathongyouths.betteruptime.com";
 export const KHYN_KHR_URL = "https://keat-hong-recycles.web.app";
+export const KHYN_LINKTREE_URL = "https://linktr.ee/keathongyn";
 
 // REGEX
 export const EMAIL_INCLUDED_REGEX =
@@ -139,5 +140,59 @@ export const HOME_HERO_PIC_LIST = [
     {
         fileId: 3,
         filePath: "/assets/img/partner-bpgh.png"
+    }
+];
+
+export const HOME_SIG_EVENTS_LIST = [
+    // content is derived in the page itself.
+    {
+        id: 1,
+        heading: "Halloween",
+        pictureFilePaths: {
+            one: "/assets/img/test-1.png", // number determines the position of the picture
+            two: "/assets/img/test-2.png",
+            three: "/assets/img/test-3.png",
+            four: "/assets/img/test-4.png"
+        }
+    },
+    {
+        id: 2,
+        heading: "Children Education Tours",
+        pictureFilePaths: {
+            one: "/assets/img/test-1.png",
+            two: "/assets/img/test-2.png",
+            three: "/assets/img/test-4.png",
+            four: "/assets/img/test-3.png"
+        }
+    },
+    {
+        id: 3,
+        heading: "Migrant Workers Carnival",
+        pictureFilePaths: {
+            one: "/assets/img/test-1.png",
+            two: "/assets/img/test-2.png",
+            three: "/assets/img/test-3.png",
+            four: "/assets/img/test-4.png"
+        }
+    },
+    {
+        id: 4,
+        heading: "Youth Dialogue",
+        pictureFilePaths: {
+            one: "/assets/img/test-1.png",
+            two: "/assets/img/test-2.png",
+            three: "/assets/img/test-4.png",
+            four: "/assets/img/test-3.png"
+        }
+    },
+    {
+        id: 5,
+        heading: "Keat Hong Recycles",
+        pictureFilePaths: {
+            one: "/assets/img/test-1.png",
+            two: "/assets/img/test-2.png",
+            three: "/assets/img/test-3.png",
+            four: "/assets/img/test-4.png"
+        }
     }
 ];
