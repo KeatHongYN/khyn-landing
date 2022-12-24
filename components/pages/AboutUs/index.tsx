@@ -5,10 +5,10 @@ import ImgBPGH from "../../../public/assets/img/partner-bpgh.png";
 import ImgJPJC from "../../../public/assets/img/partner-jpjc.png";
 import Accordion from "../../shared/Accordion";
 import {
-    FAQ_LIST,
     KHYN_TELEGRAM_URL,
     KHYN_VOLUNTEER_SIGN_UP_FORM_URL
 } from "../../../config/constants";
+import { FAQ_LIST } from "../../../config/data";
 
 function AboutUsPage(): JSX.Element {
     return (
