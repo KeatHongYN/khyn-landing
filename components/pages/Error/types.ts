@@ -1,4 +1,4 @@
-import { ERROR_PAGE_ENUM } from "../../../config/constants";
+import { ERROR_PAGE_ENUM } from "../../../config/enum";
 
 export interface ErrorProps {
     statusCode?: number;

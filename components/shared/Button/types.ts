@@ -1,4 +1,4 @@
-import { BTN_VARIATION_ENUM } from "../../../config/constants";
+import { BTN_VARIATION_ENUM } from "../../../config/enum";
 
 export interface ButtonProps {
     disabled?: boolean;

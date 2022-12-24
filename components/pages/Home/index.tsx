@@ -1,21 +1,25 @@
 import { useRouter } from "next/router";
 import Button from "../../shared/Button";
-import {
-    BTN_VARIATION_ENUM,
-    HOME_HERO_PIC_LIST,
-    HOME_SIG_EVENTS_LIST
-} from "../../../config/constants";
+import { BTN_VARIATION_ENUM } from "../../../config/enum";
 import MainLayout from "../../../layout/MainLayout";
 import Carousel from "../../shared/Carousel";
 import SegmentedControl from "../../shared/SegmentedControl";
 import SIGEventsBentoBox from "./SIGEventsBentoBox";
+import {
+    HOME_HERO_PIC_LIST,
+    HOME_SIG_EVENTS_LIST,
+    HOME_TESTIMONIAL_LIST
+} from "../../../config/data";
+import Testimonials from "./Testimonials";
 
 const HomePage = () => {
     const router = useRouter();
 
     const formattedHomeSigEventsList = HOME_SIG_EVENTS_LIST.map((sigEvent) => ({
         ...sigEvent,
-        content: <SIGEventsBentoBox pictureList={sigEvent.pictureFilePaths} />
+        content: (
+            <SIGEventsBentoBox pictureFilePaths={sigEvent.pictureFilePaths} />
+        )
     }));
 
     return (
@@ -62,6 +66,7 @@ const HomePage = () => {
                     {/* Testimonials */}
                     <div className="c-Home__Testimonials c-Testimonials">
                         <h1>What our Volunteers Say</h1>
+                        <Testimonials testimonialList={HOME_TESTIMONIAL_LIST} />
                     </div>
                     {/* CTA */}
                     <div className="c-Home__CTA c-CTA">

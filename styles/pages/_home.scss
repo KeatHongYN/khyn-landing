@@ -58,7 +58,7 @@
 
     .c-Sig-events {
         max-width: 1000px;
-        margin: 120px 0;
+        margin: 100px 0;
         &__Header {
             text-align: center;
             font-size: $font-large;
@@ -68,7 +68,7 @@
 
     .c-Testimonials {
         max-width: 1000px;
-        margin: 50px 0;
+        margin-bottom: 50px;
         h1 {
             text-align: center;
             font-size: $font-large;
@@ -77,7 +77,8 @@
 
     .c-CTA {
         max-width: 1000px;
-        margin: 100px 0;
+        margin-top: 50px;
+        margin-bottom: 100px;
         &__Punchline {
             display: flex;
             justify-content: center;
@@ -145,5 +146,100 @@
     &_Four {
         grid-column: 4 / -1;
         grid-row: 2 / -1;
+    }
+}
+
+.c-Testimonials {
+    margin: 50px 0;
+    width: 100%;
+    &__Testimonial {
+        .c-Container {
+            border-radius: 5px;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 50px 100px;
+            display: none;
+            box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+                0 18px 36px -18px rgba(0, 0, 0, 0.3);
+
+            &--selected {
+                display: flex;
+                flex-direction: row;
+            }
+
+            &--purple {
+                background-color: #4e6bf9;
+            }
+
+            &--radish {
+                background-color: #611f69;
+            }
+
+            &--blue {
+                background-color: #409fff;
+            }
+
+            .c-Left {
+                img {
+                    border-radius: 5px;
+                }
+            }
+
+            .c-Right {
+                color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .c-Text {
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    position: relative;
+                    &:before {
+                        content: open-quote;
+                        position: absolute;
+                        left: -10px;
+                    }
+
+                    &:after {
+                        content: close-quote;
+                        position: absolute;
+                        transform: translateX(2px);
+                    }
+                }
+                .c-Meta {
+                    margin-top: 10px;
+                    h2 {
+                        font-size: $font-small;
+                        font-weight: bold;
+                    }
+                    p {
+                        font-size: $font-x-small;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+
+    .c-Indicators {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        .c-Tab {
+            cursor: pointer;
+            margin: 0 4px;
+            display: block;
+            height: 4px;
+            width: 30px;
+            border-radius: 5px;
+            background-color: #c6c6c6;
+            transition: background-color 550ms ease;
+            &--selected {
+                background-color: $paym-blue;
+            }
+        }
     }
 }

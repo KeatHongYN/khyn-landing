@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { BTN_META, BTN_VARIATION_ENUM } from "../../../config/constants";
+import { BTN_META, BTN_VARIATION_ENUM } from "../../../config/enum";
 import { ExternalLinkButtonProps } from "./types";
 
 const ExternalLinkButton = ({

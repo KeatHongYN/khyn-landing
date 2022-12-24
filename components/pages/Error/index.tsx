@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
 import { ErrorProps } from "next/error";
 import Button from "../../shared/Button";
-import { ERROR_PAGE_ENUM, ERROR_PAGE_META } from "../../../config/constants";
+import { ERROR_PAGE_ENUM, ERROR_PAGE_META } from "../../../config/enum";
 import MainLayout from "../../../layout/MainLayout";
 
 function Error({ statusCode }: ErrorProps): JSX.Element {

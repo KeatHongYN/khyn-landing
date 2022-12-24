@@ -1,4 +1,4 @@
-import { FLAG_BANNER_VARIATION_ENUM } from "../../../config/constants";
+import { FLAG_BANNER_VARIATION_ENUM } from "../../../config/enum";
 
 export interface FlagBannerProps {
     text: string;

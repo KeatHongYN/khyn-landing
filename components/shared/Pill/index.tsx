@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import { PILL_META, PILL_VARIATION_ENUM } from "../../../config/constants";
+import { PILL_META, PILL_VARIATION_ENUM } from "../../../config/enum";
 import { PillProps } from "./types";
 
 const Pill = ({

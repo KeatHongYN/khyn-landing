@@ -1,4 +1,4 @@
-import { PILL_VARIATION_ENUM } from "../../../config/constants";
+import { PILL_VARIATION_ENUM } from "../../../config/enum";
 
 export interface PillProps {
     text: string;

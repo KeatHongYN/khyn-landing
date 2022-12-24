@@ -2,11 +2,9 @@ import React from "react";
 import { useRouter } from "next/router";
 import Button from "../../shared/Button";
 import ExternalLinkButton from "../../shared/Button/ExternalLinkButton";
-import {
-    BTN_VARIATION_ENUM,
-    KHYN_VOLUNTEER_SIGN_UP_FORM_URL
-} from "../../../config/constants";
+import { BTN_VARIATION_ENUM } from "../../../config/enum";
 import MainLayout from "../../../layout/MainLayout";
+import { KHYN_VOLUNTEER_SIGN_UP_FORM_URL } from "../../../config/constants";
 
 const JoinUsPage = (): JSX.Element => {
     const router = useRouter();

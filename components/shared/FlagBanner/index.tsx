@@ -2,7 +2,7 @@ import React from "react";
 import {
     FLAG_BANNER_META,
     FLAG_BANNER_VARIATION_ENUM
-} from "../../../config/constants";
+} from "../../../config/enum";
 import { FlagBannerProps } from "./types";
 
 function FlagBanner({

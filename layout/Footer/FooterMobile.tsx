@@ -6,7 +6,6 @@ import LogoKHYN from "../../public/assets/svg/logo-khyn.svg";
 import LogoStatus from "../../public/assets/svg/logo-status.svg";
 import ExternalLinkButton from "../../components/shared/Button/ExternalLinkButton";
 import {
-    BTN_VARIATION_ENUM,
     KHYN_BETTERUPTIME_URL,
     KHYN_FACEBOOK_URL,
     KHYN_GITHUB_URL,
@@ -16,6 +15,7 @@ import {
     KHYN_TELEGRAM_URL,
     VERSION_NO
 } from "../../config/constants";
+import { BTN_VARIATION_ENUM } from "../../config/enum";
 
 const FooterMobile = (): JSX.Element => (
     <div className="c-Footer-mobile">
