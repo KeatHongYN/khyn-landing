@@ -58,7 +58,7 @@ const JoinUsPage = (): JSX.Element => {
                 </div>
 
                 {/* Interest groups */}
-                <div className="c-Join-us__IG c-IG">
+                <div className="c-Join-us__IG c-IG" id="join-us_igs">
                     <h1>Interest Groups</h1>
                     <JoinUsIGs data={JOIN_US_IG_LIST} />
                 </div>

@@ -2,12 +2,29 @@
 /**
  * Contains general constants/config
  */
-export const ENVIRONMENT = process.env.NEXT_PUBLIC_ENVIONMENT
-    ? process.env.NEXT_PUBLIC_ENVIONMENT
-    : "dev";
-export const VERSION_NO = `LANDING-1.0.0${ENVIRONMENT === "dev" ? "-DEV" : ""}`;
+
+enum ENVIRONMENT_ENUMS {
+    PROD = "PROD",
+    DEV = "DEV",
+    LOCAL = "LOCAL"
+}
+
+export const ENVIRONMENT: ENVIRONMENT_ENUMS = process.env.NEXT_PUBLIC_ENVIONMENT
+    ? (process.env.NEXT_PUBLIC_ENVIONMENT as ENVIRONMENT_ENUMS)
+    : ENVIRONMENT_ENUMS.PROD;
+export const VERSION_NO = `LANDING-1.0.0${ENVIRONMENT === "DEV" ? "-DEV" : ""}`;
+export const PORT = process.env.NEXT_PUBLIC_PORT
+    ? process.env.NEXT_PUBLIC_PORT
+    : 3000;
 
 // URL Links
+const LANDING_PAGE_BASE_URLS = {
+    PROD: "https://keathongyouths.sg",
+    DEV: `http://localhost:${PORT}`,
+    LOCAL: `http://localhost:${PORT}`
+};
+
+export const LANDING_PAGE_BASE_URL = LANDING_PAGE_BASE_URLS[ENVIRONMENT];
 export const KHYN_VOLUNTEER_SIGN_UP_FORM_URL =
     "https://docs.google.com/forms/d/e/1FAIpQLSeFxeOJYoBedxfsPpYWe_WSEk8yZYZ7iYb0dlFV7mbeqMzkUQ/viewform";
 export const KHYN_TELEGRAM_URL = "https://t.me/+8Jo5iyac3AFiYTNk";

@@ -8,7 +8,8 @@ import {
     KHYN_FACEBOOK_URL,
     KHYN_INSTAGRAM_URL,
     KHYN_TELEGRAM_URL,
-    KHYN_VOLUNTEER_SIGN_UP_FORM_URL
+    KHYN_VOLUNTEER_SIGN_UP_FORM_URL,
+    LANDING_PAGE_BASE_URL
 } from "../../../config/constants";
 import { FAQ_LIST } from "../../../config/data";
 import AboutUsCoreDomains from "./AboutUsCoreDomains";
@@ -65,7 +66,9 @@ function AboutUsPage(): JSX.Element {
                             [KHYN_VOLUNTEER_SIGN_UP_FORM_URL]: "sign up form.",
                             [KHYN_TELEGRAM_URL]: "Telegram",
                             [KHYN_INSTAGRAM_URL]: "Instagram",
-                            [KHYN_FACEBOOK_URL]: "Facebook"
+                            [KHYN_FACEBOOK_URL]: "Facebook",
+                            [`${LANDING_PAGE_BASE_URL}/join-us#join-us_igs`]:
+                                "here"
                         }}
                     />
                 </div>

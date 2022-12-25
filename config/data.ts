@@ -2,7 +2,8 @@ import {
     KHYN_FACEBOOK_URL,
     KHYN_INSTAGRAM_URL,
     KHYN_TELEGRAM_URL,
-    KHYN_VOLUNTEER_SIGN_UP_FORM_URL
+    KHYN_VOLUNTEER_SIGN_UP_FORM_URL,
+    LANDING_PAGE_BASE_URL
 } from "./constants";
 import { TESTIMONIAL_BG_ENUM } from "./enum";
 
@@ -13,7 +14,7 @@ export const FAQ_LIST = [
     },
     {
         summary: "How do I join the interest groups of the YN?",
-        details: `If you are interested in a particular interest group, you may express your interest to join in `
+        details: `If you are interested in a particular interest group, you may express your interest to join ${`${LANDING_PAGE_BASE_URL}/join-us#join-us_igs`}`
     },
     {
         summary: "How do I stay updated for all future events?",
