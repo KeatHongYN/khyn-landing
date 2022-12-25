@@ -11,6 +11,7 @@ import {
     KHYN_VOLUNTEER_SIGN_UP_FORM_URL
 } from "../../../config/constants";
 import { FAQ_LIST } from "../../../config/data";
+import AboutUsCoreDomains from "./AboutUsCoreDomains";
 
 function AboutUsPage(): JSX.Element {
     return (
@@ -38,10 +39,10 @@ function AboutUsPage(): JSX.Element {
                             Keat Hong YN strives to meet the diverse interests
                             of youths, through an array of events and projects.
                             Our youths have been especially active in these
-                            domains
+                            domains.
                         </p>
                     </div>
-                    <div className="c-CD__Cards c-Cards" />
+                    <AboutUsCoreDomains />
                 </div>
 
                 {/* Partners */}

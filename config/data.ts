@@ -168,3 +168,36 @@ export const JOIN_US_IG_LIST = [
         learnMoreLink: KHYN_INSTAGRAM_URL
     }
 ];
+
+export const ABOUT_US_CORE_DOMAINS_LIST = [
+    {
+        id: 1,
+        name: "Environment & Sustainability",
+        imgFilePath: "/assets/img/test-2.png"
+    },
+    {
+        id: 2,
+        name: "Sports & Adventure",
+        imgFilePath: "/assets/img/test-2.png"
+    },
+    {
+        id: 3,
+        name: "Arts & Culture",
+        imgFilePath: "/assets/img/test-2.png"
+    },
+    {
+        id: 4,
+        name: "Health & Wellness",
+        imgFilePath: "/assets/img/test-2.png"
+    },
+    {
+        id: 5,
+        name: "Community Service",
+        imgFilePath: "/assets/img/test-2.png"
+    },
+    {
+        id: 6,
+        name: "Children & Family",
+        imgFilePath: "/assets/img/test-2.png"
+    }
+];
