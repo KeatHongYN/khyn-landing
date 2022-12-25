@@ -138,3 +138,33 @@ export const JOIN_US_PICTURE_LIST = {
     three: "/assets/img/test-4.png",
     four: "/assets/img/test-3.png"
 };
+
+export const JOIN_US_IG_LIST = [
+    {
+        id: 1,
+        imgFilePath: "/assets/img/weipin.png",
+        name: "Group to Initiate Change",
+        description:
+            "Established in 2011, Group to Initiate Change (GIC) is the YN’s Community Service Interest Group. The group hopes to provide relevant assistance to needy residents in the constituency, and have been active in organising home visits, house makeovers and grocery distributions. GIC also conducts talks and trainings for their members to help develop skills and knowledge that will enable them to help their beneficiaries effectively. In the long term, they envision to improve each beneficiary’s well-being and socio-economic conditions.",
+        signUpLink: KHYN_INSTAGRAM_URL,
+        learnMoreLink: KHYN_INSTAGRAM_URL
+    },
+    {
+        id: 2,
+        imgFilePath: "/assets/img/weipin.png",
+        name: "MusicBox Interest Group",
+        description:
+            "The group was formed to engage youths who have talent in performing, be it singing, dancing, playing musical instruments or acting. Members have been regularly invited to perform at community events, such as the New Year Countdown and Mid-Autumn Festival.",
+        signUpLink: KHYN_INSTAGRAM_URL,
+        learnMoreLink: KHYN_INSTAGRAM_URL
+    },
+    {
+        id: 3,
+        imgFilePath: "/assets/img/weipin.png",
+        name: "The A2G Group",
+        description:
+            "The “Aspire to Bring Cheer and Delight through Engaging our Future Generation (ABCDEFG or A2G)” group was formed in 2013, after the success of the Children Educational Tours (CETs). The group brings volunteers who enjoy working with children together to organise exciting activities for them, and have also started holding Children’s Art Sunday and children workshops. Looking forward, A2G hopes to promote family bonding by increasing parents’ involvement in their children’s activities.",
+        signUpLink: KHYN_INSTAGRAM_URL,
+        learnMoreLink: KHYN_INSTAGRAM_URL
+    }
+];

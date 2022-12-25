@@ -14,3 +14,16 @@ export type SocialLinksListSingularType = {
 export type SocialLinksListMultiType = Array<SocialLinksListSingularType>;
 
 export type JoinUsSocialLinkProps = SocialLinksListSingularType;
+
+export type JoinUsIGSingularType = {
+    id: number;
+    imgFilePath: string;
+    name: string;
+    description: string;
+    signUpLink: string;
+    learnMoreLink: string;
+};
+
+export interface JoinUsIGsProps {
+    data: Array<JoinUsIGSingularType>;
+}

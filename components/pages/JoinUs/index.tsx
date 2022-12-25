@@ -6,8 +6,9 @@ import { BTN_VARIATION_ENUM } from "../../../config/enum";
 import MainLayout from "../../../layout/MainLayout";
 import { KHYN_VOLUNTEER_SIGN_UP_FORM_URL } from "../../../config/constants";
 import JoinUsPictureBentoBox from "./JoinUsBentoBox";
-import { JOIN_US_PICTURE_LIST } from "../../../config/data";
+import { JOIN_US_IG_LIST, JOIN_US_PICTURE_LIST } from "../../../config/data";
 import JoinUsSocialLinks from "./JoinUsSocialLinks";
+import JoinUsIGs from "./JoinUsIGs";
 
 const JoinUsPage = (): JSX.Element => {
     const router = useRouter();
@@ -59,7 +60,7 @@ const JoinUsPage = (): JSX.Element => {
                 {/* Interest groups */}
                 <div className="c-Join-us__IG c-IG">
                     <h1>Interest Groups</h1>
-                    <div className="c-IG__List"></div>
+                    <JoinUsIGs data={JOIN_US_IG_LIST} />
                 </div>
             </div>
         </MainLayout>
