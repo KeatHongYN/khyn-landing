@@ -129,3 +129,10 @@ export const HOME_TESTIMONIAL_LIST = [
         bgVariation: TESTIMONIAL_BG_ENUM.BLUE
     }
 ];
+
+export const JOIN_US_PICTURE_LIST = {
+    one: "/assets/img/test-1.png", // number determines the position of the picture
+    two: "/assets/img/test-2.png",
+    three: "/assets/img/test-4.png",
+    four: "/assets/img/test-3.png"
+};

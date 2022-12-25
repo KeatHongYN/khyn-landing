@@ -5,6 +5,8 @@ import ExternalLinkButton from "../../shared/Button/ExternalLinkButton";
 import { BTN_VARIATION_ENUM } from "../../../config/enum";
 import MainLayout from "../../../layout/MainLayout";
 import { KHYN_VOLUNTEER_SIGN_UP_FORM_URL } from "../../../config/constants";
+import JoinUsPictureBentoBox from "./JoinUsBentoBox";
+import { JOIN_US_PICTURE_LIST } from "../../../config/data";
 
 const JoinUsPage = (): JSX.Element => {
     const router = useRouter();
@@ -37,7 +39,12 @@ const JoinUsPage = (): JSX.Element => {
                 </div>
 
                 {/* Pictures */}
-                <div className="c-Join-us__Pictures c-Pictures"></div>
+                <div className="c-Join-us__Pictures c-Pictures">
+                    <JoinUsPictureBentoBox {...JOIN_US_PICTURE_LIST} />
+                    <p className="c-Pictures__Caption">
+                        View more photos on our socials
+                    </p>
+                </div>
 
                 {/* Socials */}
                 <div className="c-Join-us__Socials c-Socials">
