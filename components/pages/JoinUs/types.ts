@@ -4,3 +4,13 @@ export interface JoinUsPictureBentoBoxProps {
     three: string;
     four: string;
 }
+
+export type SocialLinksListSingularType = {
+    href: string;
+    iconId: string;
+    name: string;
+};
+
+export type SocialLinksListMultiType = Array<SocialLinksListSingularType>;
+
+export type JoinUsSocialLinkProps = SocialLinksListSingularType;

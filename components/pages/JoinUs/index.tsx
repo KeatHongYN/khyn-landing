@@ -7,6 +7,7 @@ import MainLayout from "../../../layout/MainLayout";
 import { KHYN_VOLUNTEER_SIGN_UP_FORM_URL } from "../../../config/constants";
 import JoinUsPictureBentoBox from "./JoinUsBentoBox";
 import { JOIN_US_PICTURE_LIST } from "../../../config/data";
+import JoinUsSocialLinks from "./JoinUsSocialLinks";
 
 const JoinUsPage = (): JSX.Element => {
     const router = useRouter();
@@ -52,7 +53,7 @@ const JoinUsPage = (): JSX.Element => {
                         Stay updated. <br />
                         Follow our socials.
                     </h1>
-                    <div className="c-Socials__Links"></div>
+                    <JoinUsSocialLinks />
                 </div>
 
                 {/* Interest groups */}
