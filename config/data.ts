@@ -1,4 +1,6 @@
 import {
+    KHYN_FACEBOOK_URL,
+    KHYN_INSTAGRAM_URL,
     KHYN_TELEGRAM_URL,
     KHYN_VOLUNTEER_SIGN_UP_FORM_URL
 } from "./constants";
@@ -7,7 +9,7 @@ import { TESTIMONIAL_BG_ENUM } from "./enum";
 export const FAQ_LIST = [
     {
         summary: "How do I join the YN as a volunteer?",
-        details: `You may express to join us by indicating in this ${KHYN_VOLUNTEER_SIGN_UP_FORM_URL} Do follow us on Instagram or on our Telegram channel to stay abreast of the latest events, and sign up to volunteer in them whenever possible!`
+        details: `You may express to join us by indicating in this ${KHYN_VOLUNTEER_SIGN_UP_FORM_URL} Do follow us on our Instagram and Telegram channel to stay abreast of the latest events, and sign up to volunteer in them whenever possible!`
     },
     {
         summary: "How do I join the interest groups of the YN?",
@@ -15,7 +17,7 @@ export const FAQ_LIST = [
     },
     {
         summary: "How do I stay updated for all future events?",
-        details: `Follow us on Instagram @keathongyouths and subscribe to our Telegram channel ${KHYN_TELEGRAM_URL}`
+        details: `Follow us on ${KHYN_INSTAGRAM_URL} and subscribe to our ${KHYN_TELEGRAM_URL}`
     },
     {
         summary: "I am keen to help plan a project. Where do I get started?",
@@ -30,7 +32,7 @@ export const FAQ_LIST = [
     {
         summary:
             "I would like to collaborate with the YN. Who should I contact?",
-        details: "Feel free to drop a DM to our Instagram or Facebook accounts."
+        details: `Feel free to drop a DM to our ${KHYN_INSTAGRAM_URL} or ${KHYN_FACEBOOK_URL} page.`
     }
 ];
 

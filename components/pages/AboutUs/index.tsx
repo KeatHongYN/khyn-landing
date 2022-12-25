@@ -5,6 +5,8 @@ import ImgBPGH from "../../../public/assets/img/partner-bpgh.png";
 import ImgJPJC from "../../../public/assets/img/partner-jpjc.png";
 import Accordion from "../../shared/Accordion";
 import {
+    KHYN_FACEBOOK_URL,
+    KHYN_INSTAGRAM_URL,
     KHYN_TELEGRAM_URL,
     KHYN_VOLUNTEER_SIGN_UP_FORM_URL
 } from "../../../config/constants";
@@ -60,7 +62,9 @@ function AboutUsPage(): JSX.Element {
                         contents={FAQ_LIST}
                         linkMap={{
                             [KHYN_VOLUNTEER_SIGN_UP_FORM_URL]: "sign up form.",
-                            [KHYN_TELEGRAM_URL]: "here"
+                            [KHYN_TELEGRAM_URL]: "Telegram",
+                            [KHYN_INSTAGRAM_URL]: "Instagram",
+                            [KHYN_FACEBOOK_URL]: "Facebook"
                         }}
                     />
                 </div>
