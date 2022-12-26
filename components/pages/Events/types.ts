@@ -30,15 +30,12 @@ export interface SingularRawCamelCasedEvent {
     volunteersNeeded: boolean;
     image: string | null;
     price: number | null | undefined;
-    multiplePrice: boolean;
+    multiPrice: boolean;
     link: string | null;
 }
 
 export interface SingularEvent
-    extends Omit<
-        SingularRawCamelCasedEvent,
-        "price" | "date" | "time" | "multiplePrice"
-    > {
+    extends Omit<SingularRawCamelCasedEvent, "price" | "date" | "time"> {
     date: string | null;
     time: string | null;
     price: string | null | undefined;

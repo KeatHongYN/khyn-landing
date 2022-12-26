@@ -74,7 +74,7 @@ const firebaseFn = (() => {
                     ...oneEvent,
                     date: formatDate(oneEvent.date),
                     time: formatTime(oneEvent.time),
-                    price: formatPrice(oneEvent.price, oneEvent.multiplePrice),
+                    price: formatPrice(oneEvent.price, oneEvent.multi_price),
                     id: doc.id
                 });
                 return doc.data();
@@ -107,7 +107,7 @@ const firebaseFn = (() => {
                     ...data,
                     date: formatDate(data.date),
                     time: formatTime(data.time),
-                    price: formatPrice(data.price, data.multiplePrice),
+                    price: formatPrice(data.price, data.multi_price),
                     id: docSnaphot.id
                 });
             } else {

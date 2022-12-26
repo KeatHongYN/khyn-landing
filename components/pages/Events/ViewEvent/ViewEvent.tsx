@@ -1,8 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { Icon } from "@iconify/react";
-import React from "react";
-import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Pill from "../../../shared/Pill";
@@ -20,6 +17,7 @@ const ViewEvent = ({
     volunteersNeeded,
     image,
     price,
+    multiPrice,
     link
 }: ViewEventProps): JSX.Element => {
     const router = useRouter();
@@ -62,9 +60,12 @@ const ViewEvent = ({
                     </div>
                     <div className="c-Info__Price">
                         <h2>{price || "-"}</h2>
-                        <p>
-                            View the full prices on the event&apos;s page/form
-                        </p>
+                        {multiPrice ? (
+                            <p>
+                                View the full prices on the event&apos;s
+                                page/form
+                            </p>
+                        ) : null}
                     </div>
                     <ExternalLinkButton
                         disabled={!!link}

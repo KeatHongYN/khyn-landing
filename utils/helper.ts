@@ -22,13 +22,13 @@ export const recursiveCamelCase = (item: any): any => {
 
 export const formatPrice = (
     price: number | null | undefined,
-    multiplePrice: boolean = false
+    multiPrice: boolean = false
 ): FormatPriceRV => {
     if (price === null || price === undefined) return price;
 
     if (price === 0) return "FREE";
 
-    const formattedPrice = `S$${price.toFixed(2)}${multiplePrice ? "+" : ""}`;
+    const formattedPrice = `S$${price.toFixed(2)}${multiPrice ? "+" : ""}`;
     return formattedPrice;
 };
 
