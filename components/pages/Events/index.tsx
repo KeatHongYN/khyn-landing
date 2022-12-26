@@ -1,64 +1,32 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import EventListItem from "../../shared/EventListItem";
-import EventListItemSkeleton from "../../shared/EventListItem/EventListItemSkeleton";
-import { MOCK_EVENTS } from "../../../config/mock";
 import MainLayout from "../../../layout/MainLayout";
-import {
-    formatDate,
-    formatPrice,
-    formatTime,
-    recursiveCamelCase
-} from "../../../utils/helper";
-import NoEvents from "./NoEvents";
-import { EventType, SingularRawCamelCasedEvent } from "./types";
+import { EventsPageProps, EventType } from "./types";
+import EventList from "./EventList";
+import EventListSkeleton from "./EventListSkeleton";
+import Error from "../../shared/Error";
 
-const renderEventListSkeleton = (): JSX.Element => (
-    <>
-        {MOCK_EVENTS.map((event, index) => (
-            <span key={index}>
-                <EventListItemSkeleton />
-                {index !== MOCK_EVENTS.length - 1 ? (
-                    <hr className="c-List__HR c-HR" />
-                ) : null}
-            </span>
-        ))}
-    </>
-);
-
-const renderEventList = (events: EventType | []): JSX.Element => (
-    <>
-        {events.length ? (
-            events.map((event, index) => (
-                <span key={`event-${index}`}>
-                    <EventListItem {...event} />
-                    {index !== events.length - 1 ? (
-                        <hr className="c-List__HR c-HR" />
-                    ) : null}
-                </span>
-            ))
-        ) : (
-            <NoEvents />
-        )}
-    </>
-);
-
-const EventsPage = (): JSX.Element => {
-    const [events, setEvents] = useState<EventType | []>([]);
-    const [loadingEvents, setLoadingEvents] = useState(true);
+const EventsPage = ({
+    getEventsResult: { success, data, message }
+}: EventsPageProps): JSX.Element => {
+    const [events, setEvents] = useState<EventType | null>(null);
+    const [loadingEvents, setLoadingEvents] = useState(false);
 
     useEffect(() => {
-        let formattedEvents = recursiveCamelCase(MOCK_EVENTS);
-        formattedEvents = formattedEvents.map(
-            (oneEvent: SingularRawCamelCasedEvent) => ({
-                ...oneEvent,
-                date: formatDate(oneEvent.date),
-                time: formatTime(oneEvent.time),
-                price: formatPrice(oneEvent.price, oneEvent.multiplePrice)
-            })
-        );
-        setEvents(formattedEvents);
-        setLoadingEvents(false);
+        if (success && data) {
+            setEvents(data);
+        }
     }, []);
+
+    const renderListControl = (): JSX.Element => {
+        if (loadingEvents) {
+            return <EventListSkeleton />;
+        }
+        if (success) {
+            return <EventList events={events} />;
+        }
+        return <Error message={message} />;
+    };
 
     return (
         <MainLayout title="Events - Keat Hong Youth Network">
@@ -68,9 +36,7 @@ const EventsPage = (): JSX.Element => {
                     <p>Check out the latest events that is happening!</p>
                 </div>
                 <div className="c-Events__List c-List">
-                    {loadingEvents
-                        ? renderEventListSkeleton()
-                        : renderEventList(events)}
+                    {renderListControl()}
                 </div>
             </div>
         </MainLayout>

@@ -13,7 +13,7 @@ export class DebugConsoleLogger implements Logger {
     readonly error: LogFn;
 
     constructor() {
-        if (ENVIRONMENT === "prod") {
+        if (ENVIRONMENT === "PROD") {
             this.log = NO_OPERATION;
             this.warn = NO_OPERATION;
             this.error = NO_OPERATION;

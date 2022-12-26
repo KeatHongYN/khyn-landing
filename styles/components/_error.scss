@@ -1,0 +1,61 @@
+.c-Error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0;
+
+    &__Icon-container {
+        background-color: #f6f8fa;
+        padding: 10px;
+        border-radius: 5px;
+        .c-Error__Icon {
+            color: $error;
+            font-size: 30px;
+        }
+    }
+
+    h1 {
+        font-size: $font-medium;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    p {
+        font-size: $font-small;
+        font-weight: 600;
+        color: #545969;
+        margin-top: 10px 0;
+    }
+}
+
+.c-Not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0;
+
+    &__Icon-container {
+        background-color: #f6f8fa;
+        padding: 10px;
+        border-radius: 5px;
+        .c-Not-found__Icon {
+            color: #87909f;
+            font-size: 30px;
+        }
+    }
+
+    h1 {
+        font-size: $font-medium;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    p {
+        font-size: $font-small;
+        font-weight: 600;
+        color: #545969;
+        margin-top: 10px 0;
+    }
+}

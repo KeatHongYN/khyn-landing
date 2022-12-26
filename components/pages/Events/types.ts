@@ -1,3 +1,11 @@
+export interface EventsPageProps {
+    getEventsResult: {
+        success: boolean;
+        data: any[];
+        message: string | null;
+    };
+}
+
 interface SeparateTimeFormat {
     hour: number | null;
     minute: number | null;
@@ -34,3 +42,7 @@ interface SingularEvent
 }
 
 export type EventType = SingularEvent[];
+
+export interface EventListProps {
+    events: EventType | [] | null;
+}
