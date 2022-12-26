@@ -9,13 +9,13 @@ enum ENVIRONMENT_ENUMS {
     LOCAL = "LOCAL"
 }
 
-export const ENVIRONMENT: ENVIRONMENT_ENUMS = process.env.NEXT_PUBLIC_ENVIONMENT
-    ? (process.env.NEXT_PUBLIC_ENVIONMENT as ENVIRONMENT_ENUMS)
-    : ENVIRONMENT_ENUMS.PROD;
+export const ENVIRONMENT: ENVIRONMENT_ENUMS =
+    (process.env.NEXT_PUBLIC_ENVIONMENT as ENVIRONMENT_ENUMS) ||
+    ENVIRONMENT_ENUMS.PROD;
+export const DISABLE_DEV_FLAG =
+    process.env.NEXT_PUBLIC_DISABLE_DEV_FLAG || false;
 export const VERSION_NO = `LANDING-1.0.0${ENVIRONMENT === "DEV" ? "-DEV" : ""}`;
-export const PORT = process.env.NEXT_PUBLIC_PORT
-    ? process.env.NEXT_PUBLIC_PORT
-    : 3000;
+export const PORT = process.env.NEXT_PUBLIC_PORT || 3000;
 
 export const FIREBASE_CONFIG = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,

@@ -13,7 +13,7 @@ const NoImage = (): JSX.Element => (
 );
 
 const EventListItem = ({
-    eventId,
+    id,
     title,
     location,
     date,
@@ -28,7 +28,7 @@ const EventListItem = ({
         <div
             className="c-Event-list-item"
             role="button"
-            onClick={() => router.push(`/events/${eventId}`)}
+            onClick={() => router.push(`/events/${id}`)}
         >
             <div className="c-Event-list-item__Img c-Img">
                 {image ? (

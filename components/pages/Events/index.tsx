@@ -5,9 +5,10 @@ import { EventsPageProps, EventType } from "./types";
 import EventList from "./EventList";
 import EventListSkeleton from "./EventListSkeleton";
 import Error from "../../shared/Error";
+import { ERROR_META } from "../../../config/error";
 
 const EventsPage = ({
-    getEventsResult: { success, data, message }
+    getEventsResult: { success, data, errorType }
 }: EventsPageProps): JSX.Element => {
     const [events, setEvents] = useState<EventType | null>(null);
     const [loadingEvents, setLoadingEvents] = useState(false);
@@ -25,7 +26,7 @@ const EventsPage = ({
         if (success) {
             return <EventList events={events} />;
         }
-        return <Error message={message} />;
+        return <Error message={ERROR_META[errorType!].message} />;
     };
 
     return (

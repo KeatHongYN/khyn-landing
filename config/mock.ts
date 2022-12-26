@@ -1,6 +1,6 @@
 export const MOCK_EVENTS = [
     {
-        event_id: "this-is-a-fake-uuid-1",
+        id: "this-is-a-fake-uuid-1",
         title: "One date, multiple time slot",
         description: "This is a fake description of condordia",
         location: "Keat Hong CC, Level 1, Lam Soon Auditorium",
@@ -22,10 +22,10 @@ export const MOCK_EVENTS = [
         volunteers_needed: true,
         image: "https://picsum.photos/seed/picsum/200/200",
         price: 399.9,
-        multiplePrice: false
+        multiple_price: false
     },
     {
-        event_id: "this-is-a-fake-uuid-2",
+        id: "this-is-a-fake-uuid-2",
         title: "Multiple dates, no timeslot",
         description: "This is a fake description of condordia",
         location: "Keat Hong CC, Level 1, Lam Soon Auditorium",
@@ -47,6 +47,6 @@ export const MOCK_EVENTS = [
         volunteers_needed: true,
         image: null,
         price: 399.9,
-        multiplePrice: true
+        multiple_price: true
     }
 ];

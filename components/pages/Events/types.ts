@@ -1,8 +1,10 @@
+import { ERROR_ENUM } from "../../../config/error";
+
 export interface EventsPageProps {
     getEventsResult: {
         success: boolean;
         data: any[];
-        message: string | null;
+        errorType: ERROR_ENUM | null;
     };
 }
 
@@ -12,7 +14,7 @@ interface SeparateTimeFormat {
 }
 // Raw data but camelCased
 export interface SingularRawCamelCasedEvent {
-    eventId: string;
+    id: string;
     title: string;
     description: string;
     location: string;
@@ -29,9 +31,10 @@ export interface SingularRawCamelCasedEvent {
     image: string | null;
     price: number | null | undefined;
     multiplePrice: boolean;
+    link: string | null;
 }
 
-interface SingularEvent
+export interface SingularEvent
     extends Omit<
         SingularRawCamelCasedEvent,
         "price" | "date" | "time" | "multiplePrice"

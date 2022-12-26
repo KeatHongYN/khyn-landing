@@ -1,5 +1,5 @@
 export interface EventListItemProps {
-    eventId: string;
+    id: string;
     title: string;
     location: string;
     date: string | null;

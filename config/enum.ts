@@ -1,27 +1,4 @@
 /* eslint-disable no-unused-vars */
-export enum ERROR_PAGE_ENUM {
-    PAGE_NOT_FOUND = "PAGE_NOT_FOUND",
-    SERVER_ERROR = "SERVER_ERROR",
-    GENERIC = "GENERIC"
-}
-
-export const ERROR_PAGE_META = {
-    [ERROR_PAGE_ENUM.PAGE_NOT_FOUND]: {
-        classSuffix: "page-not-found",
-        header: "Page not found.",
-        desc: "Hmm... We couldn't find the specified resource."
-    },
-    [ERROR_PAGE_ENUM.SERVER_ERROR]: {
-        classSuffix: "server-error",
-        header: "Server error.",
-        desc: "Something went wrong. Please try again later."
-    },
-    [ERROR_PAGE_ENUM.GENERIC]: {
-        classSuffix: "generic",
-        header: "Something went wrong.",
-        desc: "An unknown error has occured. Please try again later."
-    }
-};
 
 export enum BTN_VARIATION_ENUM {
     PRIMARY = "PRIMARY",

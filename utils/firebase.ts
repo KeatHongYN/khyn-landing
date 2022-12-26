@@ -4,9 +4,12 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import {
     collection,
+    doc,
+    getDoc,
     getDocs,
     getFirestore,
     limit,
+    orderBy,
     query
 } from "firebase/firestore";
 import { ENVIRONMENT, FIREBASE_CONFIG } from "../config/constants";
@@ -17,6 +20,7 @@ import {
     formatTime,
     recursiveCamelCase
 } from "./helper";
+import { ERROR_ENUM } from "../config/error";
 
 // Initialize Firebase
 const app = initializeApp(FIREBASE_CONFIG);
@@ -54,7 +58,11 @@ const firebaseFn = (() => {
 
     const getEvents = async () => {
         try {
-            const q = query(collection(firestore, "events"), limit(2));
+            const q = query(
+                collection(firestore, "events"),
+                orderBy("updated", "desc"), // get most updated event
+                limit(2)
+            );
 
             const querySnapshot = await getDocs(q);
 
@@ -81,12 +89,41 @@ const firebaseFn = (() => {
             return [true, events, null];
         } catch (error) {
             DEBUG.error(error);
-            return [false, null, "Something went wrong!"];
+            return [false, null, ERROR_ENUM.FIREBASE_FAILURE];
+        }
+    };
+
+    const getEvent = async (eventId: string) => {
+        try {
+            const docRef = doc(firestore, "events", eventId);
+            const docSnaphot = await getDoc(docRef);
+
+            let event: any = null;
+            let errorType: ERROR_ENUM | null = null;
+
+            if (docSnaphot.exists()) {
+                const data = docSnaphot.data();
+                event = recursiveCamelCase({
+                    ...data,
+                    date: formatDate(data.date),
+                    time: formatTime(data.time),
+                    price: formatPrice(data.price, data.multiplePrice),
+                    id: docSnaphot.id
+                });
+            } else {
+                errorType = ERROR_ENUM.FIREBASE_INVALID_EVENT_ID;
+            }
+
+            return [true, event, errorType];
+        } catch (error) {
+            DEBUG.error(error);
+            return [false, null, ERROR_ENUM.FIREBASE_FAILURE];
         }
     };
 
     return {
-        getEvents
+        getEvents,
+        getEvent
     };
 })();
 

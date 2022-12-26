@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
 import { ErrorProps } from "next/error";
 import Button from "../../shared/Button";
-import { ERROR_PAGE_ENUM, ERROR_PAGE_META } from "../../../config/enum";
+import { ERROR_ENUM, ERROR_PAGE_META } from "../../../config/error";
 import MainLayout from "../../../layout/MainLayout";
 
 function Error({ statusCode }: ErrorProps): JSX.Element {
@@ -14,22 +14,21 @@ function Error({ statusCode }: ErrorProps): JSX.Element {
     switch (statusCode) {
         case 404: {
             classSuffix =
-                ERROR_PAGE_META[ERROR_PAGE_ENUM.PAGE_NOT_FOUND].classSuffix;
-            header = ERROR_PAGE_META[ERROR_PAGE_ENUM.PAGE_NOT_FOUND].header;
-            desc = ERROR_PAGE_META[ERROR_PAGE_ENUM.PAGE_NOT_FOUND].desc;
+                ERROR_PAGE_META[ERROR_ENUM.PAGE_NOT_FOUND].classSuffix;
+            header = ERROR_PAGE_META[ERROR_ENUM.PAGE_NOT_FOUND].header;
+            desc = ERROR_PAGE_META[ERROR_ENUM.PAGE_NOT_FOUND].desc;
             break;
         }
         case 500: {
-            classSuffix =
-                ERROR_PAGE_META[ERROR_PAGE_ENUM.SERVER_ERROR].classSuffix;
-            header = ERROR_PAGE_META[ERROR_PAGE_ENUM.SERVER_ERROR].header;
-            desc = ERROR_PAGE_META[ERROR_PAGE_ENUM.SERVER_ERROR].desc;
+            classSuffix = ERROR_PAGE_META[ERROR_ENUM.SERVER_ERROR].classSuffix;
+            header = ERROR_PAGE_META[ERROR_ENUM.SERVER_ERROR].header;
+            desc = ERROR_PAGE_META[ERROR_ENUM.SERVER_ERROR].desc;
             break;
         }
         default: {
-            classSuffix = ERROR_PAGE_META[ERROR_PAGE_ENUM.GENERIC].classSuffix;
-            header = ERROR_PAGE_META[ERROR_PAGE_ENUM.GENERIC].header;
-            desc = ERROR_PAGE_META[ERROR_PAGE_ENUM.GENERIC].desc;
+            classSuffix = ERROR_PAGE_META[ERROR_ENUM.GENERIC].classSuffix;
+            header = ERROR_PAGE_META[ERROR_ENUM.GENERIC].header;
+            desc = ERROR_PAGE_META[ERROR_ENUM.GENERIC].desc;
         }
     }
 
