@@ -7,12 +7,12 @@ footer {
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        max-width: 1920px;
         margin: auto;
+        max-width: 1200px;
+        padding: 0 100px;
 
         .c-Top {
             display: flex;
-            padding: 0 200px;
             align-items: center;
 
             .c-Left {
@@ -71,7 +71,7 @@ footer {
         }
 
         hr {
-            margin: 20px 200px;
+            margin: 20px 0;
             height: 0px;
             border: none;
             border-top: 0.0000000001px solid #6e6e73;
@@ -80,7 +80,6 @@ footer {
 
         .c-Bottom {
             display: flex;
-            padding: 0 200px;
             align-items: center;
             justify-content: space-between;
             &__Copyright {
@@ -115,7 +114,6 @@ footer {
         .c-Version {
             display: flex;
             justify-content: flex-end;
-            padding: 0 200px;
             margin-top: 10px;
             &__Link {
                 color: #a8a8a8;

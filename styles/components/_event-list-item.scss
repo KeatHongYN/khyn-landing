@@ -65,6 +65,10 @@
         h1 {
             font-size: $font-medium;
             font-weight: bold;
+            text-overflow: ellipsis;
+            max-width: 400px;
+            white-space: nowrap;
+            overflow: hidden;
         }
         .c-Location {
             display: flex;
@@ -79,6 +83,10 @@
                 font-size: $font-small;
                 margin-left: 5px;
                 font-weight: 500;
+                text-overflow: ellipsis;
+                max-width: 400px;
+                white-space: nowrap;
+                overflow: hidden;
             }
         }
 
@@ -98,6 +106,10 @@
                     font-size: $font-small;
                     margin-left: 5px;
                     font-weight: 500;
+                    text-overflow: ellipsis;
+                    max-width: 400px;
+                    white-space: nowrap;
+                    overflow: hidden;
                 }
             }
             .c-Time {
@@ -113,6 +125,10 @@
                     font-size: $font-small;
                     margin-left: 5px;
                     font-weight: 500;
+                    text-overflow: ellipsis;
+                    max-width: 400px;
+                    white-space: nowrap;
+                    overflow: hidden;
                 }
             }
         }
@@ -125,6 +141,90 @@
             h2 {
                 margin-left: auto;
                 font-size: $font-medium;
+                text-overflow: ellipsis;
+                max-width: 400px;
+            }
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .c-Img {
+            img {
+                width: 130px;
+                height: 130px;
+            }
+        }
+
+        .c-Desc {
+            h1 {
+                font-size: $font-small;
+                max-width: 250px;
+            }
+            .c-Location {
+                margin-top: 5px;
+                &__Icon {
+                    font-size: 15px;
+                }
+                p {
+                    font-size: $font-x-small;
+                    margin-left: 5px;
+                    font-weight: 500;
+                    max-width: 250px;
+                }
+            }
+
+            .c-Date-and-time {
+                margin-top: 5px;
+                .c-Date {
+                    &__Icon {
+                        font-size: 13px;
+                    }
+                    p {
+                        font-size: $font-x-small;
+                    }
+                }
+                .c-Time {
+                    margin-left: 15px;
+                    &__Icon {
+                        font-size: 15px;
+                    }
+                    p {
+                        font-size: $font-x-small;
+                    }
+                }
+            }
+
+            .c-Bottom {
+                margin-top: 5px;
+                h2 {
+                    font-size: $font-small;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: center;
+        .c-Img {
+            img {
+                width: calc(100vw - 80px);
+                height: 100%;
+            }
+        }
+        .c-Desc {
+            margin-top: 10px;
+            .c-Location {
+                p {
+                    max-width: 250px;
+                }
+            }
+            .c-Bottom {
+                flex-direction: column;
+                h2 {
+                    margin-top: 5px;
+                    margin-left: 0;
+                }
             }
         }
     }

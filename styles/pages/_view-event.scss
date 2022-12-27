@@ -2,12 +2,12 @@
     &__Top {
         display: flex;
         flex-direction: row;
-        padding: 20px 0;
+        margin: 20px 0;
     }
 
     &__Middle {
         display: flex;
-        margin: 10px 0;
+        margin-top: 20px;
         justify-content: space-between;
         align-items: center;
 

@@ -37,4 +37,10 @@
         background-color: #cbf4c8;
         color: #116144;
     }
+
+    @media (max-width: 1000px) {
+        p {
+            font-size: 9px;
+        }
+    }
 }

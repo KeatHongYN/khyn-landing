@@ -1,6 +1,6 @@
 .c-Join-us {
     .c-Hero {
-        padding: 100px;
+        margin-top: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -11,6 +11,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-align: center;
         }
         p {
             text-align: center;
@@ -28,7 +29,7 @@
     }
 
     .c-Pictures {
-        padding: 30px 100px;
+        margin-top: 100px;
 
         &__Caption {
             margin-top: 20px;
@@ -40,7 +41,7 @@
     }
 
     .c-Socials {
-        padding: 50px 100px;
+        margin-top: 100px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -55,7 +56,7 @@
     }
 
     .c-IG {
-        padding: 100px;
+        margin-top: 100px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -151,7 +152,8 @@
 }
 
 .c-Join-us-igs {
-    margin: 50px 0;
+    margin-top: 50px;
+    margin-bottom: 100px;
     .c-Join-us-ig {
         display: flex;
         flex-direction: row;

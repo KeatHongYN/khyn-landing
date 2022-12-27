@@ -11,11 +11,11 @@ header {
     width: 100%;
     padding: 10px 0;
     .c-Header-desktop {
-        max-width: 1920px;
+        max-width: 1200px;
+        padding: 0 100px;
         margin: auto;
         display: flex;
         justify-content: space-between;
-        padding: 0 150px;
         .c-Left {
             &__Logo {
                 svg {

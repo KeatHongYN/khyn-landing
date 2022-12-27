@@ -23,8 +23,15 @@ html {
     scroll-behavior: smooth;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
+    position: relative;
 }
 
 body a {

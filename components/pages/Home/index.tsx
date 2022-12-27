@@ -57,14 +57,10 @@ const HomePage = () => {
                         <h1 className="c-Sig-events__Header">
                             Signature Events
                         </h1>
-                        <div className="c-Sig-events__Container">
-                            <SegmentedControl
-                                data={formattedHomeSigEventsList}
-                            />
-                        </div>
+                        <SegmentedControl data={formattedHomeSigEventsList} />
                     </div>
                     {/* Testimonials */}
-                    <div className="c-Home__Testimonials c-Testimonials">
+                    <div className="c-Home__Testimonial c-Testimonial">
                         <h1>What our Volunteers Say</h1>
                         <Testimonials testimonialList={HOME_TESTIMONIAL_LIST} />
                     </div>
