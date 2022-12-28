@@ -25,7 +25,13 @@ const ViewEvent = ({
         <>
             <div className="c-View-event__Middle c-Middle">
                 <div className="c-Middle__Pic">
-                    <Image priority src={image!} alt="Event poster" fill />
+                    <Image
+                        priority
+                        src={image!}
+                        alt="Event poster"
+                        width={300}
+                        height={300}
+                    />
                 </div>
 
                 <div className="c-Middle__Info c-Info">
@@ -87,7 +93,7 @@ const ViewEvent = ({
             <div className="c-View-event__View-all-events">
                 <Button
                     text="Back to all events"
-                    onClickFn={() => router.push("/")}
+                    onClickFn={() => router.push("/events")}
                     arrow
                 />
             </div>

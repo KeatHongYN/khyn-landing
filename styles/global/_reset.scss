@@ -21,6 +21,13 @@ html {
     font-size: 62.5%;
     background-color: #fff;
     scroll-behavior: smooth;
+
+    @media (max-width: 1000px) {
+        font-size: 9px;
+    }
+    @media (max-width: 500px) {
+        font-size: 8.5px;
+    }
 }
 
 *,

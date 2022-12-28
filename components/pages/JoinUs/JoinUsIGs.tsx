@@ -19,59 +19,26 @@ const JoinUsIG = ({
                 hadEvenId ? "even" : "odd"
             }`}
         >
-            {hadEvenId ? (
-                <>
-                    <div className="c-Join-us-ig__Details c-Details">
-                        <h1>{name}</h1>
-                        <p>{description}</p>
-                        <div className="c-Details__Btns c-Btns">
-                            <ExternalLinkButton
-                                text="Sign up"
-                                href={signUpLink}
-                            />
-                            <ExternalLinkButton
-                                text="Learn more"
-                                href={learnMoreLink}
-                                variation={BTN_VARIATION_ENUM.PRIMARY_EMPTY}
-                            />
-                        </div>
-                    </div>
-                    <div className="c-Join-us-ig__Img c-Img">
-                        <Image
-                            width={200}
-                            height={200}
-                            src={imgFilePath}
-                            alt="interest group"
-                        />
-                    </div>
-                </>
-            ) : (
-                <>
-                    <div className="c-Join-us-ig__Img c-Img">
-                        <Image
-                            width={200}
-                            height={200}
-                            src={imgFilePath}
-                            alt="interest group"
-                        />
-                    </div>
-                    <div className="c-Join-us-ig__Details c-Details">
-                        <h1>{name}</h1>
-                        <p>{description}</p>
-                        <div className="c-Details__Btns c-Btns">
-                            <ExternalLinkButton
-                                text="Sign up"
-                                href={signUpLink}
-                            />
-                            <ExternalLinkButton
-                                text="Learn more"
-                                href={learnMoreLink}
-                                variation={BTN_VARIATION_ENUM.PRIMARY_EMPTY}
-                            />
-                        </div>
-                    </div>
-                </>
-            )}
+            <div className="c-Join-us-ig__Details c-Details">
+                <h1>{name}</h1>
+                <p>{description}</p>
+                <div className="c-Details__Btns c-Btns">
+                    <ExternalLinkButton text="Sign up" href={signUpLink} />
+                    <ExternalLinkButton
+                        text="Learn more"
+                        href={learnMoreLink}
+                        variation={BTN_VARIATION_ENUM.PRIMARY_EMPTY}
+                    />
+                </div>
+            </div>
+            <div className="c-Join-us-ig__Img c-Img">
+                <Image
+                    width={200}
+                    height={200}
+                    src={imgFilePath}
+                    alt="interest group"
+                />
+            </div>
         </div>
     );
 };
