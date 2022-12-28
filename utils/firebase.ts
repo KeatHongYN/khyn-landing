@@ -72,9 +72,12 @@ const firebaseFn = (() => {
                 const oneEvent = doc.data();
                 events.push({
                     ...oneEvent,
-                    date: formatDate(oneEvent.date),
-                    time: formatTime(oneEvent.time),
-                    price: formatPrice(oneEvent.price, oneEvent.multi_price),
+                    formatted_date: formatDate(oneEvent.date),
+                    formatted_time: formatTime(oneEvent.time),
+                    formatted_price: formatPrice(
+                        oneEvent.price,
+                        oneEvent.multi_price
+                    ),
                     id: doc.id
                 });
                 return doc.data();
@@ -105,9 +108,9 @@ const firebaseFn = (() => {
                 const data = docSnaphot.data();
                 event = recursiveCamelCase({
                     ...data,
-                    date: formatDate(data.date),
-                    time: formatTime(data.time),
-                    price: formatPrice(data.price, data.multi_price),
+                    formatted_date: formatDate(data.date),
+                    formatted_time: formatTime(data.time),
+                    formatted_price: formatPrice(data.price, data.multi_price),
                     id: docSnaphot.id
                 });
             } else {

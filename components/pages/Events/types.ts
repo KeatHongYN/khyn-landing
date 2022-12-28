@@ -34,11 +34,10 @@ export interface SingularRawCamelCasedEvent {
     link: string | null;
 }
 
-export interface SingularEvent
-    extends Omit<SingularRawCamelCasedEvent, "price" | "date" | "time"> {
-    date: string | null;
-    time: string | null;
-    price: string | null | undefined;
+export interface SingularEvent extends SingularRawCamelCasedEvent {
+    formattedDate: string | null;
+    formattedTime: string | null;
+    formattedPrice: string | null | undefined;
 }
 
 export type EventType = SingularEvent[];

@@ -6,6 +6,7 @@ import Pill from "../../../shared/Pill";
 import ExternalLinkButton from "../../../shared/Button/ExternalLinkButton";
 import Button from "../../../shared/Button";
 import { ViewEventProps } from "./types";
+import { PILL_VARIATION_ENUM } from "../../../../config/enum";
 
 const ViewEvent = ({
     id,
@@ -18,9 +19,53 @@ const ViewEvent = ({
     image,
     price,
     multiPrice,
-    link
+    link,
+    formattedDate,
+    formattedTime,
+    formattedPrice
 }: ViewEventProps): JSX.Element => {
     const router = useRouter();
+
+    const renderPill = (): JSX.Element | null => {
+        if (date) {
+            const timeNowUnix = Date.now();
+            const startDate = (date.start && parseInt(date.start, 10)) || null;
+            const endDate = (date.end && parseInt(date.end, 10)) || null;
+
+            if (
+                startDate &&
+                endDate &&
+                startDate >= timeNowUnix &&
+                endDate <= timeNowUnix
+            ) {
+                return (
+                    <Pill
+                        text="Event in progress"
+                        variation={PILL_VARIATION_ENUM.WARNING}
+                    />
+                );
+            }
+
+            if (
+                (startDate && startDate < timeNowUnix) ||
+                (endDate && endDate < timeNowUnix)
+            ) {
+                return (
+                    <Pill
+                        text="Event is over"
+                        variation={PILL_VARIATION_ENUM.WARNING}
+                    />
+                );
+            }
+        }
+
+        if (volunteersNeeded) {
+            return <Pill text="Volunteers Needed" />;
+        }
+
+        return null;
+    };
+
     return (
         <>
             <div className="c-View-event__Middle c-Middle">
@@ -36,11 +81,7 @@ const ViewEvent = ({
 
                 <div className="c-Middle__Info c-Info">
                     <h1>{title}</h1>
-                    <span className="c-Info__Pill">
-                        {volunteersNeeded ? (
-                            <Pill text="Volunteers Needed" />
-                        ) : null}
-                    </span>
+                    <span className="c-Info__Pill">{renderPill()}</span>
                     <span className="c-Info__Location c-Location">
                         <Icon
                             className="c-Location__Icon"
@@ -54,18 +95,18 @@ const ViewEvent = ({
                                 className="c-Date__Icon"
                                 icon="akar-icons:calendar"
                             />
-                            <p>{date || "-"}</p>
+                            <p>{formattedDate || "-"}</p>
                         </span>
                         <span className="c-Date-and-time__Time c-Time">
                             <Icon
                                 className="c-Time__Icon"
                                 icon="bx:time-five"
                             />
-                            <p>{time || "-"}</p>
+                            <p>{formattedTime || "-"}</p>
                         </span>
                     </div>
                     <div className="c-Info__Price">
-                        <h2>{price || "-"}</h2>
+                        <h2>{formattedPrice || "-"}</h2>
                         {multiPrice ? (
                             <p>
                                 View the full prices on the event&apos;s
