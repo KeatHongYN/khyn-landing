@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -25,19 +26,31 @@ const ViewEvent = ({
     formattedPrice
 }: ViewEventProps): JSX.Element => {
     const router = useRouter();
+    const [isEventInProgress, setIsEventInProgress] = useState(false);
+    const [isEventOver, setIsEventOver] = useState(false);
+
+    useEffect(() => {
+        const timeNowUnix = Date.now();
+        const startDate = (date.start && parseInt(date.start, 10)) || null;
+        const endDate = (date.end && parseInt(date.end, 10)) || null;
+
+        if (startDate && endDate) {
+            if (startDate <= timeNowUnix && endDate >= timeNowUnix) {
+                setIsEventInProgress(true);
+            }
+        }
+
+        if (
+            (startDate && startDate < timeNowUnix) ||
+            (endDate && endDate < timeNowUnix)
+        ) {
+            setIsEventOver(true);
+        }
+    }, []);
 
     const renderPill = (): JSX.Element | null => {
         if (date) {
-            const timeNowUnix = Date.now();
-            const startDate = (date.start && parseInt(date.start, 10)) || null;
-            const endDate = (date.end && parseInt(date.end, 10)) || null;
-
-            if (
-                startDate &&
-                endDate &&
-                startDate >= timeNowUnix &&
-                endDate <= timeNowUnix
-            ) {
+            if (isEventInProgress) {
                 return (
                     <Pill
                         text="Event in progress"
@@ -46,10 +59,7 @@ const ViewEvent = ({
                 );
             }
 
-            if (
-                (startDate && startDate < timeNowUnix) ||
-                (endDate && endDate < timeNowUnix)
-            ) {
+            if (isEventOver) {
                 return (
                     <Pill
                         text="Event is over"
@@ -115,7 +125,7 @@ const ViewEvent = ({
                         ) : null}
                     </div>
                     <ExternalLinkButton
-                        disabled={!!link}
+                        disabled={!!link || isEventOver}
                         href={link || ""}
                         text="Find out more"
                     />

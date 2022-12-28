@@ -58,13 +58,9 @@ const FooterMobile = (): JSX.Element => (
                             className="c-List__Anchor"
                             showIcon={false}
                         />
-                        <ExternalLinkButton
-                            text="Contribute"
-                            href="https://github.com/KeatHongYN"
-                            variation={BTN_VARIATION_ENUM.KOSONG}
-                            className="c-List__Anchor"
-                            showIcon={false}
-                        />
+                        <Link className="c-List__Anchor" href="/sitemap">
+                            Sitemap
+                        </Link>
                     </div>
                 </div>
             </div>

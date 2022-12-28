@@ -1,0 +1,30 @@
+.c-Sitemap {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 100px;
+    padding-bottom: 100px;
+
+    @media (max-width: 1000px) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    h1 {
+        font-size: $font-large;
+    }
+    &__Map {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        a {
+            margin: 10px 0;
+            font-size: $font-small;
+            font-weight: 600;
+            color: $paym-blue;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
@@ -20,7 +21,10 @@ const EventListItem = ({
     time,
     volunteersNeeded,
     image,
-    price
+    price,
+    formattedDate,
+    formattedTime,
+    formattedPrice
 }: EventListItemProps): JSX.Element => {
     const router = useRouter();
 
@@ -59,18 +63,18 @@ const EventListItem = ({
                             className="c-Date__Icon"
                             icon="akar-icons:calendar"
                         />
-                        <p>{date || "-"}</p>
+                        <p>{formattedDate || "-"}</p>
                     </span>
                     <span className="c-Date-and-time__Time c-Time">
                         <Icon className="c-Time__Icon" icon="bx:time-five" />
-                        <p>{time || "-"}</p>
+                        <p>{formattedTime || "-"}</p>
                     </span>
                 </div>
                 <div className="c-Desc__Bottom c-Bottom">
                     {volunteersNeeded ? (
                         <Pill text="Volunteers Needed" />
                     ) : null}
-                    <h2>{price}</h2>
+                    <h2>{formattedPrice}</h2>
                 </div>
             </div>
         </div>

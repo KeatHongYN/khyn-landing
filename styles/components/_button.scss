@@ -140,6 +140,12 @@
     &__Kosong {
         padding: 0;
         font-weight: normal;
+        -webkit-user-select: initial;
+        -khtml-user-select: initial;
+        -moz-user-select: initial;
+        -ms-user-select: initial;
+        -o-user-select: initial;
+        user-select: initial;
 
         &:hover {
             color: $paym-blue !important;
