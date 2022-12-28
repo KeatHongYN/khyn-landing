@@ -1,18 +1,22 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { PROD_HOST } from "../config/constants";
 import useBrowserLayoutEffect from "../hooks/useBrowserLayoutEffect";
 import Footer from "./Footer";
 import Header from "./Header";
-import Title from "./Title";
+import SEO from "./SEO";
 import { MainLayoutProps } from "./types";
 
 const MainLayout = ({
     children,
     maxBodyWidth = false,
-    title
+    title,
+    openGraph
 }: MainLayoutProps): JSX.Element => {
     const [windowWidth, setWindowWidth] = useState<number | undefined>(
         undefined
     );
+    const router = useRouter();
 
     useBrowserLayoutEffect(() => {
         const changeWindowSize = () => {
@@ -23,9 +27,14 @@ const MainLayout = ({
         return () => window.removeEventListener("resize", changeWindowSize);
     }, []);
 
+    const customOpenGraph = {
+        ...openGraph,
+        ogUrl: `${PROD_HOST}${router.asPath}`
+    };
+
     return (
         <>
-            <Title title={title} />
+            <SEO title={title} openGraph={customOpenGraph} />
             <Header windowWidth={windowWidth} />
             <main className="c-Main-layout">
                 {maxBodyWidth ? (

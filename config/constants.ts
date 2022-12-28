@@ -28,8 +28,9 @@ export const FIREBASE_CONFIG = {
 };
 
 // URL Links
+export const PROD_HOST = "https://keathongyouths.sg";
 const LANDING_PAGE_BASE_URLS = {
-    PROD: "https://keathongyouths.sg",
+    PROD: PROD_HOST,
     DEV: `http://localhost:${PORT}`,
     LOCAL: `http://localhost:${PORT}`
 };

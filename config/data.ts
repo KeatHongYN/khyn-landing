@@ -40,15 +40,19 @@ export const FAQ_LIST = [
 export const HOME_HERO_PIC_LIST = [
     {
         fileId: 1,
-        filePath: "/assets/img/test-mw.png"
+        filePath: "/assets/img/home/carousel/home-carousel-1.jpg"
     },
     {
         fileId: 2,
-        filePath: "/assets/img/test-1.png"
+        filePath: "/assets/img/home/carousel/home-carousel-2.jpg"
     },
     {
         fileId: 3,
-        filePath: "/assets/img/test-2.png"
+        filePath: "/assets/img/home/carousel/home-carousel-3.jpg"
+    },
+    {
+        fileId: 4,
+        filePath: "/assets/img/home/carousel/home-carousel-4.jpg"
     }
 ];
 
