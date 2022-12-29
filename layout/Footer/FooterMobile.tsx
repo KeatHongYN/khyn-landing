@@ -13,7 +13,7 @@ import {
     KHYN_KHR_URL,
     KHYN_LINKTREE_URL,
     KHYN_TELEGRAM_URL,
-    VERSION_NO
+    VERSION
 } from "../../config/constants";
 import { BTN_VARIATION_ENUM } from "../../config/enum";
 
@@ -143,7 +143,7 @@ const FooterMobile = (): JSX.Element => (
         </div>
         <div className="c-Footer-desktop__Version c-Version">
             <Link className="c-Version__Link" href="/release-notes">
-                {VERSION_NO}
+                {VERSION}
             </Link>
         </div>
     </div>

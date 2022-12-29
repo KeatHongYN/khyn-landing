@@ -3,7 +3,7 @@
  * Contains general constants/config
  */
 
-enum ENVIRONMENT_ENUMS {
+export enum ENVIRONMENT_ENUMS {
     PROD = "PROD",
     DEV = "DEV",
     LOCAL = "LOCAL"
@@ -14,8 +14,13 @@ export const ENVIRONMENT: ENVIRONMENT_ENUMS =
     ENVIRONMENT_ENUMS.PROD;
 export const DISABLE_DEV_FLAG =
     process.env.NEXT_PUBLIC_DISABLE_DEV_FLAG || false;
-export const VERSION_NO = `LANDING-1.0.0${ENVIRONMENT === "DEV" ? "-DEV" : ""}`;
+export const VERSION = `LANDING-1.0.0${
+    ENVIRONMENT === "PROD" ? "" : `-${ENVIRONMENT}`
+}`;
 export const PORT = process.env.NEXT_PUBLIC_PORT || 3000;
+export const DEBUG = process.env.NEXT_PUBLIC_DEBUG || false;
+export const SENTRY_DSN =
+    process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
 
 export const FIREBASE_CONFIG = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,

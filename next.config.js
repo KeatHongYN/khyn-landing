@@ -1,3 +1,4 @@
+const { withSentryConfig } = require("@sentry/nextjs");
 const withMDX = require("@next/mdx")({
     extension: /\.mdx?$/,
     options: {
@@ -22,7 +23,15 @@ const nextConfig = withMDX({
     images: {
         domains: ["picsum.photos"]
     },
-    pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"]
+    pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+    sentry: {
+        hideSourceMaps: true
+    }
 });
 
-module.exports = nextConfig;
+const sentryWebpackPluginOptions = {
+    silent: process.env.NEXT_PUBLIC_ENVIRONMENT !== "PROD" // Suppresses all logs
+    // https://github.com/getsentry/sentry-webpack-plugin#options.
+};
+
+module.exports = withSentryConfig(nextConfig, sentryWebpackPluginOptions);
