@@ -67,17 +67,3 @@ export const TESTIMONIAL_BG_META = {
         classSuffix: "blue"
     }
 };
-
-export enum ApiErrorCode {
-    SUCCESS = 0,
-    SERVER_ERROR = 1,
-    INVALID_PARAMS = 2,
-    INVALID_METHOD = 3
-}
-
-export const API_ERROR_CODE_MSG = {
-    [ApiErrorCode.SUCCESS]: "Success.",
-    [ApiErrorCode.SERVER_ERROR]: "Server error.",
-    [ApiErrorCode.INVALID_PARAMS]: "Invalid parameters.",
-    [ApiErrorCode.INVALID_METHOD]: "Method not allowed."
-};
