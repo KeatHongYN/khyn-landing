@@ -42,7 +42,8 @@ const Carousel = ({ pictureList }: CarouselProps): JSX.Element | null => {
                         height={350}
                         alt="picture"
                         key={`img-${onePicture.fileId}`}
-                        priority={onePicture.fileId === 1}
+                        priority
+                        unoptimized
                     />
                 ))}
             </div>

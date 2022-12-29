@@ -9,7 +9,7 @@ const SEO = ({
         ogTitle: "Official Keat Hong Youth Network Website",
         ogDescription:
             "We empower youths to make a difference in the community.",
-        ogImage: `${PROD_HOST}/assets/img/test-1.png`,
+        ogImage: `${PROD_HOST}/assets/img/avatar/avatar-weipin.jpeg`,
         ogUrl: PROD_HOST
     }
 }: SEOProps): JSX.Element => (

@@ -14,6 +14,7 @@ const JoinUsPictureBentoBox = ({
             width={100}
             height={100}
             alt="picture"
+            unoptimized
         />
         <Image
             className="c-Join-us-picture-bento-box__Two"
@@ -21,6 +22,7 @@ const JoinUsPictureBentoBox = ({
             width={100}
             height={100}
             alt="picture"
+            unoptimized
         />
         <Image
             className="c-Join-us-picture-bento-box__Three"
@@ -28,6 +30,7 @@ const JoinUsPictureBentoBox = ({
             width={100}
             height={100}
             alt="picture"
+            unoptimized
         />
         <Image
             className="c-Join-us-picture-bento-box__Four"
@@ -35,6 +38,7 @@ const JoinUsPictureBentoBox = ({
             width={100}
             height={100}
             alt="picture"
+            unoptimized
         />
     </div>
 );

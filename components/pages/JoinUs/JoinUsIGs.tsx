@@ -37,6 +37,7 @@ const JoinUsIG = ({
                     height={200}
                     src={imgFilePath}
                     alt="interest group"
+                    unoptimized
                 />
             </div>
         </div>

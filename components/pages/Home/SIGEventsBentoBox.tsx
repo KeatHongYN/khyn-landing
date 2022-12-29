@@ -11,6 +11,7 @@ const SIGEventsBentoBox = ({
             width={300}
             height={300}
             alt="picture"
+            unoptimized
         />
         <Image
             className="c-SIG-events-bento-box__Two"
@@ -18,6 +19,7 @@ const SIGEventsBentoBox = ({
             width={300}
             height={300}
             alt="picture"
+            unoptimized
         />
         <Image
             className="c-SIG-events-bento-box__Three"
@@ -25,6 +27,7 @@ const SIGEventsBentoBox = ({
             width={100}
             height={100}
             alt="picture"
+            unoptimized
         />
         <Image
             className="c-SIG-events-bento-box__Four"
@@ -32,6 +35,7 @@ const SIGEventsBentoBox = ({
             width={100}
             height={100}
             alt="picture"
+            unoptimized
         />
     </div>
 );

@@ -40,19 +40,15 @@ export const FAQ_LIST = [
 export const HOME_HERO_PIC_LIST = [
     {
         fileId: 1,
-        filePath: "/assets/img/home/carousel/home-carousel-1.jpg"
+        filePath: "/assets/img/home/home-carousel-1.jpg"
     },
     {
         fileId: 2,
-        filePath: "/assets/img/home/carousel/home-carousel-2.jpg"
+        filePath: "/assets/img/home/home-carousel-2.jpg"
     },
     {
         fileId: 3,
-        filePath: "/assets/img/home/carousel/home-carousel-3.jpg"
-    },
-    {
-        fileId: 4,
-        filePath: "/assets/img/home/carousel/home-carousel-4.jpg"
+        filePath: "/assets/img/home/home-carousel-3.jpg"
     }
 ];
 
@@ -62,58 +58,58 @@ export const HOME_SIG_EVENTS_LIST = [
         id: 1,
         heading: "Halloween",
         pictureFilePaths: {
-            one: "/assets/img/test-1.png", // number determines the position of the picture
-            two: "/assets/img/test-2.png",
-            three: "/assets/img/test-3.png",
-            four: "/assets/img/test-4.png"
+            one: "/assets/img/home/home-sig-halloween-1.jpg", // number determines the position of the picture
+            two: "/assets/img/home/home-sig-halloween-2.jpeg",
+            three: "/assets/img/home/home-sig-halloween-3.jpg",
+            four: "/assets/img/home/home-sig-halloween-4.jpg"
         }
     },
     {
         id: 2,
         heading: "Children Education Tours",
         pictureFilePaths: {
-            one: "/assets/img/test-1.png",
-            two: "/assets/img/test-2.png",
-            three: "/assets/img/test-4.png",
-            four: "/assets/img/test-3.png"
+            one: "/assets/img/home/home-sig-cet-1.JPG",
+            two: "/assets/img/home/home-sig-cet-2.JPG",
+            three: "/assets/img/home/home-sig-cet-3.JPG",
+            four: "/assets/img/home/home-sig-cet-4.jpeg"
         }
     },
     {
         id: 3,
         heading: "Migrant Workers Carnival",
         pictureFilePaths: {
-            one: "/assets/img/test-1.png",
-            two: "/assets/img/test-2.png",
-            three: "/assets/img/test-3.png",
-            four: "/assets/img/test-4.png"
+            one: "/assets/img/home/home-sig-mw-1.JPG", // number determines the position of the picture
+            two: "/assets/img/home/home-sig-mw-2.JPG",
+            three: "/assets/img/home/home-sig-mw-3.JPG",
+            four: "/assets/img/home/home-sig-mw-4.JPG"
         }
     },
     {
         id: 4,
         heading: "Youth Dialogue",
         pictureFilePaths: {
-            one: "/assets/img/test-1.png",
-            two: "/assets/img/test-2.png",
-            three: "/assets/img/test-4.png",
-            four: "/assets/img/test-3.png"
-        }
-    },
-    {
-        id: 5,
-        heading: "Keat Hong Recycles",
-        pictureFilePaths: {
-            one: "/assets/img/test-1.png",
-            two: "/assets/img/test-2.png",
-            three: "/assets/img/test-3.png",
-            four: "/assets/img/test-4.png"
+            one: "/assets/img/home/home-sig-yd-1.JPG",
+            two: "/assets/img/home/home-sig-yd-2.jpg",
+            three: "/assets/img/home/home-sig-yd-3.JPEG",
+            four: "/assets/img/home/home-sig-yd-4.JPG"
         }
     }
+    // {
+    //     id: 5,
+    //     heading: "Keat Hong Recycles",
+    //     pictureFilePaths: {
+    //         one: "/assets/img/home/home-sig-yd-1.JPG",
+    //         two: "/assets/img/home/home-sig-yd-2.jpg",
+    //         three: "/assets/img/home/home-sig-yd-3.JPEG",
+    //         four: "/assets/img/home/home-sig-yd-4.JPG"
+    //     }
+    // }
 ];
 
 export const HOME_TESTIMONIAL_LIST = [
     {
         id: 1,
-        avatarFilePath: "/assets/img/weipin.png",
+        avatarFilePath: "/assets/img/avatar/avatar-weipin.jpeg",
         text: "Joining the YN has been very humbling and empowering. I got to make friends from diverse backgrounds, grow my skillsets, and benefit my community!",
         name: "Teo Wei Pin",
         position: "Student, Nanyang Technological University",
@@ -121,7 +117,7 @@ export const HOME_TESTIMONIAL_LIST = [
     },
     {
         id: 2,
-        avatarFilePath: "/assets/img/weipin.png",
+        avatarFilePath: "/assets/img/avatar/avatar-estrella.jpeg",
         text: "Joining the YN has brought me closer to the community! From ideating and executing various events that bring fun to everyone, just like in the Halloween carnival of 2022!",
         name: "Estrella Kwok",
         position: "Student, Singapore Polytechnic",
@@ -129,7 +125,7 @@ export const HOME_TESTIMONIAL_LIST = [
     },
     {
         id: 3,
-        avatarFilePath: "/assets/img/weipin.png",
+        avatarFilePath: "/assets/img/avatar/avatar-jamie.jpeg",
         text: "Joining the YN has opened many new doors for me! I got to try things I never thought possible, even being part of the musical “Lost in Choa Chu Kang” for Countdown 2022!",
         name: "Jamie Wu",
         position: "Student, University of Melbourne",
@@ -138,16 +134,16 @@ export const HOME_TESTIMONIAL_LIST = [
 ];
 
 export const JOIN_US_PICTURE_LIST = {
-    one: "/assets/img/test-1.png", // number determines the position of the picture
-    two: "/assets/img/test-2.png",
-    three: "/assets/img/test-4.png",
-    four: "/assets/img/test-3.png"
+    one: "/assets/img/join-us/join-us-bento-1.jpg", // number determines the position of the picture
+    two: "/assets/img/join-us/join-us-bento-2.jpeg",
+    three: "/assets/img/join-us/join-us-bento-3.jpeg",
+    four: "/assets/img/join-us/join-us-bento-4.jpg"
 };
 
 export const JOIN_US_IG_LIST = [
     {
         id: 1,
-        imgFilePath: "/assets/img/weipin.png",
+        imgFilePath: "/assets/img/join-us/join-us-ig-gic.jpeg",
         name: "Group to Initiate Change",
         description:
             "Established in 2011, Group to Initiate Change (GIC) is the YN’s Community Service Interest Group. The group hopes to provide relevant assistance to needy residents in the constituency, and have been active in organising home visits, house makeovers and grocery distributions. GIC also conducts talks and trainings for their members to help develop skills and knowledge that will enable them to help their beneficiaries effectively. In the long term, they envision to improve each beneficiary’s well-being and socio-economic conditions.",
@@ -156,7 +152,7 @@ export const JOIN_US_IG_LIST = [
     },
     {
         id: 2,
-        imgFilePath: "/assets/img/weipin.png",
+        imgFilePath: "/assets/img/join-us/join-us-ig-music-box.jpeg",
         name: "MusicBox Interest Group",
         description:
             "The group was formed to engage youths who have talent in performing, be it singing, dancing, playing musical instruments or acting. Members have been regularly invited to perform at community events, such as the New Year Countdown and Mid-Autumn Festival.",
@@ -165,7 +161,7 @@ export const JOIN_US_IG_LIST = [
     },
     {
         id: 3,
-        imgFilePath: "/assets/img/weipin.png",
+        imgFilePath: "/assets/img/join-us/join-us-ig-a2g.jpeg",
         name: "The A2G Group",
         description:
             "The “Aspire to Bring Cheer and Delight through Engaging our Future Generation (ABCDEFG or A2G)” group was formed in 2013, after the success of the Children Educational Tours (CETs). The group brings volunteers who enjoy working with children together to organise exciting activities for them, and have also started holding Children’s Art Sunday and children workshops. Looking forward, A2G hopes to promote family bonding by increasing parents’ involvement in their children’s activities.",
@@ -193,16 +189,16 @@ export const ABOUT_US_CORE_DOMAINS_LIST = [
     {
         id: 4,
         name: "Health & Wellness",
-        imgFilePath: "/assets/img/test-2.png"
+        imgFilePath: "/assets/img/about-us/about-us-bento-health.jpeg"
     },
     {
         id: 5,
         name: "Community Service",
-        imgFilePath: "/assets/img/test-2.png"
+        imgFilePath: "/assets/img/about-us/about-us-bento-cs.jpeg"
     },
     {
         id: 6,
         name: "Children & Family",
-        imgFilePath: "/assets/img/test-2.png"
+        imgFilePath: "/assets/img/about-us/about-us-bento-cf.jpg"
     }
 ];

@@ -17,7 +17,9 @@ const ExternalLinkButton = ({
             {...(disabled ? null : { href })}
             target="_blank"
             rel="noopener noreferrer"
-            className={`c-External-link-btn c-External-link-btn__${classSuffix} ${className}`}
+            className={`c-External-link-btn c-External-link-btn__${classSuffix} ${className} ${
+                disabled ? "c-External-link-btn--disabled" : ""
+            }`}
         >
             {text}
             {showIcon && (
