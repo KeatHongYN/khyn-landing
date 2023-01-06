@@ -8,7 +8,7 @@ import { DEBUG, ENVIRONMENT, SENTRY_DSN, VERSION } from "./config/constants";
 Sentry.init({
     dsn: SENTRY_DSN,
     // Adjust this value in production, or use tracesSampler for greater control
-    tracesSampleRate: 1.0,
+    tracesSampleRate: 0.5,
     debug: DEBUG,
     release: VERSION,
     environment: ENVIRONMENT

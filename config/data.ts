@@ -174,17 +174,17 @@ export const ABOUT_US_CORE_DOMAINS_LIST = [
     {
         id: 1,
         name: "Environment & Sustainability",
-        imgFilePath: "/assets/img/test-2.png"
+        imgFilePath: "/assets/img/about-us/about-us-bento-health.jpeg"
     },
     {
         id: 2,
         name: "Sports & Adventure",
-        imgFilePath: "/assets/img/test-2.png"
+        imgFilePath: "/assets/img/about-us/about-us-bento-health.jpeg"
     },
     {
         id: 3,
         name: "Arts & Culture",
-        imgFilePath: "/assets/img/test-2.png"
+        imgFilePath: "/assets/img/about-us/about-us-bento-health.jpeg"
     },
     {
         id: 4,

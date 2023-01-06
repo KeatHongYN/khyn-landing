@@ -1,4 +1,7 @@
 /* eslint-disable no-unused-vars */
+
+import { ERROR_ENUM } from "../config/error";
+
 // helper.ts
 export type FormatPriceRV = string | null | undefined;
 
@@ -30,3 +33,12 @@ export interface Logger {
 }
 
 export type LogLevel = "log" | "warn" | "error";
+
+export interface APIFormatState {
+    success: boolean;
+    data: any;
+    errorType: ERROR_ENUM | null;
+    loading: boolean;
+}
+
+export type APIFormat = [boolean, any, ERROR_ENUM | null];

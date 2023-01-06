@@ -14,7 +14,6 @@ const Sitemap = (): JSX.Element => (
                 <Link href="/events">Events</Link>
                 <Link href="/join-us">Join us</Link>
                 <Link href="/release-notes">Release notes</Link>
-                <Link href="/blog">Blog</Link>
                 <Link href="/sitemap">Sitemap</Link>
             </div>
         </div>

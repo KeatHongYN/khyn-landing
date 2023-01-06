@@ -1,13 +1,3 @@
-import { ERROR_ENUM } from "../../../config/error";
-
-export interface EventsPageProps {
-    getEventsResult: {
-        success: boolean;
-        data: any[];
-        errorType: ERROR_ENUM | null;
-    };
-}
-
 interface SeparateTimeFormat {
     hour: number | null;
     minute: number | null;

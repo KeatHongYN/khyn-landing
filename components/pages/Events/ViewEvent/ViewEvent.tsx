@@ -99,7 +99,7 @@ const ViewEvent = ({
                         />
                         <p>{location}</p>
                     </span>
-                    <div className="c-Info__ c-Date-and-time">
+                    <div className="c-Info__Date-and-time c-Date-and-time">
                         <span className="c-Date-and-time__Date c-Date">
                             <Icon
                                 className="c-Date__Icon"

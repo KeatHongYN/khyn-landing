@@ -21,6 +21,7 @@ import {
     recursiveCamelCase
 } from "./helper";
 import { ERROR_ENUM } from "../config/error";
+import { APIFormat } from "./types";
 
 // Initialize Firebase
 const app = initializeApp(FIREBASE_CONFIG);
@@ -56,7 +57,7 @@ const firebaseFn = (() => {
         return result;
     };
 
-    const getEvents = async () => {
+    const getEvents = async (): Promise<APIFormat> => {
         try {
             const q = query(
                 collection(firestore, "events"),
@@ -96,7 +97,7 @@ const firebaseFn = (() => {
         }
     };
 
-    const getEvent = async (eventId: string) => {
+    const getEvent = async (eventId: string): Promise<APIFormat> => {
         try {
             const docRef = doc(firestore, "events", eventId);
             const docSnaphot = await getDoc(docRef);

@@ -13,7 +13,7 @@ export enum ERROR_ENUM {
     FIREBASE_INVALID_EVENT_ID = 3001
 }
 
-export const ERROR_META = {
+export const ERROR_META: any = {
     [ERROR_ENUM.PAGE_NOT_FOUND]: {
         errorCode: ERROR_ENUM[ERROR_ENUM.PAGE_NOT_FOUND],
         errorType: "ERROR_ENUM.PAGE_NOT_FOUND",

@@ -1,32 +1,49 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import MainLayout from "../../../layout/MainLayout";
-import { EventsPageProps, EventType } from "./types";
 import EventList from "./EventList";
 import EventListSkeleton from "./EventListSkeleton";
 import Error from "../../shared/Error";
-import { ERROR_META } from "../../../config/error";
+import { ERROR_ENUM, ERROR_META } from "../../../config/error";
+import firebaseFn from "../../../utils/firebase";
+import { APIFormatState } from "../../../utils/types";
 
-const EventsPage = ({
-    getEventsResult: { success, data, errorType }
-}: EventsPageProps): JSX.Element => {
-    const [events, setEvents] = useState<EventType | null>(null);
-    const [loadingEvents, setLoadingEvents] = useState(false);
+const EventsPage = (): JSX.Element => {
+    const [getEventsResult, setGetEventsResult] = useState<APIFormatState>({
+        success: false,
+        data: null,
+        errorType: ERROR_ENUM.FIREBASE_INVALID_EVENT_ID,
+        loading: true
+    });
+    const router = useRouter();
 
     useEffect(() => {
-        if (success && data) {
-            setEvents(data);
-        }
+        (async () => {
+            if (!router.isReady) {
+                return;
+            }
+
+            const [success, data, errorType] = await firebaseFn.getEvents();
+            setGetEventsResult({
+                success,
+                data,
+                errorType,
+                loading: false
+            });
+        })();
     }, []);
 
     const renderListControl = (): JSX.Element => {
-        if (loadingEvents) {
+        if (getEventsResult.loading) {
             return <EventListSkeleton />;
         }
-        if (success) {
-            return <EventList events={events} />;
+        if (getEventsResult.success) {
+            return <EventList events={getEventsResult.data} />;
         }
-        return <Error message={ERROR_META[errorType!].message} />;
+        return (
+            <Error message={ERROR_META[getEventsResult.errorType!].message} />
+        );
     };
 
     return (
