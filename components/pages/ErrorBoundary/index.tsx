@@ -2,7 +2,9 @@
 /* eslint-disable react/state-in-constructor */
 import React, { Component, ErrorInfo, ReactNode } from "react";
 import { Icon } from "@iconify/react";
+import * as Sentry from "@sentry/nextjs";
 import Button from "../../shared/Button";
+import { DEBUG } from "../../../utils/logger";
 
 interface Props {
     children?: ReactNode;
@@ -23,7 +25,11 @@ class ErrorBoundary extends Component<Props, State> {
     }
 
     public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-        console.error("Uncaught error:", error, errorInfo);
+        DEBUG.error("Error Boundary:", error, errorInfo);
+        Sentry.withScope((scope) => {
+            scope.setLevel("fatal");
+            Sentry.captureException(`[Error Boundary] ${error}`);
+        });
     }
 
     public render() {

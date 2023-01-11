@@ -3,15 +3,21 @@
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
 import * as Sentry from "@sentry/nextjs";
-import { DEBUG, ENVIRONMENT, SENTRY_DSN, VERSION } from "./config/constants";
+import {
+    DEBUG,
+    ENVIRONMENT,
+    ENVIRONMENT_ENUMS,
+    SENTRY_DSN,
+    VERSION
+} from "./config/constants";
 
 Sentry.init({
     dsn: SENTRY_DSN,
-    // Adjust this value in production, or use tracesSampler for greater control
     tracesSampleRate: 0.5,
     debug: DEBUG,
     release: VERSION,
-    environment: ENVIRONMENT
+    environment: ENVIRONMENT,
+    enabled: ENVIRONMENT !== ENVIRONMENT_ENUMS[LOCAL]
     // ...
     // Note: if you want to override the automatic release value, do not set a
     // `release` value here - use the environment variable `SENTRY_RELEASE`, so

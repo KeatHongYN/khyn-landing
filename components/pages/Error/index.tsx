@@ -1,6 +1,8 @@
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
 import { ErrorProps } from "next/error";
+import * as Sentry from "@sentry/nextjs";
+import React, { useEffect } from "react";
 import Button from "../../shared/Button";
 import { ERROR_ENUM, ERROR_PAGE_META } from "../../../config/error";
 import MainLayout from "../../../layout/MainLayout";
@@ -11,6 +13,7 @@ function Error({ statusCode }: ErrorProps): JSX.Element {
     let classSuffix = "";
     let header = "";
     let desc = "";
+    let errorEnum = "";
     switch (statusCode) {
         case 404: {
             classSuffix =
@@ -23,14 +26,25 @@ function Error({ statusCode }: ErrorProps): JSX.Element {
             classSuffix = ERROR_PAGE_META[ERROR_ENUM.SERVER_ERROR].classSuffix;
             header = ERROR_PAGE_META[ERROR_ENUM.SERVER_ERROR].header;
             desc = ERROR_PAGE_META[ERROR_ENUM.SERVER_ERROR].desc;
+            errorEnum = "ERROR_ENUM.SERVER_ERROR";
             break;
         }
         default: {
             classSuffix = ERROR_PAGE_META[ERROR_ENUM.GENERIC].classSuffix;
             header = ERROR_PAGE_META[ERROR_ENUM.GENERIC].header;
             desc = ERROR_PAGE_META[ERROR_ENUM.GENERIC].desc;
+            errorEnum = "ERROR_ENUM.GENERIC";
         }
     }
+
+    useEffect(() => {
+        if (statusCode !== 404) {
+            Sentry.withScope((scope) => {
+                scope.setLevel("fatal");
+                Sentry.captureException(`[App Error] ${errorEnum}`);
+            });
+        }
+    }, []);
 
     return (
         <MainLayout title="Error - Keat Hong Youth Network" maxBodyWidth>
@@ -49,15 +63,5 @@ function Error({ statusCode }: ErrorProps): JSX.Element {
         </MainLayout>
     );
 }
-
-Error.getInitialProps = ({ res, err }: { res: any; err: any }) => {
-    let statusCode = 404;
-    if (res) {
-        statusCode = res.statusCode;
-    } else if (err) {
-        statusCode = err.StatusCode;
-    }
-    return { statusCode };
-};
 
 export default Error;

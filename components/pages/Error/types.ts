@@ -1,6 +1,6 @@
-import { ERROR_PAGE_ENUM } from "../../../config/enum";
+import { ERROR_ENUM } from "../../../config/error";
 
 export interface ErrorProps {
     statusCode?: number;
-    type?: ERROR_PAGE_ENUM;
+    type?: ERROR_ENUM;
 }
