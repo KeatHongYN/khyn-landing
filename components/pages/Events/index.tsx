@@ -8,6 +8,7 @@ import Error from "../../shared/Error";
 import { ERROR_ENUM, ERROR_META } from "../../../config/error";
 import firebaseFn from "../../../utils/firebase";
 import { APIFormatState } from "../../../utils/types";
+import { DEBUG } from "../../../utils/logger";
 
 const EventsPage = (): JSX.Element => {
     const [getEventsResult, setGetEventsResult] = useState<APIFormatState>({
@@ -20,10 +21,6 @@ const EventsPage = (): JSX.Element => {
 
     useEffect(() => {
         (async () => {
-            if (!router.isReady) {
-                return;
-            }
-
             const [success, data, errorType] = await firebaseFn.getEvents();
             setGetEventsResult({
                 success,

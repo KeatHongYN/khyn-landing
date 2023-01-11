@@ -13,7 +13,7 @@ import {
     query
 } from "firebase/firestore";
 import { ENVIRONMENT, FIREBASE_CONFIG } from "../config/constants";
-import { DEBUG } from "./logger";
+import { DEBUG, logSentryException } from "./logger";
 import {
     formatDate,
     formatPrice,
@@ -92,7 +92,11 @@ const firebaseFn = (() => {
 
             return [true, events, null];
         } catch (error) {
-            DEBUG.error(error);
+            logSentryException(
+                "ERROR_ENUM.FIREBASE_FAILURE",
+                "getEvents",
+                `error: ${error}`
+            );
             return [false, null, ERROR_ENUM.FIREBASE_FAILURE];
         }
     };
@@ -121,6 +125,11 @@ const firebaseFn = (() => {
             return [true, event, errorType];
         } catch (error) {
             DEBUG.error(error);
+            logSentryException(
+                "ERROR_ENUM.FIREBASE_FAILURE",
+                "getEvent",
+                `error: ${error}`
+            );
             return [false, null, ERROR_ENUM.FIREBASE_FAILURE];
         }
     };

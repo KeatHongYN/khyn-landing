@@ -1,11 +1,11 @@
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/router";
 import { ErrorProps } from "next/error";
-import * as Sentry from "@sentry/nextjs";
 import React, { useEffect } from "react";
 import Button from "../../shared/Button";
 import { ERROR_ENUM, ERROR_PAGE_META } from "../../../config/error";
 import MainLayout from "../../../layout/MainLayout";
+import { logSentryException } from "../../../utils/logger";
 
 function Error({ statusCode }: ErrorProps): JSX.Element {
     const router = useRouter();
@@ -39,10 +39,7 @@ function Error({ statusCode }: ErrorProps): JSX.Element {
 
     useEffect(() => {
         if (statusCode !== 404) {
-            Sentry.withScope((scope) => {
-                scope.setLevel("fatal");
-                Sentry.captureException(`[App Error] ${errorEnum}`);
-            });
+            logSentryException(errorEnum, "components/pages/Error/index.tsx");
         }
     }, []);
 
