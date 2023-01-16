@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 import Button from "../../shared/Button";
 import { BTN_VARIATION_ENUM } from "../../../config/enum";
 import MainLayout from "../../../layout/MainLayout";
@@ -11,6 +12,11 @@ import {
     HOME_TESTIMONIAL_LIST
 } from "../../../config/data";
 import Testimonials from "./Testimonials";
+import {
+    slideFromLeftAni,
+    slideFromRightAni,
+    textAni
+} from "../../../config/animation";
 
 const HomePage = () => {
     const router = useRouter();
@@ -29,7 +35,13 @@ const HomePage = () => {
                     <span className="c-Home__BG" />
                     {/* Hero */}
                     <div className="c-Home__Hero c-Hero">
-                        <div className="c-Hero__Left c-Left">
+                        <motion.div
+                            initial="offscreen"
+                            whileInView="onscreen"
+                            viewport={{ once: true }}
+                            variants={textAni}
+                            className="c-Hero__Left c-Left"
+                        >
                             <h1>
                                 We empower youths to <b>make a difference</b> in
                                 the community.
@@ -47,10 +59,16 @@ const HomePage = () => {
                                     variation={BTN_VARIATION_ENUM.PRIMARY_EMPTY}
                                 />
                             </div>
-                        </div>
-                        <div className="c-Hero__Right c-Right">
+                        </motion.div>
+                        <motion.div
+                            initial="offscreen"
+                            whileInView="onscreen"
+                            viewport={{ once: true, amount: 0.5 }}
+                            variants={slideFromRightAni}
+                            className="c-Hero__Right c-Right"
+                        >
                             <Carousel pictureList={HOME_HERO_PIC_LIST} />
-                        </div>
+                        </motion.div>
                     </div>
                     {/* Signature Events */}
                     <div className="c-Home__Sig-events c-Sig-events">
@@ -62,10 +80,28 @@ const HomePage = () => {
                     {/* Testimonials */}
                     <div className="c-Home__Testimonial c-Testimonial">
                         <h1>What our Volunteers Say</h1>
-                        <Testimonials testimonialList={HOME_TESTIMONIAL_LIST} />
+                        <motion.div
+                            initial="offscreen"
+                            whileInView="onscreen"
+                            viewport={{ once: true, amount: 0.5 }}
+                            variants={slideFromLeftAni}
+                        >
+                            <Testimonials
+                                testimonialList={HOME_TESTIMONIAL_LIST}
+                            />
+                        </motion.div>
                     </div>
                     {/* CTA */}
-                    <div className="c-Home__CTA c-CTA">
+                    <motion.div
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true, amount: 0.5 }}
+                        variants={slideFromRightAni}
+                        // transition={{
+                        //     staggerChildren: 0.5
+                        // }}
+                        className="c-Home__CTA c-CTA"
+                    >
                         <div className="c-CTA__Punchline c-Punchline">
                             <h2>Be part of the</h2>
                             <h1>Action.</h1>
@@ -83,7 +119,7 @@ const HomePage = () => {
                                 variation={BTN_VARIATION_ENUM.PRIMARY_EMPTY}
                             />
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </MainLayout>
         </>

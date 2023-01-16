@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { slideFromLeftAni, slideFromRightAni } from "../../../config/animation";
 import { BTN_VARIATION_ENUM } from "../../../config/enum";
 import ExternalLinkButton from "../../shared/Button/ExternalLinkButton";
 import { JoinUsIGSingularType, JoinUsIGsProps } from "./types";
@@ -11,12 +13,15 @@ const JoinUsIG = ({
     signUpLink,
     learnMoreLink
 }: JoinUsIGSingularType): JSX.Element => {
-    const hadEvenId = id % 2 === 0;
-
+    const hasEvenId = id % 2 === 0;
     return (
-        <div
+        <motion.div
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={hasEvenId ? slideFromLeftAni : slideFromRightAni}
             className={`c-Join-us-ig c-Join-us-ig--${
-                hadEvenId ? "even" : "odd"
+                hasEvenId ? "even" : "odd"
             }`}
         >
             <div className="c-Join-us-ig__Details c-Details">
@@ -40,7 +45,7 @@ const JoinUsIG = ({
                     unoptimized
                 />
             </div>
-        </div>
+        </motion.div>
     );
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Button from "../../shared/Button";
 import ExternalLinkButton from "../../shared/Button/ExternalLinkButton";
@@ -9,6 +10,7 @@ import JoinUsPictureBentoBox from "./JoinUsBentoBox";
 import { JOIN_US_IG_LIST, JOIN_US_PICTURE_LIST } from "../../../config/data";
 import JoinUsSocialLinks from "./JoinUsSocialLinks";
 import JoinUsIGs from "./JoinUsIGs";
+import { textAni } from "../../../config/animation";
 
 const JoinUsPage = (): JSX.Element => {
     const router = useRouter();
@@ -17,7 +19,13 @@ const JoinUsPage = (): JSX.Element => {
         <MainLayout title="Join us - Keat Hong Youth Network">
             <div className="c-Join-us">
                 {/* Hero */}
-                <div className="c-Join-us__Hero c-Hero">
+                <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.5 }}
+                    variants={textAni}
+                    className="c-Join-us__Hero c-Hero"
+                >
                     <h1>Join our Community</h1>
                     <p>
                         We engage the residents living in Keat Hong Constituency
@@ -38,7 +46,7 @@ const JoinUsPage = (): JSX.Element => {
                             variation={BTN_VARIATION_ENUM.PRIMARY_EMPTY}
                         />
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Pictures */}
                 <div className="c-Join-us__Pictures c-Pictures">

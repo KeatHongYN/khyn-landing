@@ -52,6 +52,12 @@ export const HOME_HERO_PIC_LIST = [
     }
 ];
 
+export const TEST_IMG_LIST = [
+    "/assets/img/home/home-carousel-1.jpg",
+    "/assets/img/home/home-carousel-2.jpg",
+    "/assets/img/home/home-carousel-3.jpg"
+];
+
 export const HOME_SIG_EVENTS_LIST = [
     // content is derived in the page itself.
     {
