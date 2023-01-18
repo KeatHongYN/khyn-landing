@@ -72,6 +72,6 @@ Please read [SECURITY.md](https://github.com/KeatHongYN/khyn-landing/blob/master
 
 <a href="#acknowledgements"></a>
 
-Thanks to **[Wei Pin](https://www.linkedin.com/in/wei-pin-teo-317374176/)** for compiling the images and helping out with the administrative work, and to **[Pin Zheng](https://www.linkedin.com/in/chai-pin-zheng-5610921aa/)** and **You Cheng** for lending their valuable input and expertise leading up to the initial release, and to **[Estrella](https://www.linkedin.com/in/estrella-kwok/)** and **Jamie** for their testimonials.
+Thanks to **[Wei Pin](https://www.linkedin.com/in/wei-pin-teo-317374176/)** for compiling the images and helping out with the administrative work, and to **[Pin Zheng](https://www.linkedin.com/in/chai-pin-zheng-5610921aa/)** and **You Cheng** for lending their valuable input and expertise leading up to the initial release, and to **[Estrella](https://www.linkedin.com/in/estrella-kwok/)** and **Jamie** for providing their testimonials.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
