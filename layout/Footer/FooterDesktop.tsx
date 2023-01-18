@@ -69,8 +69,8 @@ const FooterDesktop = () => (
         <div className="c-Footer-desktop__Bottom c-Bottom">
             <div className="c-Bottom__Copyright">
                 <p>
-                    Copyright &#169; 2022 Keat Hong Youth Network. All Rights
-                    Reserved.
+                    Copyright &#169; 2023 Keat Hong Youth Network. All rights
+                    reserved.
                 </p>
             </div>
             <div className="c-Bottom__Socials c-Socials">
