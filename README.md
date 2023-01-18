@@ -7,9 +7,9 @@
     <img src="public/assets/svg/logo-khyn.svg" alt="Logo" width="120" height="120">
   </a>
 
-<h3 align="center">Keat Hong Youth Network</h3>
+<h3 align="center">Keat Hong Youth Network Landing Site</h3>
   <p align="center">
-    Landing Site
+    #techforpublicgood
     <br />
     <br />
     <!-- <a href="https://www.keathongyouths.sg">Production Site (currently still old site)</a>
