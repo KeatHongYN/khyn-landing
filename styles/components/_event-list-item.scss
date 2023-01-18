@@ -28,32 +28,13 @@
     }
 
     .c-Img {
-        img {
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .c-No-image {
-            background-color: #f5f5f5;
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            width: 200px;
-            height: 200px;
-
-            &__Icon {
-                font-size: $font-large;
-            }
-
-            p {
-                font-size: $font-x-small;
-                font-weight: bold;
-            }
-        }
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 200px;
+        height: 200px;
     }
 
     .c-Desc {
@@ -149,10 +130,8 @@
 
     @media (max-width: 1000px) {
         .c-Img {
-            img {
-                width: 130px;
-                height: 130px;
-            }
+            width: 130px;
+            height: 130px;
         }
 
         .c-Desc {

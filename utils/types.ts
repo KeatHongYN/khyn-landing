@@ -6,8 +6,8 @@ import { ERROR_ENUM } from "../config/error";
 export type FormatPriceRV = string | null | undefined;
 
 export interface FormatDateParams {
-    start: string | null;
-    end: string | null;
+    start: any;
+    end: any;
 }
 export type FormatDateRV = string | null | Date;
 

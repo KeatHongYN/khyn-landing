@@ -31,7 +31,7 @@ export const slideFromRightAni = {
     }
 };
 
-export const textAni = {
+export const slideFromBottomAni = {
     offscreen: { y: 20, opacity: 0 },
     onscreen: {
         y: 0,

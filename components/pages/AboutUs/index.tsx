@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 import MainLayout from "../../../layout/MainLayout";
 import ImgBPGH from "../../../public/assets/img/partner-bpgh.png";
 import ImgJPJC from "../../../public/assets/img/partner-jpjc.png";
@@ -13,13 +14,20 @@ import {
 } from "../../../config/constants";
 import { FAQ_LIST } from "../../../config/data";
 import AboutUsCoreDomains from "./AboutUsCoreDomains";
+import { slideFromBottomAni } from "../../../config/animation";
 
 function AboutUsPage(): JSX.Element {
     return (
         <MainLayout title="About us - Keat Hong Youth Network" maxBodyWidth>
             <div className="c-About-us">
                 {/* Hero */}
-                <div className="c-About-us__Hero c-Hero">
+                <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true }}
+                    variants={slideFromBottomAni}
+                    className="c-About-us__Hero c-Hero"
+                >
                     <h1>We Enrich the Lives of Others.</h1>
                     <p>
                         Since 1998, Keat Hong Youth Network (YN) has been
@@ -30,10 +38,16 @@ function AboutUsPage(): JSX.Element {
                         youths, and through youths to help enrich the lives of
                         others.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Core domains */}
-                <div className="c-About-us__CD c-CD">
+                <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true }}
+                    variants={slideFromBottomAni}
+                    className="c-About-us__CD c-CD"
+                >
                     <div className="c-CD__Top c-Top">
                         <h1>Core Domains</h1>
                         <p>
@@ -44,16 +58,22 @@ function AboutUsPage(): JSX.Element {
                         </p>
                     </div>
                     <AboutUsCoreDomains />
-                </div>
+                </motion.div>
 
                 {/* Partners */}
-                <div className="c-About-us__Partners c-Partners">
+                <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.5 }}
+                    variants={slideFromBottomAni}
+                    className="c-About-us__Partners c-Partners"
+                >
                     <h1>Our Partners</h1>
                     <div className="c-Partners__Img-list c-Img-list">
                         <Image src={ImgBPGH} alt="BPGH" />
                         <Image src={ImgJPJC} alt="JPJC" />
                     </div>
-                </div>
+                </motion.div>
 
                 {/* FAQs */}
                 <div className="c-About-us__FAQs c-FAQs" id="about-us_faqs">

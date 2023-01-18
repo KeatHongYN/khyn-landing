@@ -9,8 +9,8 @@ export interface SingularRawCamelCasedEvent {
     description: string;
     location: string;
     date: {
-        start: string | null;
-        end: string | null;
+        start: any;
+        end: any;
     };
     time: {
         // 24 hr format

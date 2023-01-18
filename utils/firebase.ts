@@ -2,6 +2,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import {
     collection,
     doc,
@@ -26,6 +27,7 @@ import { APIFormat } from "./types";
 // Initialize Firebase
 const app = initializeApp(FIREBASE_CONFIG);
 const firestore = getFirestore(app);
+const storage = getStorage();
 
 if (ENVIRONMENT === "PROD") {
     getAnalytics();
@@ -55,6 +57,16 @@ const firebaseFn = (() => {
             }
         }
         return result;
+    };
+
+    const getFileFromStorage = async (filePath: string): Promise<APIFormat> => {
+        const fileRef = ref(storage, filePath);
+        try {
+            const downloadURL = await getDownloadURL(fileRef);
+            return [true, { downloadURL }, null];
+        } catch (error) {
+            return [false, null, ERROR_ENUM.FIREBASE_FAILURE];
+        }
     };
 
     const getEvents = async (): Promise<APIFormat> => {
@@ -135,6 +147,7 @@ const firebaseFn = (() => {
     };
 
     return {
+        getFileFromStorage,
         getEvents,
         getEvent
     };

@@ -8,6 +8,8 @@ import ExternalLinkButton from "../../../shared/Button/ExternalLinkButton";
 import Button from "../../../shared/Button";
 import { ViewEventProps } from "./types";
 import { PILL_VARIATION_ENUM } from "../../../../config/enum";
+import firebaseFn from "../../../../utils/firebase";
+import FirebaseImage from "../../../shared/FirebaseImage";
 
 const ViewEvent = ({
     id,
@@ -31,17 +33,20 @@ const ViewEvent = ({
 
     useEffect(() => {
         const timeNowUnix = Date.now();
-        const startDate = (date.start && parseInt(date.start, 10)) || null;
-        const endDate = (date.end && parseInt(date.end, 10)) || null;
+        const startDate =
+            (date.start?.seconds && parseInt(date.start?.seconds, 10) * 1000) ||
+            null;
+        const endDate =
+            (date.end?.seconds && parseInt(date.end?.seconds, 10) * 1000) ||
+            null;
 
         if (startDate && endDate) {
             if (startDate <= timeNowUnix && endDate >= timeNowUnix) {
                 setIsEventInProgress(true);
             }
         }
-
         if (
-            (startDate && startDate < timeNowUnix) ||
+            (startDate && !endDate && startDate < timeNowUnix) ||
             (endDate && endDate < timeNowUnix)
         ) {
             setIsEventOver(true);
@@ -79,13 +84,15 @@ const ViewEvent = ({
     return (
         <>
             <div className="c-View-event__Middle c-Middle">
-                <div className="c-Middle__Pic">
-                    <Image
-                        priority
-                        src={image!}
-                        alt="Event poster"
-                        width={300}
-                        height={300}
+                <div className="c-Middle__Pic c-Pic">
+                    <FirebaseImage
+                        filePath={image}
+                        className="c-Pic__Img c-Img"
+                        otherImageProps={{
+                            alt: "Image",
+                            width: "300",
+                            height: "300"
+                        }}
                     />
                 </div>
 
@@ -125,7 +132,7 @@ const ViewEvent = ({
                         ) : null}
                     </div>
                     <ExternalLinkButton
-                        disabled={!!link || isEventOver}
+                        disabled={!link || isEventOver}
                         href={link || ""}
                         text="Find out more"
                     />

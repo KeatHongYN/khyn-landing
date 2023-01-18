@@ -15,7 +15,7 @@ import Testimonials from "./Testimonials";
 import {
     slideFromLeftAni,
     slideFromRightAni,
-    textAni
+    slideFromBottomAni
 } from "../../../config/animation";
 
 const HomePage = () => {
@@ -39,7 +39,7 @@ const HomePage = () => {
                             initial="offscreen"
                             whileInView="onscreen"
                             viewport={{ once: true }}
-                            variants={textAni}
+                            variants={slideFromBottomAni}
                             className="c-Hero__Left c-Left"
                         >
                             <h1>
@@ -71,35 +71,35 @@ const HomePage = () => {
                         </motion.div>
                     </div>
                     {/* Signature Events */}
-                    <div className="c-Home__Sig-events c-Sig-events">
+                    <motion.div
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true, amount: 0.5 }}
+                        variants={slideFromBottomAni}
+                        className="c-Home__Sig-events c-Sig-events"
+                    >
                         <h1 className="c-Sig-events__Header">
                             Signature Events
                         </h1>
                         <SegmentedControl data={formattedHomeSigEventsList} />
-                    </div>
+                    </motion.div>
                     {/* Testimonials */}
-                    <div className="c-Home__Testimonial c-Testimonial">
+                    <motion.div
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true, amount: 0.5 }}
+                        variants={slideFromLeftAni}
+                        className="c-Home__Testimonial c-Testimonial"
+                    >
                         <h1>What our Volunteers Say</h1>
-                        <motion.div
-                            initial="offscreen"
-                            whileInView="onscreen"
-                            viewport={{ once: true, amount: 0.5 }}
-                            variants={slideFromLeftAni}
-                        >
-                            <Testimonials
-                                testimonialList={HOME_TESTIMONIAL_LIST}
-                            />
-                        </motion.div>
-                    </div>
+                        <Testimonials testimonialList={HOME_TESTIMONIAL_LIST} />
+                    </motion.div>
                     {/* CTA */}
                     <motion.div
                         initial="offscreen"
                         whileInView="onscreen"
                         viewport={{ once: true, amount: 0.5 }}
                         variants={slideFromRightAni}
-                        // transition={{
-                        //     staggerChildren: 0.5
-                        // }}
                         className="c-Home__CTA c-CTA"
                     >
                         <div className="c-CTA__Punchline c-Punchline">

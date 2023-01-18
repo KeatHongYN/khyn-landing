@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Pill from "../Pill";
 import { EventListItemProps } from "./types";
+import FirebaseImage from "../FirebaseImage";
 
 const NoImage = (): JSX.Element => (
     <div className="c-No-image">
@@ -34,20 +35,15 @@ const EventListItem = ({
             role="button"
             onClick={() => router.push(`/events/${id}`)}
         >
-            <div className="c-Event-list-item__Img c-Img">
-                {image ? (
-                    <Image
-                        blurDataURL="URL"
-                        placeholder="blur"
-                        src={image}
-                        alt="Event poster"
-                        width={200}
-                        height={200}
-                    />
-                ) : (
-                    <NoImage />
-                )}
-            </div>
+            <FirebaseImage
+                filePath={image}
+                className="c-Event-list-item__Img c-Img"
+                otherImageProps={{
+                    alt: "Image",
+                    width: "200",
+                    height: "200"
+                }}
+            />
             <div className="c-Event-list-item__Desc c-Desc">
                 <h1>{title}</h1>
                 <span className="c-Desc__Location c-Location">

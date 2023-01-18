@@ -10,7 +10,7 @@ import JoinUsPictureBentoBox from "./JoinUsBentoBox";
 import { JOIN_US_IG_LIST, JOIN_US_PICTURE_LIST } from "../../../config/data";
 import JoinUsSocialLinks from "./JoinUsSocialLinks";
 import JoinUsIGs from "./JoinUsIGs";
-import { textAni } from "../../../config/animation";
+import { slideFromBottomAni } from "../../../config/animation";
 
 const JoinUsPage = (): JSX.Element => {
     const router = useRouter();
@@ -23,7 +23,7 @@ const JoinUsPage = (): JSX.Element => {
                     initial="offscreen"
                     whileInView="onscreen"
                     viewport={{ once: true, amount: 0.5 }}
-                    variants={textAni}
+                    variants={slideFromBottomAni}
                     className="c-Join-us__Hero c-Hero"
                 >
                     <h1>Join our Community</h1>
@@ -49,21 +49,33 @@ const JoinUsPage = (): JSX.Element => {
                 </motion.div>
 
                 {/* Pictures */}
-                <div className="c-Join-us__Pictures c-Pictures">
+                <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.5 }}
+                    variants={slideFromBottomAni}
+                    className="c-Join-us__Pictures c-Pictures"
+                >
                     <JoinUsPictureBentoBox {...JOIN_US_PICTURE_LIST} />
                     <p className="c-Pictures__Caption">
                         View more photos on our socials
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Socials */}
-                <div className="c-Join-us__Socials c-Socials">
+                <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.5 }}
+                    variants={slideFromBottomAni}
+                    className="c-Join-us__Socials c-Socials"
+                >
                     <h1>
                         Stay updated. <br />
                         Follow our socials.
                     </h1>
                     <JoinUsSocialLinks />
-                </div>
+                </motion.div>
 
                 {/* Interest groups */}
                 <div className="c-Join-us__IG c-IG" id="join-us_igs">

@@ -21,7 +21,7 @@ const nextConfig = withMDX({
         return config;
     },
     images: {
-        domains: ["picsum.photos"]
+        domains: ["picsum.photos", "firebasestorage.googleapis.com"]
     },
     pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
     sentry: {

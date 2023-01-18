@@ -35,13 +35,22 @@ export const formatPrice = (
 export const formatDate = ({ start, end }: FormatDateParams): FormatDateRV => {
     if (!start && !end) return null;
 
+    let formattedDate = null;
     const makeDateReadable = (date: string) =>
         dayjs(parseInt(date, 10) * 1000).format("DD MMM YYYY");
-    let formattedDate = makeDateReadable(start!);
+
+    if (start) {
+        formattedDate = makeDateReadable(start.seconds);
+    }
 
     if (!end) return formattedDate;
 
-    formattedDate = `${formattedDate} - ${makeDateReadable(end)}`;
+    if (start && end) {
+        formattedDate = `${formattedDate} - ${makeDateReadable(end.seconds)}`;
+    } else {
+        formattedDate = makeDateReadable(end.seconds);
+    }
+
     return formattedDate;
 };
 
