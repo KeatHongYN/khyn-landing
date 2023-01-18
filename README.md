@@ -37,7 +37,7 @@
 
 <a href="#about-the-project"></a>
 
-![](https://github.com/KeatHongYN/khyn-landing/blob/main/public/assets/img/ad-hero.png)
+![](https://github.com/KeatHongYN/khyn-landing/blob/master/public/assets/img/ad-hero.png)
 
 The [Keat Hong Youth Network Landing site](https://www.keathongyouths.sg) is a website that is currently in development. The goal of the project is to revamp an existing WordPress site with poor user experience and add new features, such as the ability to view events. The site is not currently hosted, but once it is completed it will be available to the public.
 
