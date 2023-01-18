@@ -31,6 +31,7 @@
 -   [Contributing](#contributing)
 -   [Security and Feedback](#security-and-feedback)
 -   [Contact](#contact)
+-   [Acknowledgements](#acknowledgements)
 
 ## About the Project
 
@@ -59,9 +60,9 @@ We welcome contributions and pull requests. Please read our [contributor guideli
 
 ## Security and Feedback
 
-Please read [SECURITY.md](https://github.com/KeatHongYN/khyn-landing/blob/master/SECURITY.md) for more info.
-
 <a href="#security-and-feedback"></a>
+
+Please read [SECURITY.md](https://github.com/KeatHongYN/khyn-landing/blob/master/SECURITY.md) for more info.
 
 ## Contact
 
@@ -70,6 +71,8 @@ Please read [SECURITY.md](https://github.com/KeatHongYN/khyn-landing/blob/master
 -   Tham Kei Lok (Fullstack Engineer/UIUX Designer) - [LinkedIn](https://www.linkedin.com/in/thamkeilok/)
 
 ## Acknowledgements
+
+<a href="#acknowledgements"></a>
 
 Thanks to [Wei Pin][https://www.linkedin.com/in/wei-pin-teo-317374176/] for compiling the images and helping out with the administrative work, and to [Pin Zheng][https://www.linkedin.com/in/chai-pin-zheng-5610921aa/] and You Cheng for lending their valuable input and expertise leading up to the initial release, and to [Estrella](https://www.linkedin.com/in/estrella-kwok/) and Jamie for their testimonials.
 
