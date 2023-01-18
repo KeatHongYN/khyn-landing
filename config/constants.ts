@@ -31,6 +31,8 @@ export const FIREBASE_CONFIG = {
     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
     measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
+export const FIREBASE_APP_CHECK_PUBLIC_KEY =
+    process.env.NEXT_PUBLIC_FIREBASE_APP_CHECK_PUBLIC_KEY;
 
 // URL Links
 export const PROD_HOST = "https://keathongyouths.sg";
