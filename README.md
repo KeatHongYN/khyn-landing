@@ -12,10 +12,6 @@
     #techforpublicgood
     <br />
     <br />
-    <!-- <a href="https://www.keathongyouths.sg">Production Site (currently still old site)</a>
-    ·
-    <a href="#">Staging Site (coming soon)</a>
-    · -->
     <a href="https://github.com/KeatHongYN/khyn-landing/blob/master/SECURITY.md">Report Issues</a>
     ·
     <a href="https://github.com/Ducksss/HacknRoll2023-Robin-Hood/issues">Request Features</a>
