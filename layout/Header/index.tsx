@@ -22,12 +22,12 @@ const Header = ({ windowWidth }: HeaderProps): JSX.Element => (
             ) : null}
         </header>
         {ENVIRONMENT === ENVIRONMENT_ENUMS.DEV ||
-            (ENVIRONMENT === ENVIRONMENT_ENUMS.LOCAL && !DISABLE_DEV_FLAG && (
-                <FlagBanner
-                    isMobile={!(windowWidth && windowWidth > 1000)}
-                    text={ENVIRONMENT}
-                />
-            ))}
+        (ENVIRONMENT === ENVIRONMENT_ENUMS.LOCAL && !DISABLE_DEV_FLAG) ? (
+            <FlagBanner
+                isMobile={!(windowWidth && windowWidth > 1000)}
+                text={ENVIRONMENT}
+            />
+        ) : null}
     </>
 );
 
