@@ -38,8 +38,6 @@
 
 The [Keat Hong Youth Network Landing site](https://www.keathongyouths.sg) is a website that is currently in development. The goal of the project is to revamp an existing WordPress site with poor user experience and add new features, such as the ability to view events. The site is not currently hosted, but once it is completed it will be available to the public.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ### Built with
 
 <a href="#built-with"></a>
@@ -53,15 +51,11 @@ The [Keat Hong Youth Network Landing site](https://www.keathongyouths.sg) is a w
 -   [Firebase](https://firebase.google.com/)
 -   [Figma](https://www.figma.com/)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Contributing
 
 <a href="#contributing"></a>
 
 We welcome contributions and pull requests. Please read our [contributor guidelines](https://github.com/KeatHongYN/khyn-landing/blob/master/CONTRIBUTING.md).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Security and Feedback
 
@@ -74,8 +68,6 @@ Please read [SECURITY.md](https://github.com/KeatHongYN/khyn-landing/blob/master
 <a href="#contact"></a>
 
 -   Tham Kei Lok (Fullstack Engineer/UIUX Designer) - [LinkedIn](https://www.linkedin.com/in/thamkeilok/)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Acknowledgements
 

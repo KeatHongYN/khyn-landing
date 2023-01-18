@@ -21,9 +21,10 @@ The project is powered by NextJS 12.
 
 1. Create a issue
 2. Create a new branch from `develop` branch
-3. Push your commits
-4. Create a Pull request to merge into `develop` branch
-5. Wait for review and approval
+3. Start development
+4. Once done, bump up version number in `config/constants.ts` based on (SemVer2.0)[https://semver.org/]
+5. Create a Pull request to merge into `develop` branch
+6. Wait for review and approval
 
 ## Git commit message format
 
