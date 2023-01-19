@@ -37,9 +37,9 @@ const firestore = getFirestore(app);
 const storage = getStorage();
 
 if (typeof window !== "undefined") {
-    // if (ENVIRONMENT === ENVIRONMENT_ENUMS.LOCAL) {
-    //     (self as any).FIREBASE_APPCHECK_DEBUG_TOKEN = true;
-    // }
+    if (ENVIRONMENT === ENVIRONMENT_ENUMS.LOCAL) {
+        (self as any).FIREBASE_APPCHECK_DEBUG_TOKEN = true;
+    }
     const appCheck = initializeAppCheck(app, {
         provider: new ReCaptchaV3Provider(FIREBASE_APP_CHECK_PUBLIC_KEY!),
         isTokenAutoRefreshEnabled: true
@@ -82,6 +82,7 @@ const firebaseFn = (() => {
             const downloadURL = await getDownloadURL(fileRef);
             return [true, { downloadURL }, null];
         } catch (error) {
+            DEBUG.error(error);
             return [false, null, ERROR_ENUM.FIREBASE_FAILURE];
         }
     };
@@ -91,7 +92,7 @@ const firebaseFn = (() => {
             const q = query(
                 collection(firestore, "events"),
                 orderBy("updated", "desc"), // get most updated event
-                limit(2)
+                limit(5)
             );
 
             const querySnapshot = await getDocs(q);
@@ -121,6 +122,7 @@ const firebaseFn = (() => {
 
             return [true, events, null];
         } catch (error) {
+            DEBUG.error(error);
             logSentryException(
                 "ERROR_ENUM.FIREBASE_FAILURE",
                 "getEvents",

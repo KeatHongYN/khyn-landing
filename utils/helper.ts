@@ -32,7 +32,9 @@ export const formatPrice = (
     return formattedPrice;
 };
 
-export const formatDate = ({ start, end }: FormatDateParams): FormatDateRV => {
+export const formatDate = (date: FormatDateParams): FormatDateRV => {
+    if (!date) return null;
+    const { start, end } = date;
     if (!start && !end) return null;
 
     let formattedDate = null;
@@ -54,7 +56,11 @@ export const formatDate = ({ start, end }: FormatDateParams): FormatDateRV => {
     return formattedDate;
 };
 
-export const formatTime = ({ start, end }: FormatTimeParams): string | null => {
+export const formatTime = (time: FormatTimeParams): string | null => {
+    if (!time) return null;
+
+    const { start, end } = time;
+
     if (!start?.hour && !start?.minute && !end?.hour && !end?.minute)
         return null;
 
