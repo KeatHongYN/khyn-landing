@@ -10,7 +10,7 @@ export enum ENVIRONMENT_ENUMS {
 }
 
 export const ENVIRONMENT: ENVIRONMENT_ENUMS =
-    (process.env.NEXT_PUBLIC_ENVIONMENT as ENVIRONMENT_ENUMS) ||
+    (process.env.NEXT_PUBLIC_ENVIRONMENT as ENVIRONMENT_ENUMS) ||
     ENVIRONMENT_ENUMS.LOCAL;
 export const DISABLE_DEV_FLAG =
     process.env.NEXT_PUBLIC_DISABLE_DEV_FLAG || false;
@@ -31,6 +31,8 @@ export const FIREBASE_CONFIG = {
     appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
     measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
+export const FIREBASE_APP_CHECK_PUBLIC_KEY =
+    process.env.NEXT_PUBLIC_FIREBASE_APP_CHECK_PUBLIC_KEY;
 
 // URL Links
 export const PROD_HOST = "https://keathongyouths.sg";

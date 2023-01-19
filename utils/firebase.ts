@@ -1,7 +1,9 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-unused-vars */
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import {
     collection,
@@ -13,7 +15,12 @@ import {
     orderBy,
     query
 } from "firebase/firestore";
-import { ENVIRONMENT, FIREBASE_CONFIG } from "../config/constants";
+import {
+    ENVIRONMENT,
+    ENVIRONMENT_ENUMS,
+    FIREBASE_APP_CHECK_PUBLIC_KEY,
+    FIREBASE_CONFIG
+} from "../config/constants";
 import { DEBUG, logSentryException } from "./logger";
 import {
     formatDate,
@@ -29,7 +36,17 @@ const app = initializeApp(FIREBASE_CONFIG);
 const firestore = getFirestore(app);
 const storage = getStorage();
 
-if (ENVIRONMENT === "PROD") {
+if (typeof window !== "undefined") {
+    if (ENVIRONMENT === ENVIRONMENT_ENUMS.LOCAL) {
+        (self as any).FIREBASE_APPCHECK_DEBUG_TOKEN = true;
+    }
+    const appCheck = initializeAppCheck(app, {
+        provider: new ReCaptchaV3Provider(FIREBASE_APP_CHECK_PUBLIC_KEY!),
+        isTokenAutoRefreshEnabled: true
+    });
+}
+
+if (ENVIRONMENT === ENVIRONMENT_ENUMS.PROD) {
     getAnalytics();
 }
 
@@ -65,6 +82,7 @@ const firebaseFn = (() => {
             const downloadURL = await getDownloadURL(fileRef);
             return [true, { downloadURL }, null];
         } catch (error) {
+            DEBUG.error(error);
             return [false, null, ERROR_ENUM.FIREBASE_FAILURE];
         }
     };
@@ -74,7 +92,7 @@ const firebaseFn = (() => {
             const q = query(
                 collection(firestore, "events"),
                 orderBy("updated", "desc"), // get most updated event
-                limit(2)
+                limit(5)
             );
 
             const querySnapshot = await getDocs(q);
@@ -104,6 +122,7 @@ const firebaseFn = (() => {
 
             return [true, events, null];
         } catch (error) {
+            DEBUG.error(error);
             logSentryException(
                 "ERROR_ENUM.FIREBASE_FAILURE",
                 "getEvents",

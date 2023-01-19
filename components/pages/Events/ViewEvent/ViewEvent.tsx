@@ -1,14 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import Pill from "../../../shared/Pill";
 import ExternalLinkButton from "../../../shared/Button/ExternalLinkButton";
 import Button from "../../../shared/Button";
 import { ViewEventProps } from "./types";
 import { PILL_VARIATION_ENUM } from "../../../../config/enum";
-import firebaseFn from "../../../../utils/firebase";
 import FirebaseImage from "../../../shared/FirebaseImage";
 
 const ViewEvent = ({
@@ -34,10 +32,11 @@ const ViewEvent = ({
     useEffect(() => {
         const timeNowUnix = Date.now();
         const startDate =
-            (date.start?.seconds && parseInt(date.start?.seconds, 10) * 1000) ||
+            (date?.start?.seconds &&
+                parseInt(date?.start?.seconds, 10) * 1000) ||
             null;
         const endDate =
-            (date.end?.seconds && parseInt(date.end?.seconds, 10) * 1000) ||
+            (date?.end?.seconds && parseInt(date?.end?.seconds, 10) * 1000) ||
             null;
 
         if (startDate && endDate) {
@@ -104,7 +103,7 @@ const ViewEvent = ({
                             className="c-Location__Icon"
                             icon="akar-icons:location"
                         />
-                        <p>{location}</p>
+                        <p>{location || "-"}</p>
                     </span>
                     <div className="c-Info__Date-and-time c-Date-and-time">
                         <span className="c-Date-and-time__Date c-Date">
