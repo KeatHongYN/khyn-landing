@@ -8,6 +8,7 @@ import Button from "../../../shared/Button";
 import { ViewEventProps } from "./types";
 import { PILL_VARIATION_ENUM } from "../../../../config/enum";
 import FirebaseImage from "../../../shared/FirebaseImage";
+import firebaseFn from "../../../../utils/firebase";
 
 const ViewEvent = ({
     id,
@@ -132,6 +133,16 @@ const ViewEvent = ({
                     </div>
                     <ExternalLinkButton
                         disabled={!link || isEventOver}
+                        handleOnClick={() => {
+                            firebaseFn.logAnalytics(
+                                "btn_click_event_referral",
+                                {
+                                    event_id: id,
+                                    event_title: title,
+                                    event_link: link
+                                }
+                            );
+                        }}
                         href={link || ""}
                         text="Find out more"
                     />
