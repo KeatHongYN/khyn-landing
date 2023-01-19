@@ -17,6 +17,7 @@ const FirebaseImage = ({
         errorType: null,
         loading: true
     });
+    const [imageLoading, setImageLoading] = useState(true);
 
     useEffect(() => {
         (async () => {
@@ -43,8 +44,15 @@ const FirebaseImage = ({
 
     return (
         <Image
-            className={className || ""}
+            className={
+                `${className} ${
+                    imageLoading ? `${className}--loading` : ""
+                } c-Firebase-image-parent c-Firebase-image-parent${
+                    imageLoading ? "--loading" : ""
+                }` || ""
+            }
             src={getEventResult.data.downloadURL}
+            onLoadingComplete={() => setImageLoading(false)}
             {...otherImageProps}
         />
     );
