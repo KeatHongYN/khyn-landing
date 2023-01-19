@@ -1,5 +1,7 @@
 <div id="top"></div>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f3493678-03d9-47ef-8ba0-6f55c7ca91e9/deploy-status)](https://app.netlify.com/sites/keathongyouths/deploys)
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
