@@ -1,18 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import Pill from "../Pill";
 import { EventListItemProps } from "./types";
 import FirebaseImage from "../FirebaseImage";
-
-const NoImage = (): JSX.Element => (
-    <div className="c-No-image">
-        <Icon className="c-No-image__Icon" icon="carbon:no-image" />
-        <p>No image</p>
-    </div>
-);
+import { PILL_VARIATION_ENUM } from "../../../config/enum";
 
 const EventListItem = ({
     id,
@@ -28,6 +21,59 @@ const EventListItem = ({
     formattedPrice
 }: EventListItemProps): JSX.Element => {
     const router = useRouter();
+    const [isEventInProgress, setIsEventInProgress] = useState(false);
+    const [isEventOver, setIsEventOver] = useState(false);
+
+    useEffect(() => {
+        const timeNowUnix = Date.now();
+        const startDate =
+            (date?.start?.seconds &&
+                parseInt(date?.start?.seconds, 10) * 1000) ||
+            null;
+        const endDate =
+            (date?.end?.seconds && parseInt(date?.end?.seconds, 10) * 1000) ||
+            null;
+
+        if (startDate && endDate) {
+            if (startDate <= timeNowUnix && endDate >= timeNowUnix) {
+                setIsEventInProgress(true);
+            }
+        }
+        if (
+            (startDate && !endDate && startDate < timeNowUnix) ||
+            (endDate && endDate < timeNowUnix)
+        ) {
+            setIsEventOver(true);
+        }
+    }, []);
+
+    const renderPill = (): JSX.Element | null => {
+        if (date) {
+            if (isEventInProgress) {
+                return (
+                    <Pill
+                        text="Event in progress"
+                        variation={PILL_VARIATION_ENUM.WARNING}
+                    />
+                );
+            }
+
+            if (isEventOver) {
+                return (
+                    <Pill
+                        text="Event is over"
+                        variation={PILL_VARIATION_ENUM.WARNING}
+                    />
+                );
+            }
+        }
+
+        if (volunteersNeeded) {
+            return <Pill text="Volunteers Needed" />;
+        }
+
+        return null;
+    };
 
     return (
         <div
@@ -67,9 +113,7 @@ const EventListItem = ({
                     </span>
                 </div>
                 <div className="c-Desc__Bottom c-Bottom">
-                    {volunteersNeeded ? (
-                        <Pill text="Volunteers Needed" />
-                    ) : null}
+                    {renderPill()}
                     <h2>{formattedPrice}</h2>
                 </div>
             </div>
