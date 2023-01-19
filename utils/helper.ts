@@ -65,15 +65,31 @@ export const formatTime = (time: FormatTimeParams): string | null => {
         return null;
 
     // Format start time first
-    const startHourStr = start?.hour?.toString();
-    const startMinStr = start?.minute?.toString();
-    let formattedTime = `${startHourStr!.padStart(
-        2,
-        "0"
-    )}:${startMinStr!.padStart(2, "0")}`;
+    let formattedTime = "";
+    if (start?.hour || start?.minute) {
+        if (!start.hour) {
+            start.hour = 0;
+        }
+        if (!start.minute) {
+            start.minute = 0;
+        }
+        const startHourStr = start?.hour?.toString();
+        const startMinStr = start?.minute?.toString();
+        formattedTime = `${startHourStr!.padStart(
+            2,
+            "0"
+        )}:${startMinStr!.padStart(2, "0")}`;
+    }
 
     if (!end?.hour && !end?.minute) {
         return formattedTime;
+    }
+
+    if (!end.hour) {
+        end.hour = 0;
+    }
+    if (!end.minute) {
+        end.minute = 0;
     }
 
     // Format end time and combine
