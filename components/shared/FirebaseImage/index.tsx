@@ -43,17 +43,16 @@ const FirebaseImage = ({
     }
 
     return (
-        <>
-            {imageLoading ? (
-                <FirebaseImageLoading className={className} />
-            ) : null}
-            <Image
-                className={className || ""}
-                src={getEventResult.data.downloadURL}
-                onLoadingComplete={() => setImageLoading(false)}
-                {...otherImageProps}
-            />
-        </>
+        <Image
+            className={
+                `${className} c-Firebase-image-parent c-Firebase-image-parent${
+                    imageLoading ? "--loading" : ""
+                }` || ""
+            }
+            src={getEventResult.data.downloadURL}
+            onLoadingComplete={() => setImageLoading(false)}
+            {...otherImageProps}
+        />
     );
 };
 
