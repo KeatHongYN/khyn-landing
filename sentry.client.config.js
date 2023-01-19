@@ -13,7 +13,9 @@ Sentry.init({
     debug: DEBUG,
     release: VERSION,
     environment: ENVIRONMENT,
-    enabled: ENVIRONMENT === ENVIRONMENT_ENUMS.PROD
+    enabled:
+        ENVIRONMENT === ENVIRONMENT_ENUMS.PROD ||
+        ENVIRONMENT === ENVIRONMENT_ENUMS.DEV
     // ...
     // Note: if you want to override the automatic release value, do not set a
     // `release` value here - use the environment variable `SENTRY_RELEASE`, so
