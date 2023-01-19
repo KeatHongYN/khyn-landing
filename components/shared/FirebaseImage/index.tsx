@@ -45,7 +45,9 @@ const FirebaseImage = ({
     return (
         <Image
             className={
-                `${className} c-Firebase-image-parent c-Firebase-image-parent${
+                `${className} ${
+                    imageLoading ? `${className}--loading` : ""
+                } c-Firebase-image-parent c-Firebase-image-parent${
                     imageLoading ? "--loading" : ""
                 }` || ""
             }
