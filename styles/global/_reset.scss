@@ -90,3 +90,15 @@ body a {
 .MuiTooltip-tooltipArrow {
     font-size: 11px !important;
 }
+
+.c-Replace-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: $font-small;
+    color: $paym-blue;
+    font-weight: bold;
+    &__Icon {
+        margin-left: 3px;
+        font-size: 15px;
+    }
+}
