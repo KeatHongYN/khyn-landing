@@ -10,10 +10,16 @@ const useReplaceLinksAndEmailInStr = (input = "", linkMap = {}) =>
     input.split(EMAIL_OR_HTTPS_INCLUDED_REGEX).map((str, i) => {
         if (HTTPS_INCLUDED_REGEX.test(str)) {
             return (
-                <a href={str} key={i} rel="noopener noreferrer" target="_blank">
-                    {get(linkMap, [str], str)}
+                <a
+                    className="c-Replace-link"
+                    href={str}
+                    key={i}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    {linkMap ? get(linkMap, [str], str) : str}
                     <Icon
-                        className="c-External-link__Icon"
+                        className="c-Replace-link__Icon"
                         icon="bx:link-external"
                     />
                 </a>
@@ -21,10 +27,10 @@ const useReplaceLinksAndEmailInStr = (input = "", linkMap = {}) =>
         }
         if (EMAIL_INCLUDED_REGEX.test(str)) {
             return (
-                <a key={i} href={`mailto:${str}}`}>
-                    {get(linkMap, [str], str)}
+                <a className="c-Replace-link" key={i} href={`mailto:${str}}`}>
+                    {linkMap ? get(linkMap, [str], str) : str}
                     <Icon
-                        className="c-External-link__Icon"
+                        className="c-Replace-link__Icon"
                         icon="material-symbols:mail"
                     />
                 </a>

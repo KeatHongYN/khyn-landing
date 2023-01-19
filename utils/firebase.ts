@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, logEvent } from "firebase/analytics";
 import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import {
@@ -32,9 +32,16 @@ import { ERROR_ENUM } from "../config/error";
 import { APIFormat } from "./types";
 
 // Initialize Firebase
+DEBUG.log("firebase.ts running!");
 const app = initializeApp(FIREBASE_CONFIG);
 const firestore = getFirestore(app);
 const storage = getStorage();
+const analytics =
+    (ENVIRONMENT === ENVIRONMENT_ENUMS.PROD ||
+        ENVIRONMENT === ENVIRONMENT_ENUMS.DEV) &&
+    typeof window !== "undefined"
+        ? getAnalytics(app)
+        : null;
 
 if (typeof window !== "undefined") {
     if (ENVIRONMENT === ENVIRONMENT_ENUMS.LOCAL) {
@@ -44,10 +51,6 @@ if (typeof window !== "undefined") {
         provider: new ReCaptchaV3Provider(FIREBASE_APP_CHECK_PUBLIC_KEY!),
         isTokenAutoRefreshEnabled: true
     });
-}
-
-if (ENVIRONMENT === ENVIRONMENT_ENUMS.PROD) {
-    getAnalytics();
 }
 
 const firebaseFn = (() => {
@@ -74,6 +77,21 @@ const firebaseFn = (() => {
             }
         }
         return result;
+    };
+
+    const logAnalytics = (eventName: string, eventParams?: any) => {
+        if (analytics) {
+            try {
+                logEvent(analytics, eventName, eventParams);
+            } catch (error) {
+                DEBUG.error(error);
+                logSentryException(
+                    "ERROR_ENUM.FIREBASE_FAILURE",
+                    "logAnalytics",
+                    `error: ${error}`
+                );
+            }
+        }
     };
 
     const getFileFromStorage = async (filePath: string): Promise<APIFormat> => {
@@ -166,6 +184,7 @@ const firebaseFn = (() => {
     };
 
     return {
+        logAnalytics,
         getFileFromStorage,
         getEvents,
         getEvent
@@ -173,3 +192,5 @@ const firebaseFn = (() => {
 })();
 
 export default firebaseFn;
+
+DEBUG.log("firebase.ts ran success!");

@@ -8,6 +8,8 @@ import Button from "../../../shared/Button";
 import { ViewEventProps } from "./types";
 import { PILL_VARIATION_ENUM } from "../../../../config/enum";
 import FirebaseImage from "../../../shared/FirebaseImage";
+import firebaseFn from "../../../../utils/firebase";
+import useReplaceLinksAndEmailInStr from "../../../../hooks/useReplaceLinksAndEmailInStr";
 
 const ViewEvent = ({
     id,
@@ -28,6 +30,8 @@ const ViewEvent = ({
     const router = useRouter();
     const [isEventInProgress, setIsEventInProgress] = useState(false);
     const [isEventOver, setIsEventOver] = useState(false);
+
+    const formattedDescription = useReplaceLinksAndEmailInStr(description);
 
     useEffect(() => {
         const timeNowUnix = Date.now();
@@ -132,6 +136,17 @@ const ViewEvent = ({
                     </div>
                     <ExternalLinkButton
                         disabled={!link || isEventOver}
+                        handleOnClick={() => {
+                            if (!link || isEventOver) return;
+                            firebaseFn.logAnalytics(
+                                "btn_click_event_referral",
+                                {
+                                    event_id: id,
+                                    event_title: title,
+                                    event_link: link
+                                }
+                            );
+                        }}
                         href={link || ""}
                         text="Find out more"
                     />
@@ -141,7 +156,8 @@ const ViewEvent = ({
             <div className="c-View-event__Desc">
                 <h2>Event Description</h2>
                 <p>
-                    {description || "The admin has not added any description."}
+                    {formattedDescription ||
+                        "The admin has not added any description."}
                 </p>
             </div>
 

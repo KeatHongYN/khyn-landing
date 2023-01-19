@@ -8,17 +8,6 @@
         flex-direction: column;
         justify-content: center;
         padding: 20px 0;
-        a[target="_blank"] {
-            display: inline-flex;
-            align-items: center;
-            font-size: $font-small;
-            color: $paym-blue;
-            font-weight: bold;
-            .c-External-link__Icon {
-                margin-left: 3px;
-                font-size: 15px;
-            }
-        }
 
         .c-Summary {
             margin: 10px 0;

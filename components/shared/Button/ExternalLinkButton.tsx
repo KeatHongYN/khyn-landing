@@ -8,7 +8,8 @@ const ExternalLinkButton = ({
     disabled = false,
     variation = BTN_VARIATION_ENUM.PRIMARY,
     className = "",
-    showIcon = true
+    showIcon = true,
+    handleOnClick = null
 }: ExternalLinkButtonProps): JSX.Element => {
     const { classSuffix } = BTN_META[variation];
 
@@ -20,6 +21,7 @@ const ExternalLinkButton = ({
             className={`c-External-link-btn c-External-link-btn__${classSuffix} ${className} ${
                 disabled ? "c-External-link-btn--disabled" : ""
             }`}
+            onClick={() => handleOnClick && handleOnClick()}
         >
             {text}
             {showIcon && (
