@@ -16,4 +16,5 @@ export interface ExternalLinkButtonProps {
     variation?: BTN_VARIATION_ENUM;
     className?: string;
     showIcon?: boolean;
+    handleOnClick?: any;
 }
