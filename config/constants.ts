@@ -52,6 +52,8 @@ export const KHYN_INSTAGRAM_URL = "https://www.instagram.com/keathongyouths";
 export const KHYN_BETTERUPTIME_URL = "https://keathongyouths.betteruptime.com";
 export const KHYN_KHR_URL = "https://keat-hong-recycles.web.app";
 export const KHYN_LINKTREE_URL = "https://linktr.ee/keathongyn";
+export const REPORT_ISSUE_URL =
+    "https://github.com/KeatHongYN/khyn-landing/blob/master/SECURITY.md";
 
 // REGEX
 export const EMAIL_INCLUDED_REGEX =

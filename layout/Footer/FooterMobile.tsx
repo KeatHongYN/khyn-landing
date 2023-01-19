@@ -13,6 +13,7 @@ import {
     KHYN_KHR_URL,
     KHYN_LINKTREE_URL,
     KHYN_TELEGRAM_URL,
+    REPORT_ISSUE_URL,
     VERSION
 } from "../../config/constants";
 import { BTN_VARIATION_ENUM } from "../../config/enum";
@@ -53,7 +54,7 @@ const FooterMobile = (): JSX.Element => (
                     <div className="c-Column__List c-List">
                         <ExternalLinkButton
                             text="Report Issue"
-                            href="https://github.com/KeatHongYN"
+                            href={REPORT_ISSUE_URL}
                             variation={BTN_VARIATION_ENUM.KOSONG}
                             className="c-List__Anchor"
                             showIcon={false}
