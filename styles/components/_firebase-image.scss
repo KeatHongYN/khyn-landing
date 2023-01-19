@@ -1,13 +1,15 @@
 .c-Firebase-image-parent {
     &--loading {
+        transform: none;
+        aspect-ratio: 1 / 1;
         animation: skeleton-loading 1s linear infinite alternate;
 
         @keyframes skeleton-loading {
             0% {
-                background-color: hsl(200, 20%, 80%);
+                background-color: hsl(0, 0%, 91%);
             }
             100% {
-                background-color: hsl(200, 20%, 95%);
+                background-color: hsl(0, 0%, 82%);
             }
         }
     }
