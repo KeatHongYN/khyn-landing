@@ -34,10 +34,11 @@ const ViewEvent = ({
     useEffect(() => {
         const timeNowUnix = Date.now();
         const startDate =
-            (date.start?.seconds && parseInt(date.start?.seconds, 10) * 1000) ||
+            (date?.start?.seconds &&
+                parseInt(date?.start?.seconds, 10) * 1000) ||
             null;
         const endDate =
-            (date.end?.seconds && parseInt(date.end?.seconds, 10) * 1000) ||
+            (date?.end?.seconds && parseInt(date?.end?.seconds, 10) * 1000) ||
             null;
 
         if (startDate && endDate) {
@@ -104,7 +105,7 @@ const ViewEvent = ({
                             className="c-Location__Icon"
                             icon="akar-icons:location"
                         />
-                        <p>{location}</p>
+                        <p>{location || "-"}</p>
                     </span>
                     <div className="c-Info__Date-and-time c-Date-and-time">
                         <span className="c-Date-and-time__Date c-Date">
