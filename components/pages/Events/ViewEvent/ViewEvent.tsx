@@ -9,6 +9,7 @@ import { ViewEventProps } from "./types";
 import { PILL_VARIATION_ENUM } from "../../../../config/enum";
 import FirebaseImage from "../../../shared/FirebaseImage";
 import firebaseFn from "../../../../utils/firebase";
+import useReplaceLinksAndEmailInStr from "../../../../hooks/useReplaceLinksAndEmailInStr";
 
 const ViewEvent = ({
     id,
@@ -29,6 +30,8 @@ const ViewEvent = ({
     const router = useRouter();
     const [isEventInProgress, setIsEventInProgress] = useState(false);
     const [isEventOver, setIsEventOver] = useState(false);
+
+    const formattedDescription = useReplaceLinksAndEmailInStr(description);
 
     useEffect(() => {
         const timeNowUnix = Date.now();
@@ -153,7 +156,8 @@ const ViewEvent = ({
             <div className="c-View-event__Desc">
                 <h2>Event Description</h2>
                 <p>
-                    {description || "The admin has not added any description."}
+                    {formattedDescription ||
+                        "The admin has not added any description."}
                 </p>
             </div>
 
