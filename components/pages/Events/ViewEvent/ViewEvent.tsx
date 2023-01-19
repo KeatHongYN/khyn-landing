@@ -134,6 +134,7 @@ const ViewEvent = ({
                     <ExternalLinkButton
                         disabled={!link || isEventOver}
                         handleOnClick={() => {
+                            if (!link || isEventOver) return;
                             firebaseFn.logAnalytics(
                                 "btn_click_event_referral",
                                 {
