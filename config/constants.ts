@@ -9,6 +9,7 @@ export enum ENVIRONMENT_ENUMS {
     LOCAL = "LOCAL"
 }
 
+// General
 export const ENVIRONMENT: ENVIRONMENT_ENUMS =
     (process.env.NEXT_PUBLIC_ENVIRONMENT as ENVIRONMENT_ENUMS) ||
     ENVIRONMENT_ENUMS.LOCAL;
@@ -22,6 +23,7 @@ export const DEBUG = process.env.NEXT_PUBLIC_DEBUG || false;
 export const SENTRY_DSN =
     process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
 
+// Firebase
 export const FIREBASE_CONFIG = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
     authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -33,6 +35,7 @@ export const FIREBASE_CONFIG = {
 };
 export const FIREBASE_APP_CHECK_PUBLIC_KEY =
     process.env.NEXT_PUBLIC_FIREBASE_APP_CHECK_PUBLIC_KEY;
+export const FIRESTORE_EVENTS_QUERY_LIMIT = 2;
 
 // URL Links
 export const PROD_HOST = "https://keathongyouths.sg";

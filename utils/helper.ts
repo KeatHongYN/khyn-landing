@@ -1,5 +1,6 @@
 import { camelCase } from "change-case";
 import dayjs from "dayjs";
+import { FIRESTORE_EVENTS_QUERY_LIMIT } from "../config/constants";
 import {
     FormatDateParams,
     FormatDateRV,
@@ -101,4 +102,15 @@ export const formatTime = (time: FormatTimeParams): string | null => {
     )}:${endMinStr!.padStart(2, "0")}`;
 
     return formattedTime;
+};
+
+export const calcPaginationStatus = (
+    page: number,
+    noOfItemsOnCurrentPage: number = 0
+): string => {
+    const start = noOfItemsOnCurrentPage
+        ? (page - 1) * FIRESTORE_EVENTS_QUERY_LIMIT + 1
+        : 0;
+    const end = noOfItemsOnCurrentPage ? start + noOfItemsOnCurrentPage - 1 : 0;
+    return `${start}-${end}`;
 };

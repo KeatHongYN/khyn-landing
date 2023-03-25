@@ -1,3 +1,5 @@
+import { PAGINATION_ACTION_ENUM } from "../../../config/enum";
+
 interface SeparateTimeFormat {
     hour: number | null;
     minute: number | null;
@@ -34,4 +36,14 @@ export type EventType = SingularEvent[];
 
 export interface EventListProps {
     events: EventType | [] | null;
+}
+
+export interface IPaginationObj {
+    page: number;
+    actionType: PAGINATION_ACTION_ENUM;
+    nextExist: boolean;
+    prevExist: boolean;
+    firstVisible: any;
+    lastVisible: any;
+    checkVisible?: any; // last or first visible document used for checking if nextOrPrev page exists in firebase.ts
 }

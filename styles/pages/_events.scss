@@ -20,4 +20,25 @@
             margin: 30px 0;
         }
     }
+
+    .c-Pagination {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p {
+            font-size: 12px;
+        }
+        &__Btns {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                &:first-of-type {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
 }
