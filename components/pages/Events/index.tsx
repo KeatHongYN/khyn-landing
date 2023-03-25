@@ -122,14 +122,20 @@ const EventsPage = (): JSX.Element => {
                     <div className="c-Pagination__Btns">
                         <Button
                             text="Prev"
-                            disabled={!paginationObj.prevExist}
+                            disabled={
+                                !paginationObj.prevExist ||
+                                getEventsResult.loading
+                            }
                             onClickFn={() =>
                                 handlePagination(PAGINATION_ACTION_ENUM.PREV)
                             }
                         />
                         <Button
                             text="Next"
-                            disabled={!paginationObj.nextExist}
+                            disabled={
+                                !paginationObj.nextExist ||
+                                getEventsResult.loading
+                            }
                             onClickFn={() =>
                                 handlePagination(PAGINATION_ACTION_ENUM.NEXT)
                             }
