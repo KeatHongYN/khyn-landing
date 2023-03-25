@@ -67,3 +67,9 @@ export const TESTIMONIAL_BG_META = {
         classSuffix: "blue"
     }
 };
+
+export enum PAGINATION_ACTION_ENUM {
+    NONE = "NONE",
+    NEXT = "NEXT",
+    PREV = "PREV"
+}
