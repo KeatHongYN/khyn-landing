@@ -47,6 +47,8 @@ const LANDING_PAGE_BASE_URLS = {
 
 export const LANDING_PAGE_BASE_URL = LANDING_PAGE_BASE_URLS[ENVIRONMENT];
 export const KHYN_VOLUNTEER_SIGN_UP_FORM_URL =
+    "https://go.gov.sg/khynvolunteers";
+export const KHYN_VOLUNTEER_SIGN_UP_FORM_URL_OLD =
     "https://docs.google.com/forms/d/e/1FAIpQLSeFxeOJYoBedxfsPpYWe_WSEk8yZYZ7iYb0dlFV7mbeqMzkUQ/viewform";
 export const KHYN_TELEGRAM_URL = "https://t.me/+8Jo5iyac3AFiYTNk";
 export const KHYN_GITHUB_URL = "https://github.com/KeatHongYN";
