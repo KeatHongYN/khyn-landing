@@ -11,6 +11,10 @@ const withMDX = require("@next/mdx")({
 /** @type {import('next').NextConfig} */
 const nextConfig = withMDX({
     reactStrictMode: true,
+    images: {
+        unoptimized: true,
+        domains: ["picsum.photos", "firebasestorage.googleapis.com"]
+    },
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/i,
@@ -19,9 +23,6 @@ const nextConfig = withMDX({
         });
 
         return config;
-    },
-    images: {
-        domains: ["picsum.photos", "firebasestorage.googleapis.com"]
     },
     pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
     sentry: {

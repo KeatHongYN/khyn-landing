@@ -3,10 +3,8 @@ import { Tooltip } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import LogoKHYN from "../../public/assets/svg/logo-khyn.svg";
-import LogoStatus from "../../public/assets/svg/logo-status.svg";
 import ExternalLinkButton from "../../components/shared/Button/ExternalLinkButton";
 import {
-    KHYN_BETTERUPTIME_URL,
     KHYN_FACEBOOK_URL,
     KHYN_GITHUB_URL,
     KHYN_INSTAGRAM_URL,
@@ -25,16 +23,6 @@ const FooterMobile = (): JSX.Element => (
                 <Link className="c-Left__Logo" href="/">
                     <LogoKHYN />
                 </Link>
-                <div className="c-Left__Status c-Status">
-                    <LogoStatus />
-                    <ExternalLinkButton
-                        text="All Systems Operational."
-                        className="c-Status__Link"
-                        href={KHYN_BETTERUPTIME_URL}
-                        showIcon={false}
-                        variation={BTN_VARIATION_ENUM.KOSONG}
-                    />
-                </div>
             </div>
             <div className="c-Top__Links c-Links">
                 <div className="c-Links__Column c-Column">
