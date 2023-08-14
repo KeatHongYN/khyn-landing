@@ -180,22 +180,22 @@ export const ABOUT_US_CORE_DOMAINS_LIST = [
     {
         id: 1,
         name: "Environment & Sustainability",
-        imgFilePath: "/assets/img/about-us/about-us-bento-health.jpeg"
+        imgFilePath: "/assets/img/about-us/about-us-bento-es.JPG"
     },
     {
         id: 2,
         name: "Sports & Adventure",
-        imgFilePath: "/assets/img/about-us/about-us-bento-health.jpeg"
+        imgFilePath: "/assets/img/about-us/about-us-bento-sa.jpeg"
     },
     {
         id: 3,
         name: "Arts & Culture",
-        imgFilePath: "/assets/img/about-us/about-us-bento-health.jpeg"
+        imgFilePath: "/assets/img/about-us/about-us-bento-ac.JPG"
     },
     {
         id: 4,
         name: "Health & Wellness",
-        imgFilePath: "/assets/img/about-us/about-us-bento-health.jpeg"
+        imgFilePath: "/assets/img/about-us/about-us-bento-hw.JPG"
     },
     {
         id: 5,
