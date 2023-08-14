@@ -70,8 +70,8 @@ function AboutUsPage(): JSX.Element {
                 >
                     <h1>Our Partners</h1>
                     <div className="c-Partners__Img-list c-Img-list">
-                        <Image src={ImgBPGH} alt="BPGH" />
-                        <Image src={ImgJPJC} alt="JPJC" />
+                        <Image src={ImgBPGH} alt="BPGH" unoptimized />
+                        <Image src={ImgJPJC} alt="JPJC" unoptimized />
                     </div>
                 </motion.div>
 

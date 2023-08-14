@@ -12,7 +12,7 @@ export enum ENVIRONMENT_ENUMS {
 // General
 export const ENVIRONMENT: ENVIRONMENT_ENUMS =
     (process.env.NEXT_PUBLIC_ENVIRONMENT as ENVIRONMENT_ENUMS) ||
-    ENVIRONMENT_ENUMS.LOCAL;
+    ENVIRONMENT_ENUMS.PROD;
 export const DISABLE_DEV_FLAG =
     process.env.NEXT_PUBLIC_DISABLE_DEV_FLAG || false;
 export const VERSION = `LANDING-1.0.0${
@@ -25,16 +25,27 @@ export const SENTRY_DSN =
 
 // Firebase
 export const FIREBASE_CONFIG = {
-    apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-    authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-    measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+    apiKey:
+        process.env.NEXT_PUBLIC_FIREBASE_API_KEY ||
+        "AIzaSyBt_CxMo0Z3iduyQhnzhj6rgumNNXvmYTw",
+    authDomain:
+        process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ||
+        "khyn-cms.firebaseapp.com",
+    projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "khyn-cms",
+    storageBucket:
+        process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET ||
+        "khyn-cms.appspot.com",
+    messagingSenderId:
+        process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || "773423461522",
+    appId:
+        process.env.NEXT_PUBLIC_FIREBASE_APP_ID ||
+        "1:773423461522:web:9b216473d6b73d5dade24b",
+    measurementId:
+        process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || "G-BHB463FK2G"
 };
 export const FIREBASE_APP_CHECK_PUBLIC_KEY =
-    process.env.NEXT_PUBLIC_FIREBASE_APP_CHECK_PUBLIC_KEY;
+    process.env.NEXT_PUBLIC_FIREBASE_APP_CHECK_PUBLIC_KEY ||
+    "6LcCUQokAAAAAJlz4bQxvlejvMVSR6rZUq4e1Vax";
 export const FIRESTORE_EVENTS_QUERY_LIMIT = 2;
 
 // URL Links
