@@ -9,6 +9,8 @@
     <img src="public/assets/svg/logo-khyn.svg" alt="Logo" width="120" height="120">
   </a>
 
+> This project is not in production and has been archived.
+
 <h3 align="center">Keat Hong Youth Network Landing Site</h3>
   <p align="center">
     #techforpublicgood
@@ -24,12 +26,13 @@
 
 ## Table of Contents
 
--   [About the Project](#about-the-project)
--   [Built with](#built-with)
--   [Contributing](#contributing)
--   [Security and Feedback](#security-and-feedback)
--   [Contact](#contact)
--   [Acknowledgements](#acknowledgements)
+- [Table of Contents](#table-of-contents)
+- [About the Project](#about-the-project)
+  - [Built with](#built-with)
+- [Contributing](#contributing)
+- [Security and Feedback](#security-and-feedback)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
 ## About the Project
 
